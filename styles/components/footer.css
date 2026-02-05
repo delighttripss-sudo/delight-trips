@@ -1,0 +1,172 @@
+/* =====================================
+   ✅ FOOTER — WORLD CLASS + OPTIMIZED
+===================================== */
+
+.footer {
+  width: 100%;
+  background: #0ea5e9; /* Brand primary */
+  color: #ffffff;
+  padding: 55px 20px 25px;
+
+  /* ✅ Lighthouse Boost: Render only when needed */
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
+
+/* ✅ Footer Wrapper Grid */
+.footer-wrapper {
+  max-width: 1150px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* ===============================
+   ✅ BRAND
+================================= */
+
+.footer-logo {
+  max-width: 70px;
+  margin-bottom: 14px;
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  opacity: 0.9;
+  max-width: 320px;
+}
+
+/* ===============================
+   ✅ LINKS
+================================= */
+
+.footer-links h4,
+.footer-social h4 {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: opacity 0.25s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ===============================
+   ✅ SOCIAL ICONS (FIXED FOR IMG)
+================================= */
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.9;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+/* ===============================
+   ✅ FOOTER BOTTOM
+================================= */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  margin-top: 35px;
+  padding-top: 14px;
+
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ===============================
+   ✅ RESPONSIVE
+================================= */
+
+@media (max-width: 992px) {
+  .footer-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-description {
+    margin: auto;
+  }
+}
+.cookie-popup {
+  position: fixed;
+  bottom: 20px; /* Start visible to test immediately */
+  left: 20px;
+  z-index: 99999;
+  display: none; /* Controlled by JS */
+}
+
+.cookie-card {
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cookie-btn-primary {
+  background: #0077ff;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cookie-btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid #fff;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,101 @@
+/* ==============================
+   PACKAGE FORM POPUP
+================================ */
+
+.package-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.package-form-overlay.hidden {
+  display: none;
+}
+
+.package-form-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.package-form-title {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.package-form-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.package-form-box input,
+.package-form-box select,
+.package-form-box textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.package-form-box textarea {
+  resize: none;
+  height: 90px;
+}
+
+.package-form-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .package-form-box {
+    margin: 0 16px;
+    padding: 24px;
+  }
+}
+/* ===== FINAL POPUP POLISH ===== */
+
+.package-form-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.package-form-box {
+  position: relative;
+  z-index: 100000;
+}
+
+/* Close button fix */
+.package-form-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 26px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Prevent background interaction */
+body {
+  overscroll-behavior: contain;
+}

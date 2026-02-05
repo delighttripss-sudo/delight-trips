@@ -1,0 +1,45 @@
+<!-- Dynamic Breadcrumb Component -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/index.html">Home</a>
+    </li>
+    <!-- Example dynamic item -->
+    <li class="breadcrumb-item">
+      <a href="/tours.html">Tours</a>
+    </li>
+    <li class="breadcrumb-item" aria-current="page">Destination Name</li>
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb {
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .breadcrumb-list {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--accent-color);
+  }
+
+  .breadcrumb-item[aria-current="page"] {
+    font-weight: bold;
+    color: var(--text-color);
+  }
+</style>

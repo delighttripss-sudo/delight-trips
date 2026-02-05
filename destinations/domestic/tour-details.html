@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ SEO -->
+    <title>Tour Details | Delight Trips</title>
+    <meta
+      name="description"
+      content="Detailed tour itinerary with inclusions, exclusions, highlights and complete travel planning support from Delight Trips."
+    />
+
+    <!-- ✅ GLOBAL CORE (Relative Paths Correct) -->
+    <link rel="stylesheet" href="../../styles/tokens.css" />
+    <link rel="stylesheet" href="../../styles/base.css" />
+    <link rel="stylesheet" href="../../styles/layout.css" />
+    <link rel="stylesheet" href="../../styles/utilities.css" />
+    <link rel="stylesheet" href="../../styles/accessibility.css" />
+    <link rel="stylesheet" href="../../styles/support.css" />
+
+    <!-- ✅ GLOBAL LUXURY BACKGROUND PATTERN -->
+    <link rel="stylesheet" href="../../styles/global-pattern.css" />
+
+    <!-- ✅ COMPONENTS -->
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
+
+    <!-- ✅ PAGE CSS -->
+    <link rel="stylesheet" href="/styles/pages/tour-details.css" />
+  </head>
+
+  <body>
+    <div id="site-header"></div>
+    <script type="module" src="/js/navigation.js"></script>
+
+    <main class="destination-container">
+      <section class="tour-summary" id="tourSummary"></section>
+
+      <section class="tour-section">
+        <h2>Day-wise Itinerary</h2>
+        <div id="itinerary"></div>
+      </section>
+
+      <section class="tour-section">
+        <h2>Inclusions</h2>
+        <ul id="inclusions"></ul>
+      </section>
+
+      <section class="tour-section">
+        <h2>Exclusions</h2>
+        <ul id="exclusions"></ul>
+      </section>
+
+      <section class="tour-cta">
+        <h2>Want this tour customized?</h2>
+        <p>Get a personalized itinerary based on your preferences.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="Delight Trips Logo"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <p class="footer-description">
+            Delight Trips is a trusted travel company offering authentic
+            journeys, offbeat destinations, and carefully curated travel
+            experiences across India and international destinations with a focus
+            on comfort, sustainability, and reliability.
+          </p>
+        </div>
+
+        <!-- POLICIES -->
+        <div class="footer-links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            <li>
+              <a href="/refund-and-cancellation-policy.html">Refund Policy</a>
+            </li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- TOURS -->
+        <div class="footer-links">
+          <h4>Tours</h4>
+          <ul>
+            <li>
+              <a href="/tours/domestic.html">Incredible Indian Destinations</a>
+            </li>
+            <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+            <li>
+              <a href="/tours/international.html">International Destinations</a>
+            </li>
+            <li>
+              <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/delight_tripss/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/instagram.svg"
+                alt="Instagram"
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/Delighttrips/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/facebook.svg"
+                alt="Facebook"
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://wa.me/917045286023"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/whatsapp.svg"
+                alt="WhatsApp"
+                width="24"
+                height="24"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span> Delight Trips. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const params = new URLSearchParams(window.location.search);
+      const key = params.get("tour");
+
+      const DATA = {
+        "kerala-backwaters": {
+          title: "Kerala Backwaters Tour",
+          subtitle: "5 Nights / 6 Days · Backwaters · Hills · Beaches",
+          hero: "../../assets/images/tours/domestic/kerala.webp",
+          summary: [
+            "Duration: 5N / 6D",
+            "Destination: Kerala",
+            "Ideal For: Couples & Families",
+            "Best Time: Oct – Mar",
+          ],
+          itinerary: [
+            "Arrival at Kochi & local sightseeing",
+            "Drive to Munnar via scenic routes",
+            "Munnar sightseeing & tea gardens",
+            "Transfer to Alleppey for houseboat stay",
+            "Drive to Kovalam & beach leisure",
+            "Departure from Trivandrum",
+          ],
+          inclusions: [
+            "Hotel accommodation",
+            "Daily breakfast",
+            "Houseboat stay with meals",
+            "Private transportation",
+          ],
+          exclusions: [
+            "Airfare / train tickets",
+            "Personal expenses",
+            "Anything not mentioned in inclusions",
+          ],
+        },
+      };
+
+      const tour = DATA[key];
+      if (tour) {
+        document.getElementById("tourTitle").textContent = tour.title;
+        document.getElementById("tourSubtitle").textContent = tour.subtitle;
+        document.querySelector(".tour-hero").style.backgroundImage =
+          `url('${tour.hero}')`;
+
+        const s = document.getElementById("tourSummary");
+        tour.summary.forEach((x) => {
+          const d = document.createElement("div");
+          d.textContent = x;
+          s.appendChild(d);
+        });
+
+        const it = document.getElementById("itinerary");
+        tour.itinerary.forEach((d, i) => {
+          const box = document.createElement("div");
+          box.className = "day";
+          box.innerHTML = `<h3>Day ${i + 1}</h3><p>${d}</p>`;
+          it.appendChild(box);
+        });
+
+        const inc = document.getElementById("inclusions");
+        tour.inclusions.forEach((x) => {
+          const li = document.createElement("li");
+          li.textContent = x;
+          inc.appendChild(li);
+        });
+
+        const exc = document.getElementById("exclusions");
+        tour.exclusions.forEach((x) => {
+          const li = document.createElement("li");
+          li.textContent = x;
+          exc.appendChild(li);
+        });
+      }
+    </script>
+    <script type="module" src="/js/navigation.js"></script>
+  </body>
+</html>

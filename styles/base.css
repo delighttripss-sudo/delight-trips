@@ -1,0 +1,125 @@
+/* ============================================
+   ✅ BASE.CSS — Safe Global Reset + Typography
+   - Poppins only
+   - No overflow rules
+   - No scroll behavior changes
+   - No page-specific hacks
+============================================ */
+
+/* ===============================
+   ✅ Modern Reset
+================================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   ✅ Core Typography
+================================= */
+
+body {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+
+  color: var(--text-main);
+
+  /* ✅ Background handled in global-pattern.css */
+  background: transparent;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* ===============================
+   ✅ Links
+================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.96;
+}
+
+/* ===============================
+   ✅ Media Defaults
+================================= */
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===============================
+   ✅ Forms Normalization
+================================= */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ===============================
+   ✅ Accessibility
+================================= */
+
+::selection {
+  background: var(--primary-soft);
+  color: var(--dark);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(11, 94, 215, 0.5);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ===============================
+   ✅ Structural Defaults
+================================= */
+
+main {
+  display: block;
+}

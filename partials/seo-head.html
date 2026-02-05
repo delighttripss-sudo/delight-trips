@@ -1,0 +1,132 @@
+<head>
+  <!-- ✅ Core Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Primary SEO -->
+  <title>Delight Trips | Premium Tours, Honeymoon & Holiday Packages</title>
+
+  <meta
+    name="description"
+    content="Delight Trips is a premium travel company offering curated domestic & international holiday packages, honeymoon tours, spiritual journeys, and offbeat travel experiences across India and beyond."
+  />
+
+  <link rel="canonical" href="https://delighttrips.in/" />
+
+  <!-- ✅ Open Graph -->
+  <meta property="og:title" content="Delight Trips | Premium Travel Experiences" />
+  <meta
+    property="og:description"
+    content="Plan unforgettable journeys with Delight Trips — domestic tours, luxury escapes, honeymoon packages and full travel support."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://delighttrips.in/" />
+  <meta
+    property="og:image"
+    content="https://delighttrips.in/assets/images/og-banner.webp"
+  />
+
+  <!-- ✅ Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Delight Trips | Holiday Packages" />
+  <meta
+    name="twitter:description"
+    content="Curated tours across India & world destinations with Delight Trips."
+  />
+  <meta
+    name="twitter:image"
+    content="https://delighttrips.in/assets/images/og-banner.webp"
+  />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/assets/images/logo/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/images/logo/logo.png" />
+
+  <!-- ✅ Preload Hero Image (LCP Boost) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/hero/hero.webp"
+    fetchpriority="high"
+  />
+
+  <!-- ✅ Preload HTML Partials (Navbar Loads Faster) -->
+  <link rel="preload" href="/partials/header.html" as="fetch" crossorigin />
+  <link rel="preload" href="/partials/mobile-menu.html" as="fetch" crossorigin />
+
+  <!-- ✅ Fonts (Non-blocking Lighthouse Safe) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- ✅ CRITICAL CSS (Render First) -->
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/global-pattern.css" />
+  <link rel="stylesheet" href="/styles/pages/home.css" />
+
+  <!-- ✅ Components Async Load (No Render Blocking) -->
+  <link
+    rel="preload"
+    href="/styles/components/navbar.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript><link rel="stylesheet" href="/styles/components/navbar.css" /></noscript>
+
+  <link
+    rel="preload"
+    href="/styles/components/mobile-menu.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="/styles/components/mobile-menu.css" />
+  </noscript>
+
+  <link
+    rel="preload"
+    href="/styles/components/footer.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript><link rel="stylesheet" href="/styles/components/footer.css" /></noscript>
+
+  <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+
+  <!-- ✅ Schema (Google Trust Boost) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Delight Trips",
+      "url": "https://delighttrips.in",
+      "logo": "https://delighttrips.in/assets/images/logo/logo.png",
+      "description": "Delight Trips offers curated domestic, international, honeymoon, spiritual and luxury travel packages.",
+      "telephone": "+91-7045286023",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.instagram.com/delight_tripss/",
+        "https://www.facebook.com/Delighttrips/",
+        "https://wa.me/917045286023"
+      ]
+    }
+  </script>
+</head>

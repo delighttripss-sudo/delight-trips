@@ -1,0 +1,89 @@
+:root {
+  /* ===============================
+     ✅ Premium Color System
+  =============================== */
+
+  --light: #ffffff;
+  --dark: #0b0f1a;
+
+  /* Brand Primary (Professional Blue) */
+  --primary: #0b5ed7;
+  --primary-dark: #084298;
+  --primary-soft: rgba(11, 94, 215, 0.12);
+
+  /* Neutrals (Luxury UI Scale) */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+
+  /* Text Colors */
+  --text-main: var(--dark);
+  --text-muted: rgba(11, 15, 26, 0.65);
+  --text-light: rgba(255, 255, 255, 0.92);
+
+  /* Backgrounds */
+  --bg-soft: var(--gray-50);
+  --bg-glass: rgba(255, 255, 255, 0.82);
+
+  /* ===============================
+     ✅ Spacing System (Consistent)
+  =============================== */
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* ===============================
+     ✅ Radius (Modern Rounded UI)
+  =============================== */
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+
+  /* ===============================
+     ✅ Shadows (High-End Look)
+  =============================== */
+
+  --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.14);
+  --shadow-lg: 0 25px 80px rgba(15, 23, 42, 0.2);
+
+  /* ===============================
+   ✅ Typography Tokens
+=============================== */
+
+  --font-main: "Google Sans", "Inter", system-ui, sans-serif;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2.2rem;
+  --font-size-hero: clamp(2.2rem, 5vw, 4rem);
+
+  --line-height: 1.6;
+
+  /* ===============================
+     ✅ Motion (Smooth Premium Feel)
+  =============================== */
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-med: 350ms;
+  --dur-slow: 600ms;
+
+  /* ===============================
+     ✅ UI Constants (Hero/Navbar)
+  =============================== */
+
+  --navbar-height: 125px; /* matches your current navbar */
+}

@@ -1,0 +1,238 @@
+/* ================================
+   LEGAL PAGES – WORLD CLASS STYLES
+   Applies to:
+   - Privacy Policy
+   - Terms & Conditions
+   - Refund & Cancellation
+   - Cookie Policy
+================================ */
+
+/* Wrapper for all legal content */
+.legal-content {
+  max-width: 900px;
+  margin: 60px auto 90px;
+  padding: 0 22px;
+
+  font-family: var(--font-main);
+  line-height: 1.75;
+
+  color: var(--text-main);
+}
+
+/* Main page title */
+.legal-content h1 {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  font-weight: 750;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+/* Section headings */
+.legal-content h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 45px;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+/* Sub-headings */
+.legal-content h3 {
+  font-size: 1.1rem;
+  font-weight: 650;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  color: var(--gray-800);
+}
+
+/* Paragraphs */
+.legal-content p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+/* Lists */
+.legal-content ul {
+  padding-left: 22px;
+  margin-bottom: 18px;
+}
+
+.legal-content li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* Horizontal separators */
+.legal-content hr {
+  border: none;
+  border-top: 1px solid var(--gray-200);
+  margin: 50px 0;
+}
+
+/* Strong text */
+.legal-content strong {
+  font-weight: 650;
+  color: var(--dark);
+}
+
+/* Links inside legal content */
+.legal-content a {
+  color: var(--primary);
+  font-weight: 550;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.legal-content a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .legal-content {
+    margin-top: 40px;
+    margin-bottom: 70px;
+    padding: 0 18px;
+  }
+
+  .legal-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* =========================
+   COOKIE CONSENT POPUP
+   Premium + Safe Styling
+========================= */
+
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+
+  z-index: 9999;
+}
+
+.cookie-consent.hidden {
+  display: none;
+}
+
+/* Cookie Box */
+.cookie-box {
+  max-width: 980px;
+  margin: auto;
+
+  background: var(--light);
+  padding: 26px 28px;
+
+  border-radius: 18px 18px 0 0;
+  box-shadow: var(--shadow-md);
+}
+
+/* Heading */
+.cookie-box h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* Text */
+.cookie-box p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+  color: var(--text-muted);
+}
+
+/* Actions */
+.cookie-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 12px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition:
+    transform var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+
+/* Primary */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Secondary */
+.btn-secondary {
+  background: var(--gray-200);
+  color: var(--dark);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-100);
+  transform: translateY(-2px);
+}
+
+/* Links */
+.cookie-links {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cookie-links a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cookie-links a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cookie-box {
+    border-radius: 0;
+    padding: 22px;
+  }
+
+  .cookie-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}

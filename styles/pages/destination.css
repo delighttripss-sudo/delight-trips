@@ -1,0 +1,486 @@
+/* HEADER */
+.destination-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.destination-logo img {
+  height: 68px;
+}
+.destination-home {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* HERO */
+.destination-hero {
+  height: 640px;
+  position: relative;
+}
+.destination-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.destination-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.destination-hero-overlay h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  margin: 0;
+}
+
+.destination-hero-overlay p {
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  margin: 0;
+  opacity: 0.9;
+}
+
+.destination-cta-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #ff6a00, #ff8a3d);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 20px rgba(255, 106, 0, 0.3);
+}
+
+.destination-cta-btn:hover {
+  background: linear-gradient(135deg, #ff7f26, #ff9a50);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 106, 0, 0.4);
+}
+
+.destination-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* CONTAINER */
+.destination-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* GRID */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.experience-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.experience-content {
+  padding: 16px;
+}
+.experience-content h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.experience-content p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* BUTTON */
+.enquire-btn {
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  background: #0f172a;
+  color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.enquiry-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.hidden {
+  display: none;
+}
+
+.enquiry-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+.enquiry-box input,
+.enquiry-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* TEMPLATE GRID */
+.destination-template-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* TEMPLATE CARD */
+.destination-template-card {
+  position: relative;
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destination-template-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.destination-template-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.destination-template-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.35),
+    transparent
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+  color: #fff;
+}
+
+/* TEXT */
+.destination-template-text h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.destination-template-text span {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* ITINERARY CARD BUTTON - "Book Now" */
+.destination-template-btn {
+  align-self: flex-start;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #ff6a00;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.destination-template-btn:hover {
+  background: #ff7f26;
+  transform: translateY(-2px);
+}
+
+.destination-template-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   ITINERARY DURATION GRID (NEW)
+   ======================================== */
+
+.itinerary-duration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.itinerary-duration-card {
+  position: relative;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.itinerary-duration-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.itinerary-duration-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itinerary-duration-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.itinerary-duration-card:hover .itinerary-duration-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.15)
+  );
+}
+
+.itinerary-duration-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.itinerary-duration-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.itinerary-duration-meta {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.itinerary-book-btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff6a00, #ff8a3d);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.itinerary-book-btn:hover {
+  background: linear-gradient(135deg, #ff7f26, #ff9a50);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 106, 0, 0.3);
+}
+
+.itinerary-book-btn:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* TABLET - 1024px and below */
+@media (max-width: 1024px) {
+  .destination-template-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .itinerary-duration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE - 768px and below */
+@media (max-width: 768px) {
+  .destination-header {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .destination-logo img {
+    height: 36px;
+  }
+
+  .destination-container {
+    margin: 50px auto;
+    padding: 0 16px;
+  }
+
+  .destination-template-card {
+    height: 240px;
+  }
+
+  .itinerary-duration-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .itinerary-duration-card {
+    height: 240px;
+  }
+
+  .destination-template-text h3 {
+    font-size: 16px;
+  }
+
+  .itinerary-duration-title {
+    font-size: 20px;
+  }
+
+  .itinerary-duration-label {
+    font-size: 11px;
+  }
+}
+
+/* MOBILE SMALL - 600px and below */
+@media (max-width: 600px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-template-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .destination-template-card {
+    height: 220px;
+  }
+
+  .destination-hero {
+    height: 280px;
+  }
+
+  .destination-hero-overlay h1 {
+    font-size: 24px;
+  }
+
+  .destination-hero-overlay p {
+    font-size: 14px;
+  }
+
+  .destination-container {
+    margin: 40px auto;
+  }
+
+  .itinerary-duration-card {
+    height: 200px;
+  }
+
+  .itinerary-duration-overlay {
+    padding: 16px;
+  }
+
+  .itinerary-duration-label {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .itinerary-duration-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .itinerary-duration-meta {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .itinerary-book-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}

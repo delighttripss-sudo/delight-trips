@@ -1,0 +1,36 @@
+/* ==========================================
+   ✅ GLOBAL LUXURY BACKGROUND (Perfect)
+   No Black Flash + Premium Look
+========================================== */
+
+html {
+  background: #f9fcff; /* ✅ prevents scroll repaint gaps */
+}
+
+body {
+  background-color: #f9fcff;
+
+  /* ✅ Luxury SVG Pattern */
+  background-image: url("/assets/patterns/luxury.svg");
+  background-repeat: repeat;
+  background-size: 360px;
+  background-position: center;
+}
+
+/* ✅ Soft Premium White Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ✅ All Content Above Overlay */
+body > * {
+  position: relative;
+  z-index: 1;
+}

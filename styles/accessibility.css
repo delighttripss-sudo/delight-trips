@@ -1,0 +1,62 @@
+/* ============================================
+   ✅ ACCESSIBILITY.CSS — World Class Defaults
+   Purpose:
+   - Skip link for keyboard users
+   - Strong visible focus rings (WCAG compliant)
+   - No behavioral changes
+============================================ */
+
+/* ===============================
+   ✅ Skip Link (Keyboard Navigation)
+================================= */
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 16px;
+
+  background: var(--dark);
+  color: var(--light);
+
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  z-index: 2000;
+
+  transition: top var(--dur-med) var(--ease);
+}
+
+/* Appears when focused */
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ===============================
+   ✅ Global Focus Ring (Premium + Clear)
+   Applies only for keyboard focus
+================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(11, 94, 215, 0.55);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Improve focus for buttons/links */
+button:focus-visible,
+a:focus-visible {
+  box-shadow: 0 0 0 4px rgba(11, 94, 215, 0.18);
+}
+
+/* ===============================
+   ✅ Reduced Motion Support
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}

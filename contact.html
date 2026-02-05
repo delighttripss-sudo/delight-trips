@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+
+    <!-- GLOBAL CORE -->
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/utilities.css" />
+    <link rel="stylesheet" href="/styles/accessibility.css" />
+    <link rel="stylesheet" href="/styles/support.css" />
+    <link rel="stylesheet" href="/styles/global-pattern.css" />
+
+    <!-- COMPONENTS -->
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+    <link rel="stylesheet" href="/styles/components/buttons.css" />
+
+    <!-- PAGE -->
+    <link rel="stylesheet" href="/styles/pages/contact.css" />
+
+    <title>Contact Us | Delight Trips</title>
+  </head>
+
+  <body>
+   <div id="site-header"></div>
+<script type="module" src="/js/navigation.js"></script>
+
+    <main id="main-content">
+      <!-- HERO -->
+      <section
+        class="contact-hero"
+        style="
+          background-image: url(&quot;/assets/images/contact/contact-bg.webp&quot;);
+        "
+      >
+        <div class="contact-hero-overlay">
+          <h1>Let’s Talk Travel</h1>
+          <p>Your journey begins with a conversation</p>
+        </div>
+      </section>
+
+      <!-- CONTACT AREA -->
+      <section class="contact-area">
+        <div class="container contact-grid">
+          <!-- FORM -->
+          <div class="contact-form">
+            <h2>Connect With Us</h2>
+
+            <form id="whatsappForm" class="contact-form-box">
+              <input type="text" id="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email Address"
+                required
+              />
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Your Phone Number"
+                required
+              />
+              <input
+                type="number"
+                id="pax"
+                min="1"
+                placeholder="Number of Travellers"
+                required
+              />
+              <textarea
+                id="message"
+                placeholder="Your Message"
+                required
+              ></textarea>
+
+              <button type="submit" class="contact-submit-btn">
+                Send on WhatsApp
+              </button>
+            </form>
+          </div>
+
+          <!-- MAP -->
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.4457185953747!2d72.95765999999999!3d19.219397099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b929345513fd%3A0xd758ab9a777d1d7a!2sDelight%20Trips!5e0!3m2!1sen!2sin!4v1769342104743!5m2!1sen!2sin"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+  <div class="footer-wrapper">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <img
+        src="/assets/images/logo/logo.svg"
+        alt="Delight Trips Logo"
+        class="footer-logo"
+        loading="lazy"
+      />
+      <p class="footer-description">
+        Delight Trips is a trusted travel company offering authentic journeys,
+        offbeat destinations, and carefully curated travel experiences across
+        India and international destinations with a focus on comfort,
+        sustainability, and reliability.
+      </p>
+    </div>
+
+    <!-- POLICIES -->
+    <div class="footer-links">
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+    </div>
+
+    <!-- TOURS -->
+    <div class="footer-links">
+      <h4>Tours</h4>
+      <ul>
+        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
+        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+        <li><a href="/tours/international.html">International Destinations</a></li>
+        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-social">
+  <h4>Follow Us</h4>
+
+  <div class="social-icons">
+    <!-- Instagram -->
+    <a
+      href="https://www.instagram.com/delight_tripss/"
+      aria-label="Follow Delight Trips on Instagram"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="/assets/icons/social/instagram.svg"
+        alt="Instagram"
+        width="24"
+        height="24"
+        loading="lazy"
+      />
+    </a>
+
+    <!-- Facebook -->
+    <a
+      href="https://www.facebook.com/Delighttrips/"
+      aria-label="Follow Delight Trips on Facebook"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="/assets/icons/social/facebook.svg"
+        alt="Facebook"
+        width="24"
+        height="24"
+        loading="lazy"
+      />
+    </a>
+
+    <!-- WhatsApp -->
+    <a
+      href="https://wa.me/917045286023"
+      aria-label="Chat with Delight Trips on WhatsApp"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="/assets/icons/social/whatsapp.svg"
+        alt="WhatsApp"
+        width="24"
+        height="24"
+        loading="lazy"
+      />
+    </a>
+  </div>
+</div>
+  <div class="footer-bottom">
+    © <span id="year"></span> Delight Trips. All Rights Reserved.
+  </div>
+</footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- JS -->
+    <script src="/js/whatsapp-form.js"></script>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>
