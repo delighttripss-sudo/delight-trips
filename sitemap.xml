@@ -1,73 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
+  <!-- ===============================
+       HOMEPAGE (PRIMARY AUTHORITY)
+  =============================== -->
   <url>
     <loc>https://www.delighttrips.in/</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>1.0</priority>
   </url>
 
-  <!-- Core pages -->
+  <!-- ===============================
+       CORE BRAND PAGES
+  =============================== -->
   <url>
     <loc>https://www.delighttrips.in/about.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-02-08</lastmod>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/tours.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/contact.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>0.8</priority>
+  </url>
+
+  <!-- ===============================
+       CONTENT & TRUST PAGES
+  =============================== -->
+  <url>
+    <loc>https://www.delighttrips.in/blog.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/faq.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://www.delighttrips.in/blog.html</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Tour pages -->
+  <!-- ===============================
+       TOUR CATEGORY PAGES
+  =============================== -->
   <url>
     <loc>https://www.delighttrips.in/domestic.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/international.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/honeymoon.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/pilgrimage.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <priority>0.7</priority>
   </url>
 
-  <!-- Legal pages -->
+  <!-- ===============================
+       LEGAL / UTILITY PAGES (DE-EMPHASIZED)
+       (These should also have noindex, follow in head)
+  =============================== -->
   <url>
     <loc>https://www.delighttrips.in/terms-and-conditions.html</loc>
-    <priority>0.3</priority>
+    <lastmod>2026-02-08</lastmod>
+    <priority>0.2</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/privacy-policy.html</loc>
-    <priority>0.3</priority>
+    <lastmod>2026-02-08</lastmod>
+    <priority>0.2</priority>
   </url>
 
   <url>
     <loc>https://www.delighttrips.in/refund-and-cancellation-policy.html</loc>
-    <priority>0.3</priority>
+    <lastmod>2026-02-08</lastmod>
+    <priority>0.2</priority>
   </url>
 
 </urlset>
