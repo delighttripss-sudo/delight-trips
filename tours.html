@@ -1,42 +1,137 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===============================
+       CORE META
+  =============================== -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- SEO -->
-    <title>Tour Packages | Delight Trips</title>
-    <meta
-      name="description"
-      content="Explore domestic, international, honeymoon and pilgrimage tour packages curated by Delight Trips with expert planning and premium support."
-    />
-    <meta name="robots" content="index, follow" />
+  <!-- ===============================
+       CANONICAL (CATEGORY PAGE)
+  =============================== -->
+  <link rel="canonical" href="https://www.delighttrips.in/tours.html" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- ===============================
+       SEO (CATEGORY INTENT)
+  =============================== -->
+  <title>Tour Packages | Domestic & International Trips – Delight Trips</title>
 
-    <!-- GLOBAL CORE -->
-    <link rel="stylesheet" href="/styles/tokens.css" />
-    <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/utilities.css" />
-    <link rel="stylesheet" href="/styles/accessibility.css" />
-    <link rel="stylesheet" href="/styles/support.css" />
-    <link rel="stylesheet" href="/styles/global-pattern.css" />
+  <meta
+    name="description"
+    content="Explore domestic, international, honeymoon, and pilgrimage tour packages by Delight Trips. Compare destinations, itineraries, and get expert-curated travel planning with premium support."
+  />
 
-    <!-- COMPONENTS -->
-    <link rel="stylesheet" href="/styles/components/navbar.css" />
-    <link rel="stylesheet" href="/styles/components/footer.css" />
-    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-    <link rel="stylesheet" href="/styles/components/buttons.css" />
+ <!-- ===============================
+     FAVICON & APP ICONS
+================================ -->
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
 
-    <!-- PAGE -->
-    <link rel="stylesheet" href="/styles/pages/tours.css" />
-  </head>
+<!-- Standard Browser Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+
+<!-- Android / PWA Icons -->
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
+
+<!-- Web App Manifest -->
+<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- ===============================
+       FONT (GLOBAL – SAME EVERYWHERE)
+  =============================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ===============================
+       CRITICAL CSS (ABOVE FOLD)
+  =============================== -->
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/pages/tours.css" />
+
+  <!-- ===============================
+       ASYNC / BELOW FOLD CSS
+  =============================== -->
+  <link
+    rel="preload"
+    href="/styles/components/navbar.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <link
+    rel="preload"
+    href="/styles/components/footer.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <link
+    rel="preload"
+    href="/styles/components/whatsapp.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  <!-- ===============================
+       OPEN GRAPH (ADS + SHARING)
+  =============================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tour Packages | Delight Trips" />
+  <meta
+    property="og:description"
+    content="Discover domestic, international, honeymoon, and pilgrimage tour packages with expert planning by Delight Trips."
+  />
+  <meta property="og:url" content="https://www.delighttrips.in/tours.html" />
+  <meta
+    property="og:image"
+    content="https://www.delighttrips.in/assets/images/og-tours.jpg"
+  />
+
+  <!-- ===============================
+       STRUCTURED DATA (CATEGORY PAGE)
+  =============================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Tour Packages",
+    "url": "https://www.delighttrips.in/tours.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Delight Trips",
+      "url": "https://www.delighttrips.in/"
+    }
+  }
+  </script>
+
+  <!-- ===============================
+       GOOGLE ANALYTICS (SAME ID)
+  =============================== -->
+ <!-- Google tag (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F5VESB5BY0', {
+    anonymize_ip: true,
+    page_path: window.location.pathname
+  });
+</script>
+
+</head>
+
 
   <body>
     <div id="site-header"></div>

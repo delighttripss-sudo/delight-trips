@@ -2,21 +2,52 @@
 <html lang="en">
  
 <head>
+  <!-- ===============================
+     CORE META
+  ================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ✅ SEO -->
   <meta name="robots" content="index, follow" />
 
- <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-  rel="stylesheet"
-/>
+  <!-- ===============================
+     SEO (FAQ PAGE ROLE)
+  ================================ -->
+  <title>Frequently Asked Questions | Delight Trips</title>
+  <meta
+    name="description"
+    content="Find answers to common questions about tour packages, bookings, payments, visas, hotels, flights, and travel services offered by Delight Trips."
+  />
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.delighttrips.in/faq.html" />
 
-  <!-- ✅ GLOBAL CORE -->
+  <!-- ===============================
+     GOOGLE ANALYTICS (GA4 – SAFE)
+  ================================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F5VESB5BY0', {
+      anonymize_ip: true,
+      page_path: window.location.pathname
+    });
+  </script>
+
+  <!-- ===============================
+     FONTS (GLOBAL – SAME EVERYWHERE)
+  ================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ===============================
+     GLOBAL CORE CSS
+  ================================ -->
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/base.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
@@ -25,14 +56,17 @@
   <link rel="stylesheet" href="/styles/support.css" />
   <link rel="stylesheet" href="/styles/global-pattern.css" />
 
-  <!-- ✅ COMPONENTS -->
+  <!-- ===============================
+     COMPONENT STYLES
+  ================================ -->
   <link rel="stylesheet" href="/styles/components/navbar.css" />
   <link rel="stylesheet" href="/styles/components/footer.css" />
   <link rel="stylesheet" href="/styles/components/whatsapp.css" />
   <link rel="stylesheet" href="/styles/components/buttons.css" />
 
-  <!-- ✅ PAGE CSS -->
- 
+  <!-- ===============================
+     PAGE-SPECIFIC CSS
+  ================================ -->
   <link rel="stylesheet" href="/styles/pages/faq.css" />
 
   <title>Delight Trips</title>

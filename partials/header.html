@@ -1,18 +1,36 @@
-<header class="navbar">
+
+<header class="navbar" role="banner">
   <div class="navbar-container">
-    <a href="/index.html" class="navbar-logo">
-      <img src="/assets/images/logo/logo.png" alt="Delight Trips Logo" />
+    <!-- LOGO / BRAND -->
+    <a href="/index.html" class="navbar-logo" aria-label="Delight Trips Home">
+      <img
+        src="/assets/images/logo/logo.png"
+        alt="Delight Trips Logo"
+        width="48"
+        height="48"
+        loading="eager"
+      />
       <span class="logo-text">Delight Trips</span>
     </a>
 
-    <nav class="navbar-links">
+    <!-- PRIMARY NAVIGATION -->
+    <nav class="navbar-links" aria-label="Primary Navigation">
       <a href="/about.html">About Us</a>
       <a href="/tours.html">Destinations</a>
       <a href="/blog.html">Blog</a>
       <a href="/contact.html">Contact Us</a>
     </nav>
 
-    <button class="navbar-toggle" id="menuToggle">☰</button>
+    <!-- MOBILE MENU TOGGLE -->
+    <button
+      class="navbar-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      type="button"
+    >
+      ☰
+    </button>
   </div>
 </header>
-

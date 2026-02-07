@@ -1,33 +1,152 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ===============================
+     CORE META
+  ================================ -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- ✅ SEO -->
-    <title>Tour Details | Delight Trips</title>
+    <!-- ===============================
+     SEO (TOUR DETAILS PAGE)
+  ================================ -->
+    <title>
+      Tour Details | Itinerary, Inclusions & Pricing – Delight Trips
+    </title>
     <meta
       name="description"
-      content="Detailed tour itinerary with inclusions, exclusions, highlights and complete travel planning support from Delight Trips."
+      content="View complete tour details with day-wise itinerary, inclusions, exclusions, highlights and end-to-end travel planning support by Delight Trips."
     />
 
-    <!-- ✅ GLOBAL CORE (Relative Paths Correct) -->
+    <!-- Canonical (use dynamic replacement later if needed) -->
+    <link
+      rel="canonical"
+      href="https://www.delighttrips.in/tours/tour-details.html"
+    />
+
+    <!-- ===============================
+     FAVICON & APP ICONS
+================================ -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+
+    <!-- Standard Browser Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Android / PWA Icons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon/android-chrome-512x512.png"
+    />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- ===============================
+     OPEN GRAPH (SHARING)
+  ================================ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tour Details | Delight Trips" />
+    <meta
+      property="og:description"
+      content="Explore detailed tour itineraries, inclusions, exclusions and expert travel planning with Delight Trips."
+    />
+    <meta
+      property="og:url"
+      content="https://www.delighttrips.in/tours/tour-details.html"
+    />
+    <meta
+      property="og:image"
+      content="https://www.delighttrips.in/assets/images/og-tour-details.webp"
+    />
+
+    <!-- ===============================
+     GOOGLE ANALYTICS (GA4)
+  ================================ -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-F5VESB5BY0", {
+        anonymize_ip: true,
+        page_path: window.location.pathname,
+      });
+    </script>
+
+    <!-- ===============================
+     FONTS (GLOBAL)
+  ================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- ===============================
+     GLOBAL CORE CSS (RELATIVE PATHS)
+  ================================ -->
     <link rel="stylesheet" href="../../styles/tokens.css" />
     <link rel="stylesheet" href="../../styles/base.css" />
     <link rel="stylesheet" href="../../styles/layout.css" />
     <link rel="stylesheet" href="../../styles/utilities.css" />
     <link rel="stylesheet" href="../../styles/accessibility.css" />
     <link rel="stylesheet" href="../../styles/support.css" />
-
-    <!-- ✅ GLOBAL LUXURY BACKGROUND PATTERN -->
     <link rel="stylesheet" href="../../styles/global-pattern.css" />
 
-    <!-- ✅ COMPONENTS -->
+    <!-- ===============================
+     COMPONENT STYLES
+  ================================ -->
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
     <link rel="stylesheet" href="/styles/components/footer.css" />
     <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-    <link rel="stylesheet" href="/styles/components/navbar.css" />
+    <link rel="stylesheet" href="/styles/components/breadcrumb.css" />
 
-    <!-- ✅ PAGE CSS -->
+    <!-- ===============================
+     PAGE-SPECIFIC CSS
+  ================================ -->
     <link rel="stylesheet" href="/styles/pages/tour-details.css" />
   </head>
 

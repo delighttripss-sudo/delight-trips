@@ -1,10 +1,15 @@
 <head>
-  <!-- ✅ Core Meta -->
+  <!-- ===============================
+       CORE META
+  =============================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ✅ Primary SEO -->
+  <!-- ===============================
+       PRIMARY SEO (DEFAULT / HOME)
+       (Override title & description per page)
+  =============================== -->
   <title>Delight Trips | Premium Tours, Honeymoon & Holiday Packages</title>
 
   <meta
@@ -14,8 +19,13 @@
 
   <link rel="canonical" href="https://delighttrips.in/" />
 
-  <!-- ✅ Open Graph -->
-  <meta property="og:title" content="Delight Trips | Premium Travel Experiences" />
+  <!-- ===============================
+       OPEN GRAPH (SOCIAL + ADS)
+  =============================== -->
+  <meta
+    property="og:title"
+    content="Delight Trips | Premium Travel Experiences"
+  />
   <meta
     property="og:description"
     content="Plan unforgettable journeys with Delight Trips — domestic tours, luxury escapes, honeymoon packages and full travel support."
@@ -27,7 +37,9 @@
     content="https://delighttrips.in/assets/images/og-banner.webp"
   />
 
-  <!-- ✅ Twitter -->
+  <!-- ===============================
+       TWITTER
+  =============================== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Delight Trips | Holiday Packages" />
   <meta
@@ -39,11 +51,30 @@
     content="https://delighttrips.in/assets/images/og-banner.webp"
   />
 
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="/assets/images/logo/favicon.ico" />
-  <link rel="apple-touch-icon" href="/assets/images/logo/logo.png" />
+  <!-- ===============================
+       FAVICON & PWA
+  =============================== -->
+  <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/assets/favicon/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/assets/favicon/favicon-16x16.png"
+  />
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-  <!-- ✅ Preload Hero Image (LCP Boost) -->
+  <!-- ===============================
+       PERFORMANCE OPTIMIZATION
+  =============================== -->
+
+  <!-- Hero image (LCP) -->
   <link
     rel="preload"
     as="image"
@@ -51,72 +82,120 @@
     fetchpriority="high"
   />
 
-  <!-- ✅ Preload HTML Partials (Navbar Loads Faster) -->
+  <!-- Partials preload -->
   <link rel="preload" href="/partials/header.html" as="fetch" crossorigin />
-  <link rel="preload" href="/partials/mobile-menu.html" as="fetch" crossorigin />
+  <link
+    rel="preload"
+    href="/partials/mobile-menu.html"
+    as="fetch"
+    crossorigin
+  />
 
-  <!-- ✅ Fonts (Non-blocking Lighthouse Safe) -->
+  <!-- ===============================
+       FONTS (SINGLE SOURCE OF TRUTH)
+  =============================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
     rel="preload"
     as="style"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    onload="
+      this.onload = null;
+      this.rel = 'stylesheet';
+    "
   />
   <noscript>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     />
   </noscript>
 
-  <!-- ✅ CRITICAL CSS (Render First) -->
+  <!-- ===============================
+       CRITICAL CSS (ABOVE THE FOLD)
+  =============================== -->
   <link rel="stylesheet" href="/styles/tokens.css" />
   <link rel="stylesheet" href="/styles/base.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/global-pattern.css" />
-  <link rel="stylesheet" href="/styles/pages/home.css" />
 
-  <!-- ✅ Components Async Load (No Render Blocking) -->
+  <!-- ===============================
+       COMPONENT CSS (ASYNC)
+  =============================== -->
   <link
     rel="preload"
     href="/styles/components/navbar.css"
     as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
+    onload="
+      this.onload = null;
+      this.rel = 'stylesheet';
+    "
   />
-  <noscript><link rel="stylesheet" href="/styles/components/navbar.css" /></noscript>
+  <noscript
+    ><link rel="stylesheet" href="/styles/components/navbar.css"
+  /></noscript>
 
   <link
     rel="preload"
     href="/styles/components/mobile-menu.css"
     as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
+    onload="
+      this.onload = null;
+      this.rel = 'stylesheet';
+    "
   />
-  <noscript>
-    <link rel="stylesheet" href="/styles/components/mobile-menu.css" />
-  </noscript>
+  <noscript
+    ><link rel="stylesheet" href="/styles/components/mobile-menu.css"
+  /></noscript>
 
   <link
     rel="preload"
     href="/styles/components/footer.css"
     as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
+    onload="
+      this.onload = null;
+      this.rel = 'stylesheet';
+    "
   />
-  <noscript><link rel="stylesheet" href="/styles/components/footer.css" /></noscript>
+  <noscript
+    ><link rel="stylesheet" href="/styles/components/footer.css"
+  /></noscript>
 
+  <!-- WhatsApp is small, load normally -->
   <link rel="stylesheet" href="/styles/components/whatsapp.css" />
 
-  <!-- ✅ Schema (Google Trust Boost) -->
+  <!-- ✅ Breadcrumb CSS (GLOBAL) -->
+  <link rel="stylesheet" href="/styles/components/breadcrumb.css" />
+
+  <!-- ===============================
+       GOOGLE ANALYTICS (GA4)
+  =============================== -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-F5VESB5BY0", { anonymize_ip: true });
+  </script>
+
+  <!-- ===============================
+       ORGANIZATION SCHEMA
+  =============================== -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TravelAgency",
       "name": "Delight Trips",
-      "url": "https://delighttrips.in",
-      "logo": "https://delighttrips.in/assets/images/logo/logo.png",
-      "description": "Delight Trips offers curated domestic, international, honeymoon, spiritual and luxury travel packages.",
+      "url": "https://www.delighttrips.in",
+      "logo": "https://www.delighttrips.in/assets/images/logo/logo.png",
+      "description": "Delight Trips offers curated domestic, international, honeymoon, spiritual and luxury travel packages across India and abroad.",
       "telephone": "+91-7045286023",
       "address": {
         "@type": "PostalAddress",

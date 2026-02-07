@@ -1,73 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+ <!DOCTYPE html>
+<html lang="en">
  <head>
-  <!-- ✅ Core Meta -->
+  <!-- ===============================
+       CORE META (NON-NEGOTIABLE)
+  =============================== -->
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 
-  <title>Delight Trips</title>
   <!-- ===============================
-     ✅ FAVICON & PWA (PRODUCTION)
+       CANONICAL (ROOT AUTHORITY)
+  =============================== -->
+  <link rel="canonical" href="https://www.delighttrips.in/" />
+
+  <!-- ===============================
+       SEO (HOMEPAGE ROLE)
+  =============================== -->
+  <title>Delight Trips | Custom Domestic & International Tour Packages</title>
+
+  <meta
+    name="description"
+    content="Delight Trips is a trusted travel agency offering customized domestic and international tour packages, honeymoon trips, pilgrimage tours, and expert travel planning across India and abroad."
+  />
+
+ <!-- ===============================
+     FAVICON & APP ICONS
 ================================ -->
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
 
-<link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+<!-- Standard Browser Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
 
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/assets/favicon/favicon-32x32.png"
->
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
 
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="/assets/favicon/favicon-16x16.png"
->
+<!-- Android / PWA Icons -->
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
 
-<link
-  rel="apple-touch-icon"
-  href="/assets/favicon/apple-touch-icon.png"
->
+<!-- Web App Manifest -->
+<link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-<link
-  rel="manifest"
-  href="/assets/favicon/site.webmanifest"
->
+  <!-- ===============================
+       FONT (GLOBAL — SAME FOR ALL PAGES)
+  =============================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-  rel="stylesheet"
-/>
+  <!-- ===============================
+       CRITICAL CSS (ABOVE THE FOLD)
+  =============================== -->
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/pages/home.css" />
 
-  <!-- ✅ Critical CSS -->
-<link rel="stylesheet" href="/styles/tokens.css" />
-<link rel="stylesheet" href="/styles/base.css" />
-<link rel="stylesheet" href="/styles/pages/home.css" />
-<!-- ✅ Async Below-Fold CSS -->
-<link
-  rel="preload"
-  href="/styles/components/footer.css"
-  as="style"
-  onload="this.onload=null;this.rel='stylesheet'"
-/>
+  <!-- ===============================
+       ASYNC / BELOW FOLD CSS (PERFORMANCE)
+  =============================== -->
+  <link
+    rel="preload"
+    href="/styles/components/navbar.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <link
+    rel="preload"
+    href="/styles/components/footer.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <link
+    rel="preload"
+    href="/styles/components/whatsapp.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
 
-<link
-  rel="preload"
-  href="/styles/components/whatsapp.css"
-  as="style"
-  onload="this.onload=null;this.rel='stylesheet'"
-/>
-<link
-  rel="preload"
-  href="/styles/components/navbar.css"
-  as="style"
-  onload="this.onload=null;this.rel='stylesheet'"
-/>
+  <!-- ===============================
+       OPEN GRAPH (ADS + SOCIAL TRUST)
+  =============================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Delight Trips | Expert Travel Planning" />
+  <meta
+    property="og:description"
+    content="Custom domestic & international tour packages, honeymoon and pilgrimage trips by expert travel planners."
+  />
+  <meta property="og:url" content="https://www.delighttrips.in/" />
+  <meta
+    property="og:image"
+    content="https://www.delighttrips.in/assets/images/og-home.jpg"
+  />
+
+  <!-- ===============================
+       STRUCTURED DATA (ENTITY POWER)
+  =============================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Delight Trips",
+    "url": "https://www.delighttrips.in",
+    "logo": "https://www.delighttrips.in/assets/images/logo.png",
+    "description": "Customized domestic and international travel packages, honeymoon tours, and pilgrimage trips.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+
+  <!-- ===============================
+       GOOGLE ANALYTICS (GA4)
+  =============================== -->
+  <!-- Google tag (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F5VESB5BY0', {
+    anonymize_ip: true,
+    page_path: window.location.pathname
+  });
+</script>
+
 </head>
 
 
