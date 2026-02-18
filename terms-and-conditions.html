@@ -1,81 +1,87 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <!-- ===============================
+    <!-- ===============================
      ✅ CORE META
   ================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, follow">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
 
-
-  <!-- ===============================
+    <!-- ===============================
      ✅ PAGE SEO (LEGAL / TRUST PAGE)
   ================================ -->
-  <title>Terms & Conditions | Delight Trips</title>
-  <meta
-    name="description"
-    content="Read the terms and conditions governing bookings, payments, cancellations, refunds, and services offered by Delight Trips."
-  />
+    <title>Terms & Conditions | Delight Trips</title>
+    <meta
+      name="description"
+      content="Read the terms and conditions governing bookings, payments, cancellations, refunds, and services offered by Delight Trips."
+    />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.delighttrips.in/terms-and-conditions.html" />
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      href="https://www.delighttrips.in/terms-and-conditions.html"
+    />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ GOOGLE ANALYTICS (GA4)
   ================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-F5VESB5BY0', {
-      anonymize_ip: true,
-      page_path: window.location.pathname
-    });
-  </script>
+      gtag("config", "G-F5VESB5BY0", {
+        anonymize_ip: true,
+        page_path: window.location.pathname,
+      });
+    </script>
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ FONTS (GLOBAL – SAME ON ALL PAGES)
   ================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ GLOBAL CORE CSS
   ================================ -->
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/global-pattern.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/utilities.css" />
-  <link rel="stylesheet" href="/styles/accessibility.css" />
-  <link rel="stylesheet" href="/styles/support.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/global-pattern.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/utilities.css" />
+    <link rel="stylesheet" href="/styles/accessibility.css" />
+    <link rel="stylesheet" href="/styles/support.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ COMPONENT STYLES
   ================================ -->
-  <link rel="stylesheet" href="/styles/components/navbar.css" />
-  <link rel="stylesheet" href="/styles/components/footer.css" />
-  <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-  <link rel="stylesheet" href="/styles/components/buttons.css" />
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+    <link rel="stylesheet" href="/styles/components/buttons.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ PAGE-SPECIFIC CSS
      (Legal pages should be clean & readable)
   ================================ -->
-  <link rel="stylesheet" href="/styles/pages/terms.css" />
-</head>
+    <link rel="stylesheet" href="/styles/pages/terms.css" />
+  </head>
 
-
-<body>
+  <body>
     <div id="site-header"></div>
-<script type="module" src="/js/navigation.js"></script>
+    <script type="module" src="/js/navigation.js"></script>
 
     <main class="legal-content">
       <h1>Terms & Conditions</h1>
@@ -262,140 +268,105 @@
         Website: https://www.delighttrips.com
       </p>
     </main>
-    <!-- Cookie Consent -->
-    <div id="cookie-consent" class="cookie-consent hidden">
-      <div class="cookie-box">
-        <h3>We use cookies</h3>
-        <p>
-          We use cookies to enhance your browsing experience, analyze site
-          traffic, and personalize content. By clicking “Accept All”, you
-          consent to our use of cookies. You can manage your preferences at any
-          time.
-        </p>
-
-        <div class="cookie-actions">
-          <button id="cookie-accept" class="btn-primary">Accept All</button>
-          <button id="cookie-reject" class="btn-secondary">
-            Reject Non-Essential
-          </button>
-        </div>
-
-        <p class="cookie-links">
-          <a href="/cookie-policy.html">Cookie Policy</a> ·
-          <a href="/privacy-policy.html">Privacy Policy</a>
-        </p>
-      </div>
-    </div>
-  <script>
-    fetch("/footer.html")
-      .then((res) => res.text())
-      .then((data) => {
-        document.getElementById("footer-placeholder").innerHTML = data;
-      });
-  </script>
-</html>
 
     <footer class="footer">
-  <div class="footer-wrapper">
+      <div class="footer-wrapper container">
+        <div class="footer-brand">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="Delight Trips Logo"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <p class="footer-description">
+            Delight Trips is a trusted travel company offering authentic
+            journeys, offbeat destinations, and curated travel experiences
+            across India and international destinations.
+          </p>
+        </div>
 
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <img
-        src="/assets/images/logo/logo.png"
-        alt="Delight Trips Logo"
-        class="footer-logo"
-        loading="lazy"
-      />
-      <p class="footer-description">
-        Delight Trips is a trusted travel company offering authentic journeys,
-        offbeat destinations, and carefully curated travel experiences across
-        India and international destinations with a focus on comfort,
-        sustainability, and reliability.
-      </p>
-    </div>
+        <nav class="footer-links" aria-label="Policy Links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            <li>
+              <a href="/refund-and-cancellation-policy.html">Refund Policy</a>
+            </li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
 
-    <!-- POLICIES -->
-    <div class="footer-links">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
-        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-    </div>
+        <nav class="footer-links" aria-label="Tour Links">
+          <h4>Tours</h4>
+          <ul>
+            <li>
+              <a href="/tours/domestic.html">Incredible Indian Destinations</a>
+            </li>
+            <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+            <li>
+              <a href="/tours/international.html">International Destinations</a>
+            </li>
+            <li>
+              <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
+            </li>
+          </ul>
+        </nav>
 
-    <!-- TOURS -->
-    <div class="footer-links">
-      <h4>Tours</h4>
-      <ul>
-        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
-        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
-        <li><a href="/tours/international.html">International Destinations</a></li>
-        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
-      </ul>
-    </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/delight_tripss/"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/instagram.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/Delighttrips/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/facebook.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://wa.me/917045286023"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/whatsapp.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          © <span id="year"></span> Delight Trips. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
 
-    <!-- SOCIAL -->
-    <div class="footer-social">
-  <h4>Follow Us</h4>
-
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/delight_tripss/"
-      aria-label="Follow Delight Trips on Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/instagram.svg"
-        alt="Instagram"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/Delighttrips/"
-      aria-label="Follow Delight Trips on Facebook"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/facebook.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- WhatsApp -->
-    <a
-      href="https://wa.me/917045286023"
-      aria-label="Chat with Delight Trips on WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/whatsapp.svg"
-        alt="WhatsApp"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-  </div>
-</div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Delight Trips. All Rights Reserved.
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

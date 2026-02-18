@@ -166,8 +166,7 @@
     </main>
 
     <footer class="footer">
-      <div class="footer-wrapper">
-        <!-- BRAND -->
+      <div class="footer-wrapper container">
         <div class="footer-brand">
           <img
             src="/assets/images/logo/logo.png"
@@ -177,14 +176,12 @@
           />
           <p class="footer-description">
             Delight Trips is a trusted travel company offering authentic
-            journeys, offbeat destinations, and carefully curated travel
-            experiences across India and international destinations with a focus
-            on comfort, sustainability, and reliability.
+            journeys, offbeat destinations, and curated travel experiences
+            across India and international destinations.
           </p>
         </div>
 
-        <!-- POLICIES -->
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Policy Links">
           <h4>Policies</h4>
           <ul>
             <li><a href="/privacy-policy.html">Privacy Policy</a></li>
@@ -194,10 +191,9 @@
             </li>
             <li><a href="/faq.html">FAQ</a></li>
           </ul>
-        </div>
+        </nav>
 
-        <!-- TOURS -->
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Tour Links">
           <h4>Tours</h4>
           <ul>
             <li>
@@ -211,44 +207,46 @@
               <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <!-- SOCIAL -->
         <div class="footer-social">
           <h4>Follow Us</h4>
           <div class="social-icons">
             <a
               href="https://www.instagram.com/delight_tripss/"
+              aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 src="/assets/icons/social/instagram.svg"
-                alt="Instagram"
+                alt=""
                 width="24"
                 height="24"
               />
             </a>
             <a
               href="https://www.facebook.com/Delighttrips/"
+              aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 src="/assets/icons/social/facebook.svg"
-                alt="Facebook"
+                alt=""
                 width="24"
                 height="24"
               />
             </a>
             <a
               href="https://wa.me/917045286023"
+              aria-label="WhatsApp"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 src="/assets/icons/social/whatsapp.svg"
-                alt="WhatsApp"
+                alt=""
                 width="24"
                 height="24"
               />
@@ -256,9 +254,10 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
-        © <span id="year"></span> Delight Trips. All Rights Reserved.
+        <div class="container">
+          © <span id="year"></span> Delight Trips. All Rights Reserved.
+        </div>
       </div>
     </footer>
 

@@ -1,62 +1,192 @@
-/* ============================================
-   ✅ ACCESSIBILITY.CSS — World Class Defaults
-   Purpose:
-   - Skip link for keyboard users
-   - Strong visible focus rings (WCAG compliant)
-   - No behavioral changes
-============================================ */
+/* ==========================================================
+   ✅ ACCESSIBILITY.CSS — The "Inclusive Excellence" Layer
+   - Standard: WCAG 2.2 AAA Ready
+   - Focus: Cognitive, Motor, and Visual Accessibility
+   - Strategy: Progressive Enhancement
+========================================================== */
 
-/* ===============================
-   ✅ Skip Link (Keyboard Navigation)
-================================= */
-
+/* 1. SKIP LINK (ELITE "POWER USER" SHORTCUT)
+   - Using logical properties for better RTL/Global support
+---------------------------------------------------------- */
 .skip-link {
-  position: absolute;
-  top: -60px;
-  left: 16px;
-
-  background: var(--dark);
-  color: var(--light);
-
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-
-  font-weight: 600;
-  font-size: 0.95rem;
-
-  z-index: 2000;
-
-  transition: top var(--dur-med) var(--ease);
+  position: fixed; /* Fixed is better for viewport-wide jumps */
+  inset-block-start: -100px;
+  inset-inline-start: 1.5rem;
+  background: var(--primary, #ff5722);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0 0 12px 12px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  z-index: 99999;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); /* Bouncy entry */
 }
 
-/* Appears when focused */
-.skip-link:focus {
-  top: 16px;
+.skip-link:focus-visible {
+  transform: translateY(100px);
+  outline: 4px solid #000;
+  outline-offset: 2px;
 }
 
-/* ===============================
-   ✅ Global Focus Ring (Premium + Clear)
-   Applies only for keyboard focus
-================================= */
-
+/* 2. UNIVERSAL FOCUS STATE (THE FOCUS RING)
+   - Only shows for keyboard users to keep UI clean for mouse users
+---------------------------------------------------------- */
 :focus-visible {
-  outline: 3px solid rgba(11, 94, 215, 0.55);
+  outline: 3px solid var(--primary, #ff5722);
   outline-offset: 4px;
-  border-radius: 8px;
+  transition: outline-offset 0.1s ease;
 }
 
-/* Improve focus for buttons/links */
-button:focus-visible,
-a:focus-visible {
-  box-shadow: 0 0 0 4px rgba(11, 94, 215, 0.18);
+/* Prevent focus rings on containers that shouldn't have them */
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: none;
 }
 
-/* ===============================
-   ✅ Reduced Motion Support
-================================= */
+/* 3. INTERACTIVE ELEMENT REINFORCEMENT
+   ------------------------------------------------------- */
+/* Better tap targets for mobile & low motor skills */
+a,
+button,
+input,
+select,
+textarea,
+[role="button"] {
+  min-inline-size: 44px;
+  min-block-size: 44px;
+  touch-action: manipulation; /* Removes 300ms delay */
+}
 
+/* Clear Disabled States - Don't just fade, change the cursor */
+[disabled],
+.disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+  filter: grayscale(1) contrast(0.5);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 4. CONTENT VISIBILITY & SCREEN READERS
+   ------------------------------------------------------- */
+/* Standard visually-hidden pattern for Lighthouse 100 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* For labels or instructions that appear on focus (A11y best practice) */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* 5. REDUCED MOTION (COGNITIVE ACCESSIBILITY)
+   - Helps users with vestibular disorders
+---------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  .skip-link {
-    transition: none;
+  html {
+    scroll-behavior: auto !important;
   }
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  /* Soften the skip-link appearance for motion-sensitive users */
+  .skip-link {
+    transition: opacity 0.2s ease-in-out !important;
+    transform: none !important;
+    inset-block-start: 0;
+    opacity: 0;
+  }
+
+  .skip-link:focus-visible {
+    opacity: 1;
+  }
+}
+
+/* 6. ENHANCED CONTRAST (VISUAL ACCESSIBILITY)
+   - Future-proof support for High Contrast OS settings
+---------------------------------------------------------- */
+@media (prefers-contrast: more) {
+  :root {
+    --text-main: #000;
+    --text-muted: #222;
+    --primary: #d84315; /* Darker, higher contrast orange */
+  }
+
+  .btn,
+  input,
+  select {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* Windows High Contrast Mode Fixes */
+@media (forced-colors: active) {
+  .btn,
+  .experience-card,
+  .blog-card {
+    border: 1px solid CanvasText;
+  }
+
+  img {
+    forced-color-adjust: none; /* Keep images visible */
+  }
+}
+
+/* 7. LEGIBILITY & READING UX
+   ------------------------------------------------------- */
+/* Highlight color that is OLED-safe and high contrast */
+::selection {
+  background-color: var(--primary, #ff5722);
+  color: #fff;
+}
+
+/* Better underlines for links in body text (WCAG requirement) */
+.rich-text a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+/* Avoid uppercase for long sentences (Harder to read for dyslexia) */
+.section-subtitle,
+.card-description {
+  text-transform: none !important;
+}
+
+/* 8. FORM ACCESSIBILITY (THE ERROR STATE)
+   ------------------------------------------------------- */
+/* Visually distinct invalid state */
+input:invalid:not(:placeholder-shown) {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+}
+
+/* Ensuring labels are never hidden by mistake */
+label {
+  display: inline-block;
+  margin-block-end: 0.5rem;
+  cursor: default;
 }

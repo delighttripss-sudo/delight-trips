@@ -1,5 +1,5 @@
 <!-- Mobile Navigation Overlay -->
-<div class="mobile-nav-overlay" id="mobileOverlay" aria-hidden="true"></div>
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
 
 <!-- Mobile Menu -->
 <aside
@@ -8,6 +8,7 @@
   role="dialog"
   aria-modal="true"
   aria-label="Mobile Navigation"
+  tabindex="-1"
 >
   <!-- Close Button -->
   <button
@@ -22,15 +23,31 @@
   <!-- Navigation Links -->
   <nav aria-label="Mobile Primary Navigation">
     <ul class="mobile-nav-list">
-      <li><a href="/about.html">About Us</a></li>
       <li><a href="/tours.html">Destinations</a></li>
+      <li><a href="/about.html">About Us</a></li>
       <li><a href="/blog.html">Blog</a></li>
       <li><a href="/contact.html">Contact Us</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
     </ul>
   </nav>
 
   <!-- CTA -->
   <div class="mobile-nav-cta">
-    <a href="/contact.html" class="nav-cta"> Plan My Trip </a>
+    <a href="/contact.html" class="nav-cta">Plan My Trip</a>
   </div>
+  <!-- Social Links -->
+<div class="mobile-menu-social">
+  <a href="https://www.instagram.com/delight_tripss/" aria-label="Instagram">
+    <img src="/assets/icons/social/instagram.svg" alt="Instagram" />
+  </a>
+
+  <a href="https://www.facebook.com/Delighttrips/" aria-label="Facebook">
+    <img src="/assets/icons/social/facebook.svg" alt="Facebook" />
+  </a>
+
+  <a href="https://wa.me/917045286023" aria-label="WhatsApp">
+    <img src="/assets/icons/social/whatsapp.svg" alt="WhatsApp" />
+  </a>
+</div>
+
 </aside>

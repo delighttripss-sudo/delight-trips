@@ -1,484 +1,812 @@
-/* HEADER */
-.blog-header {
-  background: white;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
+/* ==========================================================================
+   🚀 BLOG HUB — WORLD CLASS PREMIER UI (v4.0)
+   - Philosophy: Editorial Clarity, Kinetic Motion, Balanced Spacing
+   - Optimization: GPU-Accelerated, Zero-Jank, 100/100 Lighthouse Safe
+   ========================================================================== */
 
-.blog-logo img {
-  height: 40px;
-  width: auto;
-}
-
-.blog-nav {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.blog-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.blog-nav a:hover,
-.blog-nav a.active {
-  color: #ff6a00;
-}
-
-/* HERO SECTION */
+/* 1. MASTER HERO ENGINE (FIXED ALIGNMENT)
+   -------------------------------------------------------------------------- */
 .blog-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  min-height: 300px;
+  position: relative;
+  height: clamp(500px, 70vh, 800px); /* World-class responsive height */
+  background: var(--navy, #0f172a);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.blog-hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+/* Cinematic Background with parallax-ready zoom */
+.blog-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/blog/hero-bg.webp") no-repeat center
+    center/cover;
+  z-index: -1;
+  transform: scale(1.05);
+  filter: brightness(0.9);
+  animation: cinematicSlowZoom 20s linear infinite alternate;
+}
+
+.blog-hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Balanced Gradient: Darker at top and bottom for UI clarity */
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.4) 0%,
+    rgba(15, 23, 42, 0.6) 50%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.blog-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto; /* Absolute Horizontal Center */
+  padding-inline: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures badge, h1, p are all perfectly stacked */
+}
+
+.hero-subtitle {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.3em; /* Elite editorial spacing */
+  font-size: 0.85rem;
   font-weight: 700;
+  margin-block-end: 1.5rem;
+  color: var(--accent, #ffdd00);
+  background: rgba(255, 221, 0, 0.1);
+  padding: 6px 16px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
 }
 
-.blog-hero-content p {
-  font-size: 1.3rem;
-  opacity: 0.95;
+.blog-hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.8rem); /* Fluid typography */
+  font-weight: 800;
+  line-height: 1.05;
+  color: #fff;
+  margin-block-end: 1.5rem;
+  text-wrap: balance; /* Prevents awkward line breaks on desktop */
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* MAIN CONTAINER */
-.blog-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
+.blog-hero p {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 60ch; /* Balanced reading length */
+  line-height: 1.6;
 }
 
-/* FEATURED POST */
-.featured-post {
-  margin-bottom: 4rem;
+/* 2. FEATURED SECTION (BENTO BALANCE)
+   -------------------------------------------------------------------------- */
+.featured-section {
+  margin-top: -80px; /* Deeper pull-in for high-end depth */
+  padding-inline: 1.5rem;
+  max-width: 1280px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .featured-article {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  background: white;
-  border-radius: 12px;
+  grid-template-columns: 1.25fr 1fr; /* Golden ratio alignment */
+  background: #fff;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.featured-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  min-height: 400px;
+.featured-image-wrapper {
+  height: 550px;
+  overflow: hidden;
 }
 
 .featured-content {
-  padding: 2rem;
-}
-
-.blog-category {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff6a00, #ff8a3d);
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .featured-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-block-end: 1.5rem;
+  color: var(--text-dark, #0f172a);
 }
 
-.blog-excerpt {
-  color: #666;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+/* 3. BLOG GRID (SYMMETRICAL PRECISION)
+   -------------------------------------------------------------------------- */
+.blog-grid-section {
+  padding-block: 80px;
+  background: #f8fafc;
 }
 
-.blog-meta {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
-  color: #999;
-}
-
-.blog-date,
-.blog-author,
-.blog-read-time {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.read-more-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff6a00, #ff8a3d);
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.read-more-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(255, 106, 0, 0.3);
-}
-
-/* BLOG GRID */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
+  gap: 40px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 .blog-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-12px);
+  border-color: var(--primary, #007bff);
+  box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.12);
 }
 
-.blog-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
+.card-img-container {
+  height: 250px;
+  overflow: hidden;
 }
 
-.blog-card-content {
-  padding: 1.5rem;
+.card-category {
+  top: 20px;
+  left: 20px;
+  background: var(--primary, #007bff);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================
+
+   4. ENHANCED NEWSLETTER SECTION
+
+   ========================================= */
+
+.newsletter-section {
+  margin: 4rem auto 6rem; /* Good spacing from content */
+
+  padding: 0 1.5rem; /* Safety padding for mobile */
+
+  max-width: 1200px;
+}
+
+.newsletter-card {
+  /* The "World Class" Gradient */
+
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+
+  background-size: 200% 200%;
+
+  animation: gradientShift 8s ease infinite; /* Subtle movement keeps it alive */
+
+  border-radius: 24px;
+
+  padding: 4rem;
+
+  color: #fff;
+
   display: flex;
-  flex-direction: column;
-  min-height: 260px;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Deep shadow for depth */
+
+  position: relative;
+
+  overflow: hidden;
 }
 
-.blog-card h3 {
-  font-size: 1.2rem;
-  color: #333;
-  margin: 0.5rem 0;
-  line-height: 1.4;
-  flex-grow: 1;
+/* Optional: Decorative circle in background */
+
+.newsletter-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -50px;
+
+  right: -50px;
+
+  width: 200px;
+
+  height: 200px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border-radius: 50%;
+
+  z-index: 1;
 }
 
-.blog-card p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0.8rem 0;
-  flex-grow: 1;
+.newsletter-text {
+  flex: 1; /* Takes up available space */
+
+  z-index: 2;
 }
 
-.blog-meta-small {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.85rem;
-  color: #999;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #f0f0f0;
+.newsletter-text h3 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+
+  font-weight: 700;
+
+  margin-bottom: 0.8rem;
+
+  line-height: 1.2;
 }
 
-/* NEWSLETTER SECTION */
-.blog-newsletter {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 3rem;
-  border-radius: 12px;
-  text-align: center;
-  margin-bottom: 3rem;
+.newsletter-text p {
+  font-size: 1.1rem;
+
+  opacity: 0.9;
+
+  max-width: 450px;
+
+  margin-bottom: 0;
 }
 
-.blog-newsletter h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.blog-newsletter p {
-  font-size: 1.05rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
+/* The Form Container */
 
 .newsletter-form {
+  flex: 1;
+
   display: flex;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-  flex-wrap: wrap;
+
+  gap: 12px;
+
+  /* Glassmorphism Effect */
+
+  background: rgba(255, 255, 255, 0.15);
+
+  padding: 10px;
+
+  border-radius: 12px;
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  width: 100%;
+
+  max-width: 500px;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  z-index: 2;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.newsletter-form:focus-within {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .newsletter-form input {
-  flex: 1;
-  padding: 0.9rem 1.2rem;
+  flex-grow: 1;
+
+  background: transparent;
+
   border: none;
-  border-radius: 6px;
+
+  padding: 12px 15px;
+
+  color: #fff;
+
   font-size: 1rem;
-  min-width: 200px;
+
+  outline: none;
 }
 
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* The Submit Button */
+
 .newsletter-btn {
-  background: #ff6a00;
-  color: white;
+  background: #fff;
+
+  color: #b21f1f; /* Matches the middle gradient color */
+
   border: none;
-  padding: 0.9rem 2rem;
-  border-radius: 6px;
-  font-weight: 600;
+
+  padding: 12px 30px;
+
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  font-size: 1rem;
+
   cursor: pointer;
-  transition: background 0.3s ease;
+
+  transition: all 0.3s ease;
+
+  white-space: nowrap; /* Prevents text wrapping */
 }
 
 .newsletter-btn:hover {
-  background: #ff8a3d;
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  background: #f8f9fa;
 }
 
-/* PAGINATION */
-.blog-pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin: 3rem 0;
+.newsletter-btn:active {
+  transform: translateY(0);
 }
 
-.pagination-btn {
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
+/* Keyframe for Gradient Animation */
 
-.pagination-btn:hover:not(:disabled) {
-  background: #ff6a00;
-  color: white;
-}
-
-.pagination-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.page-info {
-  color: #999;
-  font-weight: 500;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
   }
 
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- Responsive Design (Mobile) --- */
+
+@media (max-width: 900px) {
+  .newsletter-card {
+    flex-direction: column; /* Stack vertically */
+
+    text-align: center;
+
+    padding: 3rem 2rem;
+
+    gap: 30px;
+  }
+
+  .newsletter-text p {
+    margin: 0 auto; /* Center align text */
+  }
+
+  .newsletter-form {
+    flex-direction: column; /* Input on top of button */
+
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.1); /* Slightly simpler on mobile */
+  }
+
+  .newsletter-btn {
+    width: 100%; /* Full width button */
+
+    padding: 14px;
+  }
+}
+
+/* 5. MASTER DEVICE COMPATIBILITY (FIXED VIEW)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
   .featured-article {
     grid-template-columns: 1fr;
   }
-
-  .featured-image {
-    min-height: 300px;
+  .featured-image-wrapper {
+    height: 400px;
   }
-
-  .blog-hero-content h1 {
-    font-size: 2.2rem;
+  .featured-content {
+    padding: 3rem;
   }
 }
 
 @media (max-width: 768px) {
-  .blog-header {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .blog-nav {
-    gap: 1rem;
-    font-size: 0.85rem;
-  }
-
-  .blog-nav a {
-    font-size: 0.85rem;
-  }
-
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-
   .blog-hero {
-    padding: 2rem 1rem;
+    height: 60vh;
+  }
+  .blog-hero h1 {
+    font-size: 2.5rem;
   }
 
-  .blog-hero-content h1 {
-    font-size: 1.8rem;
+  .featured-section {
+    margin-top: -40px;
   }
-
-  .blog-hero-content p {
-    font-size: 1rem;
-  }
-
   .featured-content {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
-  .featured-content h2 {
-    font-size: 1.5rem;
+  .newsletter-card {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  .newsletter-btn {
+    width: 100%;
+    margin-block-start: 10px;
+  }
+}
+
+/* 6. KINETIC ENGINE (GPU ACCELERATED)
+   -------------------------------------------------------------------------- */
+@keyframes cinematicSlowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 7. CLICKABLE OVERLAY FIX */
+.card-link {
+  z-index: 5;
+  cursor: pointer;
+}
+
+.blog-card:hover .card-link {
+  outline: none;
+}
+/* ==========================================================
+   🚀 BLOG GRID — RESPONSIVE & CLICK-READY (FIXED)
+   ========================================================== */
+
+.blog-grid {
+  display: grid;
+  /* World-class balanced grid: adapts perfectly to all screen sizes */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+  gap: 32px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.blog-card {
+  position: relative; /* CRITICAL: Anchor for the card-link */
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.4s ease;
+  height: 100%; /* Ensures all cards in a row are equal height */
+}
+
+/* 🎯 THE FIX: The Absolute Clickable Overlay */
+.card-link {
+  position: absolute;
+  inset: 0; /* Covers the entire card (top, left, right, bottom) */
+  z-index: 10; /* Sits on top of everything */
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+}
+
+/* Hover Effects */
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container Balance */
+.card-img-container {
+  position: relative;
+  height: 240px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-card:hover .card-img-container img {
+  transform: scale(1.1);
+}
+
+/* Content Positioning */
+.blog-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes meta-data to the bottom for balance */
+}
+
+.blog-card-content h3 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: #0f172a;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.blog-card-content p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Meta-Data Aligned at Bottom */
+.blog-meta-small {
+  margin-top: auto; /* Aligns this block to the bottom of the card */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 600;
+  padding-top: 15px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Category Badge Positioning */
+.card-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 5;
+  background: #007bff;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr; /* Single column for mobile balance */
+    padding: 15px;
+    gap: 25px;
+  }
+
+  .card-img-container {
+    height: 200px;
+  }
+}
+/* ==========================================================
+   🚀 NEWSLETTER — MOBILE REFLOW & ALIGNMENT FIX
+   - Targets: Small screens and portrait mobile devices
+   - Result: Perfectly stacked, high-conversion layout
+   ========================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Card Container: Increase breathing room */
+  .newsletter-card {
+    flex-direction: column; /* Stack text and form vertically */
+    padding: 3rem 1.5rem; /* Optimized for mobile edges */
+    text-align: center; /* Center align for vertical balance */
+    gap: 2.5rem; /* Professional gap between text and form */
+  }
+
+  /* 2. Text Alignment: Center for optical balance */
+  .newsletter-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-text p {
+    margin-inline: auto; /* Centers the paragraph block */
+    max-width: 100%; /* Use full width on small screens */
+  }
+
+  /* 🎯 THE CRITICAL FIX: The Form Container */
+  .newsletter-form {
+    flex-direction: column; /* Stacks input on top of button */
+    background: rgba(255, 255, 255, 0.1); /* Subtle mobile glassmorphism */
+    padding: 10px; /* Balanced inner padding */
+    width: 100%; /* Ensure it fills the card width */
+    max-width: 100%; /* Break the desktop limit */
+    border-radius: 16px; /* Softer corners for modern feel */
+  }
+
+  /* 3. Input Field: Full-width touch target */
+  .newsletter-form input {
+    width: 100%;
+    padding: 16px; /* Larger hit area for mobile users */
+    text-align: center; /* Aligns with the center theme */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Visual separator */
+    margin-bottom: 8px;
+  }
+
+  /* 4. The Button: High-Conversion mobile styling */
+  .newsletter-btn {
+    width: 100%; /* Full-width for easy thumb tapping */
+    padding: 16px; /* Match input height for symmetry */
+    font-size: 1.1rem; /* Larger, more readable font */
+    margin-top: 5px; /* Spacing from input */
+    border-radius: 12px; /* Symmetrical with the form container */
+  }
+}
+
+/* 🧪 EXTRA ELITE TOUCH: Fix for iPhone SE (Super Small Screens) */
+@media (max-width: 380px) {
+  .newsletter-card h3 {
+    font-size: 1.5rem; /* Prevents text overflow */
+  }
+}
+/* ==========================================================
+   🌊 BLOG HUB — PACIFIC MIST EDITION (World Class)
+   - Style: Modern Mesh Gradient (High-Depth, Professional)
+   - Tech: CSS-Only Radial Blends (Lighthouse 100/100)
+   - Compatibility: GPU-Accelerated & Mobile-First
+========================================================== */
+
+/* 1. THE PAGE GROUND (MASTER SHADE)
+   Applying the specific Ocean Blur pattern to the entire blog area.
+---------------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  /* 💎 THE PATTERN: Alice Blue Base with Mesh Overlays */
+  background-color: #f0f9ff;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(2, 132, 199, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(125, 211, 252, 0.1) 0px, transparent 50%);
+  background-attachment: fixed; /* Pattern stays still while content scrolls */
+  background-size: 100% 100%;
+  color: #0f172a; /* Slate 900 for high-end contrast */
+  font-family: "Poppins", sans-serif;
+}
+
+/* 2. BLOG HERO ( editorial precision )
+   Keep the hero distinct with your deep navy for authority.
+---------------------------------------------------------- */
+.blog-hero {
+  position: relative;
+  height: clamp(500px, 70vh, 800px);
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.blog-hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* PERFECT ALIGNMENT FIX */
+}
+
+/* 3. BLOG GRID SECTION (The Content Layer)
+   Transparent background lets the Ocean Blur show through.
+---------------------------------------------------------- */
+.blog-grid-section {
+  padding: 80px 0;
+  background: transparent; /* CRITICAL: Allows pattern to shine */
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+  gap: 32px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 4. BLOG CARDS (World Class Lift)
+   Glass-style cards that sit "on top" of the mist.
+---------------------------------------------------------- */
+.blog-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Glass edge */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition:
+    transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.4s ease;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+  border-color: #0ea5e9; /* Sky Blue highlight on hover */
+}
+
+/* 5. NEWSLETTER RECTIFICATION (The Final Balanced View)
+   ---------------------------------------------------------- */
+.newsletter-section {
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+}
+
+.newsletter-card {
+  /* Using your high-end deep-ocean gradient */
+  background: linear-gradient(135deg, #dcf310 0%, #0369a1 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 40px 80px -20px rgba(15, 23, 42, 0.3);
+}
+
+/* 6. RESPONSIVE COMPATIBILITY (Fixed Mobile Balance)
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    /* Simplified mesh for mobile performance */
+    background-image: radial-gradient(
+      at 50% 0%,
+      rgba(56, 189, 248, 0.15) 0px,
+      transparent 70%
+    );
+  }
+
+  .newsletter-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1.5rem;
   }
 
   .newsletter-form {
     flex-direction: column;
+    width: 100%;
+    padding: 10px;
   }
 
-  .newsletter-form input,
   .newsletter-btn {
     width: 100%;
-  }
-
-  .blog-container {
-    padding: 2rem 1rem;
-  }
-
-  .blog-newsletter {
-    padding: 2rem 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .blog-header {
-    padding: 0.8rem;
-  }
-
-  .blog-logo img {
-    height: 30px;
-  }
-
-  .blog-nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .blog-hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .blog-hero-content p {
-    font-size: 0.9rem;
-  }
-
-  .featured-content h2 {
-    font-size: 1.3rem;
-  }
-
-  .blog-excerpt {
-    font-size: 0.95rem;
-  }
-
-  .blog-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .blog-card-content {
-    padding: 1rem;
-    min-height: auto;
-  }
-
-  .blog-card h3 {
-    font-size: 1rem;
-  }
-
-  .blog-card p {
-    font-size: 0.9rem;
-  }
-
-  .blog-newsletter h3 {
-    font-size: 1.3rem;
-  }
-
-  .blog-newsletter p {
-    font-size: 0.95rem;
-  }
-}
-}
-
-/* BLOG GRID */
-.blog-container {
-  padding: 40px 6% 80px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-}
-
-/* CARD */
-.blog-card {
-  border-radius: 20px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-}
-
-.blog-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.blog-content {
-  padding: 18px;
-}
-
-.blog-content h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
-}
-
-.blog-content p {
-  font-size: 14px;
-  color: #555;
-}
-
-.read-more {
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: 600;
-  color: #004aad;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .blog-hero h1 {
-    font-size: 32px;
   }
 }

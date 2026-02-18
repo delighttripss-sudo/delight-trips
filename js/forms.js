@@ -1,41 +1,40 @@
-/* ============================================
-   ✅ FORMS.JS — NEWSLETTER HANDLER
-============================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
   const newsletterForm = document.getElementById("newsletterForm");
   const formStatus = document.getElementById("form-status");
 
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = new FormData(e.target);
+  if (!newsletterForm || !formStatus) return;
 
-      // Show loading state
-      formStatus.innerHTML = "Processing...";
-      formStatus.style.color = "#0077ff";
+  newsletterForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      try {
-        const response = await fetch(e.target.action, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
+    const formData = new FormData(newsletterForm);
+    const actionURL = newsletterForm.getAttribute("action");
 
-        if (response.ok) {
-          // Success!
-          formStatus.innerHTML = "✨ You're subscribed! Check your inbox soon.";
-          formStatus.style.color = "#10b981";
-          newsletterForm.reset();
-        } else {
-          throw new Error();
-        }
-      } catch (error) {
-        // Error handling
-        formStatus.innerHTML =
-          "❌ Submission failed. Please check the Form ID.";
-        formStatus.style.color = "#ef4444";
+    formStatus.textContent = "Subscribing...";
+    formStatus.style.color = "#2563eb";
+
+    try {
+      const response = await fetch(actionURL, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error();
+
+      const result = await response.json();
+
+      if (result.success) {
+        formStatus.textContent =
+          "🎉 Successfully subscribed! Welcome to Delight Trip.";
+        formStatus.style.color = "#10b981";
+        newsletterForm.reset();
+      } else {
+        throw new Error();
       }
-    });
-  }
+    } catch {
+      formStatus.textContent =
+        "❌ Something went wrong. Please try again later.";
+      formStatus.style.color = "#ef4444";
+    }
+  });
 });

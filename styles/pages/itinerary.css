@@ -1,570 +1,273 @@
-/* Universal Itinerary + Modal Package Form Styles
-   Place in: styles/pages/itinerary.css
-   Designed to be reusable across all itinerary pages.
-*/
+/* =========================================================
+   WORLD-CLASS ITINERARY UI – ENTERPRISE TRAVEL STANDARD
+   Drop-in replacement | HTML & JS compatible
+========================================================= */
 
-/* --------- Design tokens (override in tokens.css or here) --------- */
+/* ------------------ DESIGN SYSTEM ------------------ */
 :root {
-  --bg: #ffffff;
-  --muted: #6b7280;
+  --bg: #f8fafc;
+  --surface: #ffffff;
   --text: #0f172a;
-  --accent: #0ea5a3;
-  --accent-700: #0f766e;
-  --surface: #fbfdff;
-  --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  --radius: 12px;
+  --muted: #64748b;
+  --accent: #0284c7;
+  --accent-700: #0369a1;
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 25px 60px rgba(15, 23, 42, 0.12);
+
   --container-max: 1200px;
-  --gap: 1.25rem;
-  --glass: rgba(255, 255, 255, 0.6);
-  --transition: 180ms cubic-bezier(0.2, 0.9, 0.2, 1);
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+  --gap: 1.5rem;
+  --transition: 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* --------- HEADER / NAVIGATION --------- */
-.itinerary-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+/* ------------------ GLOBAL ------------------ */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
-.itinerary-logo img {
-  max-width: 78px;
-  height: auto;
-  display: block;
-}
-
-.itinerary-home-link {
-  color: #0ea5a3;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  transition: background-color var(--transition);
-}
-
-.itinerary-home-link:hover {
-  background-color: rgba(14, 165, 163, 0.08);
-  text-decoration: underline;
-}
-
-.itinerary-whatsapp-btn {
-  padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, #ff6a00, #ff8a3d);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all var(--transition);
-  display: inline-block;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.2);
-}
-
-.itinerary-whatsapp-btn:hover {
-  background: linear-gradient(135deg, #e96ad8b0 , #e96ad8b0 );
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 106, 0, 0.3);
-}
-
-.itinerary-whatsapp-btn:active {
-  transform: translateY(0);
-}
-
-/* --------- Layout helpers --------- */
 .container {
   max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 1.25rem;
+  margin-inline: auto;
+  padding: clamp(1rem, 3vw, 1.75rem);
 }
 
-/* Utility row/gap */
-.row {
-  display: flex;
-  gap: var(--gap);
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-/* Basic typography */
 h1,
 h2,
 h3 {
-  color: var(--text);
-  margin: 0 0 0.5rem 0;
   font-weight: 700;
+  letter-spacing: -0.015em;
 }
+
 p,
-li,
-a,
-label {
+li {
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--muted);
-  line-height: 1.45;
-  font-size: 0.98rem;
 }
 
-/* --------- Breadcrumb --------- */
-.breadcrumb {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin: 0.25rem 0 1rem;
-}
-.breadcrumb a {
-  color: var(--accent-700);
-  text-decoration: none;
-}
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-/* --------- Hero (flexible) --------- */
+/* ------------------ HERO ------------------ */
 .itinerary-hero {
-  display: flex;
-  align-items: center;
-  min-height: 360px;
-  border-radius: var(--radius);
-  margin-bottom: var(--gap);
+  position: relative;
+  min-height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   background-size: cover;
   background-position: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--shadow-lg);
 }
-.itinerary-hero .hero-overlay {
-  width: 100%;
-  padding: clamp(1.5rem, 5vw, 3rem);
+
+.itinerary-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(240, 228, 228, 0.1),
-    rgba(0, 0, 0, 0.5)
+    rgba(2, 6, 23, 0.25),
+    rgba(2, 6, 23, 0.7)
   );
+}
+
+.itinerary-hero .hero-overlay {
+  position: relative;
+  z-index: 2;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
   color: #fff;
-  display: flex;
-  gap: 0.75rem;
-  flex-direction: column;
+  max-width: 900px;
 }
+
 .itinerary-hero h1 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  line-height: 1.1;
-  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 0.6rem;
 }
+
 .itinerary-hero .subtitle {
+  font-size: 1.05rem;
   opacity: 0.95;
-  margin: 0 0 0.75rem 0;
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  margin-bottom: 1.25rem;
 }
+
 .itinerary-hero .price {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
   display: inline-block;
-  font-weight: 600;
-  width: fit-content;
+  padding: 0.55rem 1.1rem;
+  background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(10px);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.itinerary-hero .btn {
-  width: fit-content;
-  margin-top: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-}
-
-/* --------- Highlights (compact chips) --------- */
+/* ------------------ HIGHLIGHTS ------------------ */
 .itinerary-highlights {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
-  margin-bottom: var(--gap);
-  flex-wrap: wrap;
-  justify-content: center;
-  background: var(--surface);
-  padding: 1.5rem;
-  border-radius: var(--radius);
+  margin-block: 2rem;
 }
 
 .highlight-card {
-  background: linear-gradient(135deg, #ffffff, #fbfdff);
-  padding: 0.75rem 1.2rem;
+  background: var(--surface);
   border-radius: 999px;
-  box-shadow: var(--card-shadow);
+  padding: 0.9rem 1.25rem;
+  text-align: center;
   font-weight: 600;
   color: var(--text);
-  text-align: center;
-  flex: 1;
-  min-width: 150px;
+  box-shadow: var(--shadow-sm);
 }
 
-/* --------- Gallery grid --------- */
+/* ------------------ GALLERY ------------------ */
 .itinerary-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  margin-bottom: var(--gap);
+  margin-bottom: 2.5rem;
 }
+
 .itinerary-gallery img {
-  width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-  box-shadow: var(--card-shadow);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
 }
+
 .itinerary-gallery img:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+  transform: scale(1.03);
 }
 
-/* --------- Itinerary details section heading --------- */
-.itinerary-details {
-  margin-bottom: var(--gap);
-}
-
+/* ------------------ ITINERARY DETAILS ------------------ */
 .itinerary-details h2 {
-  font-size: 1.75rem;
+  font-size: 1.9rem;
   margin-bottom: 1.5rem;
 }
 
-/* --------- Itinerary details (cards) --------- */
 .itinerary-details details {
   background: var(--surface);
-  padding: 1.15rem;
-  border-radius: 10px;
-  margin-bottom: 0.8rem;
-  box-shadow: var(--card-shadow);
-  border-left: 4px solid var(--accent);
-  transition:
-    background-color var(--transition),
-    box-shadow var(--transition);
-}
-
-.itinerary-details details:hover {
-  box-shadow: 0 15px 40px rgba(14, 165, 163, 0.12);
-}
-
-.itinerary-details details[open] {
-  background: linear-gradient(135deg, #fbfdff 0%, #ffffff 100%);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--accent);
 }
 
 .itinerary-details summary {
-  cursor: pointer;
-  font-weight: 700;
-  outline: none;
-  color: var(--text);
   font-size: 1.05rem;
-  padding: 0.25rem 0;
-  transition: color var(--transition);
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.itinerary-details summary:hover {
-  color: var(--accent);
+.itinerary-details details p {
+  margin-top: 0.85rem;
 }
 
-.itinerary-details p {
-  margin: 0.75rem 0 0 0;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* --------- Inclusion/Exclusion grid --------- */
+/* ------------------ INCLUSION / EXCLUSION ------------------ */
 .inclusion-exclusion {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin: 2rem 0;
+  gap: 2rem;
+  margin: 3rem 0;
 }
 
 .box {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-}
-
-.box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(14, 165, 163, 0.12);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
 }
 
 .box h3 {
-  margin-top: 0;
+  font-size: 1.35rem;
   margin-bottom: 1rem;
-  color: var(--accent);
-  font-size: 1.25rem;
 }
 
 .box ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .box li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
+  padding-left: 1.8rem;
   position: relative;
-  color: var(--muted);
+  margin-bottom: 0.75rem;
 }
 
-.box li:before {
-  content: "✓";
+.box li::before {
+  content: "✔";
   position: absolute;
   left: 0;
-  color: var(--accent);
-  font-weight: bold;
+  color: var(--success);
+  font-weight: 700;
 }
 
-/* --------- Related packages --------- */
-.related-itineraries {
-  margin: 2.5rem 0;
-}
-
+/* ------------------ RELATED ITINERARIES ------------------ */
 .related-itineraries h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
   text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
 }
 
 .related-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .related-card {
-  padding: 1rem 1.25rem;
+  padding: 1.25rem;
   background: linear-gradient(135deg, var(--accent), var(--accent-700));
   color: #fff;
-  text-decoration: none;
-  border-radius: 10px;
-  box-shadow: var(--card-shadow);
-  font-weight: 600;
+  border-radius: var(--radius);
   text-align: center;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
 }
 
 .related-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(14, 165, 163, 0.25);
+  transform: translateY(-6px);
 }
 
-/* --------- Footer minimal tweak --------- */
-.footer {
-  margin-top: 3rem;
-}
-
-/* --------- Modal: package form (accessible) --------- */
+/* ------------------ MODAL ------------------ */
 .package-form-overlay {
   position: fixed;
   inset: 0;
-  display: none; /* hidden by default */
+  background: rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(6px);
+  display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(3, 7, 18, 0.48);
   z-index: 1200;
-  padding: 1rem;
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
 }
+
 .package-form-overlay.open {
   display: flex;
 }
 
 .package-form-box {
-  width: 100%;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
   max-width: 560px;
-  background: linear-gradient(180deg, #ffffff, #fbfdff);
-  border-radius: 12px;
-  padding: 1.15rem;
-  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.35);
-  position: relative;
-  transform-origin: center;
-  animation: popIn 0.16s ease-out;
-}
-@keyframes popIn {
-  from {
-    transform: translateY(8px) scale(0.995);
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-.package-form-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: 0;
-  font-size: 1.4rem;
-  line-height: 1;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.package-form-title {
-  margin: 0 0 0.25rem 0;
-  color: var(--text);
-}
-.package-form-subtitle {
-  margin: 0 0 0.6rem 0;
-  color: var(--muted);
-}
-
-/* Inputs */
-.package-form input[type="text"],
-.package-form input[type="email"],
-.package-form input[type="tel"],
-.package-form input[type="date"],
-.package-form select,
-.package-form textarea {
   width: 100%;
-  padding: 0.6rem 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #e6eef2;
-  background: #fff;
-  margin-bottom: 0.6rem;
-  font-size: 0.98rem;
-  color: var(--text);
-  transition:
-    box-shadow var(--transition),
-    border-color var(--transition);
-}
-.package-form input:focus,
-.package-form textarea:focus,
-.package-form select:focus {
-  outline: none;
-  border-color: var(--accent-700);
-  box-shadow: 0 6px 18px rgba(14, 165, 163, 0.12);
-}
-.package-form textarea {
-  min-height: 96px;
-  resize: vertical;
+  box-shadow: var(--shadow-lg);
 }
 
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.6rem 0.9rem;
-  border-radius: 8px;
-  border: 0;
-  cursor: pointer;
-  transition: transform var(--transition);
-  font-weight: 600;
-}
-.btn:active {
-  transform: translateY(1px);
-}
-.btn-primary {
-  background: linear-gradient(90deg, var(--accent), var(--accent-700));
-  color: #fff;
-}
-.btn-secondary {
-  background: #fff;
-  color: var(--accent-700);
-  border: 1px solid #e6eef2;
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--accent-700);
-  border: 1px solid #e6eef2;
-}
-
-/* Small helper styles */
-.form-actions {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-  margin-top: 0.2rem;
-}
-.form-feedback {
-  margin-top: 0.6rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-  min-height: 20px;
-}
-
-/* Visually hidden utility */
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-/* --------- Responsive --------- */
+/* ------------------ RESPONSIVE ------------------ */
 @media (max-width: 1024px) {
-  .itinerary-header {
-    padding: 0.875rem 1.25rem;
-  }
-
-  .itinerary-logo img {
-    max-width: 130px;
-  }
-
-  .related-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .itinerary-nav {
-    gap: 1rem;
-  }
-
-  .itinerary-whatsapp-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .itinerary-header {
-    flex-direction: row;
-  }
-
   .itinerary-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
+@media (max-width: 768px) {
   .inclusion-exclusion {
     grid-template-columns: 1fr;
   }
@@ -574,92 +277,16 @@ label {
   }
 }
 
-@media (max-width: 768px) {
-  .itinerary-header {
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 0.75rem 1.25rem;
-  }
-
-  .itinerary-logo img {
-    max-width: 120px;
-  }
-
-  .itinerary-nav {
-    width: 100%;
-    justify-content: flex-end;
-    gap: 0.75rem;
-  }
-
-  .itinerary-highlights {
-    flex-direction: column;
-  }
-
-  .highlight-card {
-    flex: none;
-  }
-}
-
 @media (max-width: 600px) {
-  .itinerary-header {
-    padding: 0.75rem 1rem;
+  .itinerary-hero {
+    min-height: 260px;
   }
 
-  .itinerary-logo img {
-    max-width: 100px;
-  }
-
-  .itinerary-home-link {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.5rem;
-  }
-
-  .itinerary-whatsapp-btn {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
-    white-space: nowrap;
-  }
-
-  .itinerary-nav {
-    width: 100%;
-    flex-wrap: wrap;
+  .itinerary-hero h1 {
+    font-size: 1.45rem;
   }
 
   .itinerary-gallery {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-
-  .itinerary-gallery img {
-    height: 180px;
-  }
-
-  .itinerary-hero {
-    min-height: 240px;
-  }
-
-  .itinerary-hero h1 {
-    font-size: 1.35rem;
-  }
-
-  .itinerary-hero .subtitle {
-    font-size: 0.9rem;
-  }
-
-  .package-form-box {
-    padding: 1rem;
-  }
-
-  .related-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .itinerary-highlights {
-    padding: 1rem;
-  }
-
-  .highlight-card {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
   }
 }

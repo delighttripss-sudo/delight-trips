@@ -1,536 +1,588 @@
 <!doctype html>
 <html lang="en">
-  <head>
-  <!-- ===============================
-       CORE META
-  =============================== -->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <!doctype html>
+  <html lang="en" prefix="og: https://ogp.me/ns#">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ===============================
-       CANONICAL (CATEGORY PAGE)
-  =============================== -->
-  <link rel="canonical" href="https://www.delighttrips.in/tours.html" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-  <!-- ===============================
-       SEO (CATEGORY INTENT)
-  =============================== -->
-  <title>Tour Packages | Domestic & International Trips – Delight Trips</title>
-
-  <meta
-    name="description"
-    content="Explore domestic, international, honeymoon, and pilgrimage tour packages by Delight Trips. Compare destinations, itineraries, and get expert-curated travel planning with premium support."
-  />
-
- <!-- ===============================
-     FAVICON & APP ICONS
-================================ -->
-<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
-
-<!-- Standard Browser Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-
-<!-- Android / PWA Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
-
-<!-- Web App Manifest -->
-<link rel="manifest" href="/assets/favicon/site.webmanifest" />
-
-  <!-- ===============================
-       FONT (GLOBAL – SAME EVERYWHERE)
-  =============================== -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- ===============================
-       CRITICAL CSS (ABOVE FOLD)
-  =============================== -->
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/pages/tours.css" />
-
-  <!-- ===============================
-       ASYNC / BELOW FOLD CSS
-  =============================== -->
-  <link
-    rel="preload"
-    href="/styles/components/navbar.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
-  <link
-    rel="preload"
-    href="/styles/components/footer.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
-  <link
-    rel="preload"
-    href="/styles/components/whatsapp.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
-
-  <!-- ===============================
-       OPEN GRAPH (ADS + SHARING)
-  =============================== -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tour Packages | Delight Trips" />
-  <meta
-    property="og:description"
-    content="Discover domestic, international, honeymoon, and pilgrimage tour packages with expert planning by Delight Trips."
-  />
-  <meta property="og:url" content="https://www.delighttrips.in/tours.html" />
-  <meta
-    property="og:image"
-    content="https://www.delighttrips.in/assets/images/og-tours.jpg"
-  />
-
-  <!-- ===============================
-       STRUCTURED DATA (CATEGORY PAGE)
-  =============================== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Tour Packages",
-    "url": "https://www.delighttrips.in/tours.html",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Delight Trips",
-      "url": "https://www.delighttrips.in/"
-    }
-  }
-  </script>
-
-  <!-- ===============================
-       GOOGLE ANALYTICS (SAME ID)
-  =============================== -->
- <!-- Google tag (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F5VESB5BY0', {
-    anonymize_ip: true,
-    page_path: window.location.pathname
-  });
-</script>
-
-</head>
-
-
-  <body>
-    <div id="site-header"></div>
-<script type="module" src="/js/navigation.js"></script>
-
-    <!-- MAIN -->
-    <main id="main-content">
-      <!-- HERO -->
-      <section class="tour-hero">
-        <video
-  class="tour-hero-img"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="metadata"
-  poster="/assets/images/tour-hero.webp"
->
-  <source src="/assets/videos/tour-hero.mp4" type="video/mp4" />
-</video>
-
-        <div class="tour-hero-overlay">
-          <h1>Explore Our Tour Packages</h1>
-        </div>
-      </section>
-
-      <!-- DOMESTIC TOURS -->
-      <section class="tour-category">
-        <div class="tour-category-header">
-          <h2>Domestic Tours</h2>
-          <a href="/tours/domestic.html" class="explore-btn">Explore More</a>
-        </div>
-
-        <div class="destination-grid">
-          <a
-            href="/destinations/domestic/uttrakhand.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/Uttrakhand.webp"
-              loading="lazy"
-              alt="Uttarakhand Tour Package"
-            />
-            <span>Uttarakhand</span>
-          </a>
-
-          <a href="/destinations/domestic/kerala.html" class="destination-card">
-            <img
-              src="/assets/images/tours/kerala.webp"
-              loading="lazy"
-              alt="Kerala Tour Package"
-            />
-            <span>Kerala</span>
-          </a>
-
-          <a href="/destinations/domestic/goa.html" class="destination-card">
-            <img
-              src="/assets/images/tours/goa.webp"
-              loading="lazy"
-              alt="Goa Tour Package"
-            />
-            <span>Goa</span>
-          </a>
-
-          <a
-            href="/destinations/domestic/himachal.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/himachal.webp"
-              loading="lazy"
-              alt="Himachal Tour Package"
-            />
-            <span>Himachal</span>
-          </a>
-
-          <a
-            href="/destinations/domestic/rajasthan.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/rajasthan.webp"
-              loading="lazy"
-              alt="Rajasthan Tour Package"
-            />
-            <span>Rajasthan</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- INTERNATIONAL TOURS -->
-      <section class="tour-category">
-        <div class="tour-category-header">
-          <h2>International Tours</h2>
-          <a href="/tours/international.html" class="explore-btn"
-            >Explore More</a
-          >
-        </div>
-
-        <div class="destination-grid">
-          <a
-            href="/destinations/international/dubai.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/dubai.webp"
-              loading="lazy"
-              alt="Dubai Tour Package"
-            />
-            <span>Dubai</span>
-          </a>
-
-          <a
-            href="/destinations/international/thailand.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/thailand.webp"
-              loading="lazy"
-              alt="Thailand Tour Package"
-            />
-            <span>Thailand</span>
-          </a>
-
-          <a
-            href="/destinations/international/vietnam.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/vietnam.webp"
-              loading="lazy"
-              alt="Vietnam Tour Package"
-            />
-            <span>Vietnam</span>
-          </a>
-
-          <a
-            href="/destinations/international/bali.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/bali.webp"
-              loading="lazy"
-              alt="Bali Tour Package"
-            />
-            <span>Bali</span>
-          </a>
-
-          <a
-            href="/destinations/international/turkey.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/turkey.webp"
-              loading="lazy"
-              alt="Turkey Tour Package"
-            />
-            <span>Turkey</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- HONEYMOON TOURS -->
-      <section class="tour-category">
-        <div class="tour-category-header">
-          <h2>Honeymoon Tours</h2>
-          <a href="/tours/honeymoon.html" class="explore-btn">Explore More</a>
-        </div>
-
-        <div class="destination-grid">
-          <a
-            href="/destinations/honeymoon/maldives.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/maldives.webp"
-              loading="lazy"
-              alt="Maldives Honeymoon Package"
-            />
-            <span>Maldives</span>
-          </a>
-
-          <a href="/destinations/honeymoon/paris.html" class="destination-card">
-            <img
-              src="/assets/images/tours/paris.webp"
-              loading="lazy"
-              alt="Paris Honeymoon Package"
-            />
-            <span>Paris</span>
-          </a>
-
-          <a
-            href="/destinations/honeymoon/switzerland.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/switzerland.webp"
-              loading="lazy"
-              alt="Switzerland Honeymoon Package"
-            />
-            <span>Switzerland</span>
-          </a>
-
-          <a
-            href="/destinations/honeymoon/mauritius.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/mauritius.webp"
-              loading="lazy"
-              alt="Mauritius Honeymoon Package"
-            />
-            <span>Mauritius</span>
-          </a>
-
-          <a href="/destinations/honeymoon/bali.html" class="destination-card">
-            <img
-              src="/assets/images/tours/bali.webp"
-              loading="lazy"
-              alt="Bali Honeymoon Package"
-            />
-            <span>Bali</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- PILGRIMAGE TOURS -->
-      <section class="tour-category">
-        <div class="tour-category-header">
-          <h2>Pilgrimage Tours</h2>
-          <a href="/tours/pilgrimage.html" class="explore-btn">Explore More</a>
-        </div>
-
-        <div class="destination-grid">
-          <a
-            href="/destinations/pilgrimage/kedarnath.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/kedarnath.webp"
-              loading="lazy"
-              alt="Kedarnath Yatra Package"
-            />
-            <span>Kedarnath</span>
-          </a>
-
-          <a
-            href="/destinations/pilgrimage/vaishno-devi.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/vaishno-devi.webp"
-              loading="lazy"
-              alt="Vaishno Devi Yatra Package"
-            />
-            <span>Vaishno Devi</span>
-          </a>
-
-          <a
-            href="/destinations/pilgrimage/varanasi.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/varanasi.webp"
-              loading="lazy"
-              alt="Varanasi Spiritual Tour Package"
-            />
-            <span>Varanasi</span>
-          </a>
-
-          <a
-            href="/destinations/pilgrimage/rameshwaram.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/rameshwaram.webp"
-              loading="lazy"
-              alt="Rameshwaram Temple Tour Package"
-            />
-            <span>Rameshwaram</span>
-          </a>
-
-          <a
-            href="/destinations/pilgrimage/tirupati.html"
-            class="destination-card"
-          >
-            <img
-              src="/assets/images/tours/tirupati.webp"
-              loading="lazy"
-              alt="Tirupati Balaji Darshan Package"
-            />
-            <span>Tirupati</span>
-          </a>
-        </div>
-      </section>
-    </main>
-
-       <footer class="footer">
-  <div class="footer-wrapper">
-
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <img
-        src="/assets/images/logo/logo.svg"
-        alt="Delight Trips Logo"
-        class="footer-logo"
-        loading="lazy"
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap"
+        media="print"
+        onload="this.media = 'all'"
       />
-      <p class="footer-description">
-        Delight Trips is a trusted travel company offering authentic journeys,
-        offbeat destinations, and carefully curated travel experiences across
-        India and international destinations with a focus on comfort,
-        sustainability, and reliability.
-      </p>
-    </div>
-
-    <!-- POLICIES -->
-    <div class="footer-links">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
-        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-    </div>
-
-    <!-- TOURS -->
-    <div class="footer-links">
-      <h4>Tours</h4>
-      <ul>
-        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
-        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
-        <li><a href="/tours/international.html">International Destinations</a></li>
-        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
-      </ul>
-    </div>
-
-    <!-- SOCIAL -->
-    <div class="footer-social">
-  <h4>Follow Us</h4>
-
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/delight_tripss/"
-      aria-label="Follow Delight Trips on Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/instagram.svg"
-        alt="Instagram"
-        width="24"
-        height="24"
-        loading="lazy"
+      <title>
+        Tour Packages | Domestic & International Trips – Delight Trips
+      </title>
+      <meta
+        name="description"
+        content="Explore top-rated tour packages by Delight Trips. From Kashmir to Kerala, Dubai to Europe. Compare itineraries, prices, and book your perfect holiday today."
       />
-    </a>
-
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/Delighttrips/"
-      aria-label="Follow Delight Trips on Facebook"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/facebook.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        loading="lazy"
+      <meta
+        name="keywords"
+        content="tour packages, holiday packages india, international tours, honeymoon packages, group tours, delight trips packages, travel itinerary planning"
       />
-    </a>
-
-    <!-- WhatsApp -->
-    <a
-      href="https://wa.me/917045286023"
-      aria-label="Chat with Delight Trips on WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/whatsapp.svg"
-        alt="WhatsApp"
-        width="24"
-        height="24"
-        loading="lazy"
+      <meta
+        name="robots"
+        content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
       />
-    </a>
-  </div>
-</div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Delight Trips. All Rights Reserved.
-  </div>
-</footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+      <link rel="canonical" href="https://www.delighttrips.in/tours.html" />
 
-  </body>
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:title"
+        content="Explore World Class Tour Packages | Delight Trips"
+      />
+      <meta
+        property="og:description"
+        content="Discover our curated list of Domestic, International, and Pilgrimage packages. Plan your dream vacation now."
+      />
+      <meta
+        property="og:url"
+        content="https://www.delighttrips.in/tours.html"
+      />
+      <meta property="og:site_name" content="Delight Trips" />
+
+      <meta
+        property="og:image"
+        content="https://www.delighttrips.in/assets/images/og-tours.jpg"
+      />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta
+        property="og:image:alt"
+        content="Collage of beautiful destinations offered by Delight Trips"
+      />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="Best Holiday Packages | Delight Trips"
+      />
+      <meta
+        name="twitter:description"
+        content="Find your perfect getaway. Domestic & International tour packages available now."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.delighttrips.in/assets/images/og-tours.jpg"
+      />
+
+      <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/assets/favicon/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/assets/favicon/favicon-16x16.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/assets/favicon/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/assets/favicon/android-chrome-192x192.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="/assets/favicon/android-chrome-512x512.png"
+      />
+      <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+      <meta name="theme-color" content="#ffffff" />
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.delighttrips.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tour Packages",
+              "item": "https://www.delighttrips.in/tours.html"
+            }
+          ]
+        }
+      </script>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Tour Packages",
+          "description": "Comprehensive list of domestic and international holiday packages offered by Delight Trips.",
+          "url": "https://www.delighttrips.in/tours.html",
+          "provider": {
+            "@type": "TravelAgency",
+            "name": "Delight Trips",
+            "image": "https://www.delighttrips.in/assets/images/logo.png",
+            "telephone": "+91-7045286023",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "203, Atharva Height, Pokharan Road No. 1, Shivai Nagar",
+              "addressLocality": "Thane West",
+              "addressRegion": "Maharashtra",
+              "postalCode": "400606",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      </script>
+
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-F5VESB5BY0", {
+          anonymize_ip: true,
+          page_path: window.location.pathname,
+        });
+      </script>
+
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+
+      <link rel="stylesheet" href="/styles/tokens.css" />
+      <link rel="stylesheet" href="/styles/base.css" />
+      <link rel="stylesheet" href="/styles/layout.css" />
+      <link rel="stylesheet" href="/styles/utilities.css" />
+      <link rel="stylesheet" href="/styles/accessibility.css" />
+      <link rel="stylesheet" href="/styles/support.css" />
+
+      <link rel="stylesheet" href="/styles/components/navbar.css" />
+      <link rel="stylesheet" href="/styles/components/footer.css" />
+      <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+      <link rel="stylesheet" href="/styles/components/buttons.css" />
+      <link rel="stylesheet" href="/styles/components/cards.css" />
+      <link rel="stylesheet" href="/styles/pages/tours.css" />
+    </head>
+    <body>
+      <div id="site-header"></div>
+      <script type="module" src="/js/navigation.js"></script>
+
+      <!-- MAIN -->
+      <main id="main-content">
+        <section class="hero hero--tour" aria-labelledby="hero-title">
+          <img
+            src="/assets/images/hero/kerala.webp"
+            alt="Scenic Kerala Backwaters Tour Package – Premium Houseboat Experience"
+            width="1920"
+            height="1080"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            class="hero__image"
+          />
+
+          <div class="hero__overlay">
+            <div class="container hero__content">
+              <h1 id="hero-title" class="hero__title">
+                Best Tour Packages in India &
+                <span class="text-accent">International Destinations</span>
+              </h1>
+              <p class="hero__subtitle">
+                Explore expertly curated holiday tours across Kerala, Ladakh,
+                Dubai, and Thailand. From luxury honeymoon escapes to spiritual
+                pilgrimage journeys, your dream vacation is planned to
+                perfection by Delight Trips.
+              </p>
+              <div class="hero__actions">
+                <a href="#experiences" class="btn btn--primary"
+                  >View All Categories</a
+                >
+                <a href="/contact.html" class="btn btn--outline-white"
+                  >Get Custom Quote</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="trust-bar">
+          <div class="container trust-grid">
+            <div class="trust-item"><strong>1000+</strong> Happy Travelers</div>
+            <div class="trust-item"><strong>24/7</strong> Expert Support</div>
+            <div class="trust-item"><strong>100%</strong> Customized Plans</div>
+            <div class="trust-item"><strong>Best</strong> Price Guarantee</div>
+          </div>
+        </section>
+
+        <section
+          id="experiences"
+          class="experience-section"
+          aria-labelledby="experience-heading"
+        >
+          <div class="container">
+            <header class="experience-header section-header">
+              <h2 id="experience-heading">
+                Explore Curated Travel Experiences
+              </h2>
+              <div class="header-line"></div>
+              <p>
+                Handcrafted journeys across India and the world — designed by
+                travel experts for comfort, discovery, and unforgettable
+                memories.
+              </p>
+            </header>
+
+            <div class="experience-grid">
+              <article class="experience-card">
+                <a
+                  href="/tours/domestic.html"
+                  aria-label="Explore Domestic Tour Packages"
+                >
+                  <div class="card-image-wrapper">
+                    <img
+                      src="/assets/images/tours/kerala.webp"
+                      alt="Houseboats in Kerala - Domestic Tours"
+                      loading="lazy"
+                      width="400"
+                      height="500"
+                    />
+                  </div>
+                  <div class="experience-overlay"></div>
+                  <div class="experience-content">
+                    <span class="experience-pill">India</span>
+                    <h3>Domestic Holidays</h3>
+                    <p>Himachal, Kashmir, Kerala, Goa & more.</p>
+                    <span class="experience-cta">View Packages</span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="experience-card">
+                <a
+                  href="/tours/international.html"
+                  aria-label="Explore International Tour Packages"
+                >
+                  <div class="card-image-wrapper">
+                    <img
+                      src="/assets/images/tours/dubai.webp"
+                      alt="Dubai Skyline - International Vacations"
+                      loading="lazy"
+                      width="400"
+                      height="500"
+                    />
+                  </div>
+                  <div class="experience-overlay"></div>
+                  <div class="experience-content">
+                    <span class="experience-pill">Global</span>
+                    <h3>International Vacations</h3>
+                    <p>Dubai, Thailand, Bali, Europe & Maldives.</p>
+                    <span class="experience-cta">View Packages</span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="experience-card">
+                <a
+                  href="/tours/honeymoon.html"
+                  aria-label="Explore Honeymoon Packages"
+                >
+                  <div class="card-image-wrapper">
+                    <img
+                      src="/assets/images/tours/maldives.webp"
+                      alt="Romantic Resort in Maldives - Honeymoon Escapes"
+                      loading="lazy"
+                      width="400"
+                      height="500"
+                    />
+                  </div>
+                  <div class="experience-overlay"></div>
+                  <div class="experience-content">
+                    <span class="experience-pill">Romantic</span>
+                    <h3>Honeymoon Escapes</h3>
+                    <p>Exotic islands and romantic European gateways.</p>
+                    <span class="experience-cta">View Packages</span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="experience-card">
+                <a
+                  href="/tours/pilgrimage.html"
+                  aria-label="Explore Pilgrimage Packages"
+                >
+                  <div class="card-image-wrapper">
+                    <img
+                      src="/assets/images/tours/kedarnath.webp"
+                      alt="Kedarnath Temple - Spiritual Journeys"
+                      loading="lazy"
+                      width="400"
+                      height="500"
+                    />
+                  </div>
+                  <div class="experience-overlay"></div>
+                  <div class="experience-content">
+                    <span class="experience-pill">Spiritual</span>
+                    <h3>Pilgrimage Journeys</h3>
+                    <p>Chardham Yatra, Varanasi & Sacred Routes.</p>
+                    <span class="experience-cta">View Packages</span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-section" aria-labelledby="services-heading">
+          <div class="container">
+            <header class="services-header section-header">
+              <h2 id="services-heading">
+                Complete Travel Services Under One Roof
+              </h2>
+              <div class="header-line"></div>
+              <p>
+                End-to-end travel solutions managed by experienced
+                professionals.
+              </p>
+            </header>
+
+            <div class="services-grid">
+              <a href="/services/flights.html" class="service-card">
+                <div class="service-icon">
+                  <img
+                    src="/assets/icons/flight.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="48"
+                    height="48"
+                  />
+                </div>
+                <h3>Flight Bookings</h3>
+                <p>
+                  Domestic and international flights with competitive fares and
+                  24/7 support.
+                </p>
+              </a>
+
+              <a href="/services/trains.html" class="service-card">
+                <div class="service-icon">
+                  <img
+                    src="/assets/icons/train.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="48"
+                    height="48"
+                  />
+                </div>
+                <h3>Train Tickets</h3>
+                <p>
+                  Fast IRCTC bookings, Tatkal assistance, and group travel
+                  solutions.
+                </p>
+              </a>
+
+              <a href="/services/hotels.html" class="service-card">
+                <div class="service-icon">
+                  <img
+                    src="/assets/icons/hotel.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="48"
+                    height="48"
+                  />
+                </div>
+                <h3>Hotels & Stays</h3>
+                <p>
+                  Handpicked budget, premium, and luxury stays across the globe.
+                </p>
+              </a>
+
+              <a href="/services/transfers.html" class="service-card">
+                <div class="service-icon">
+                  <img
+                    src="/assets/icons/transfer.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="48"
+                    height="48"
+                  />
+                </div>
+                <h3>Private Transfers</h3>
+                <p>
+                  Safe airport pickups and intercity travel with professional
+                  drivers.
+                </p>
+              </a>
+
+              <a href="/services/sightseeing.html" class="service-card">
+                <div class="service-icon">
+                  <img
+                    src="/assets/icons/sightseeing.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="48"
+                    height="48"
+                  />
+                </div>
+                <h3>Guided Sightseeing</h3>
+                <p>
+                  Experience local landmarks and hidden gems with our expert
+                  guides.
+                </p>
+              </a>
+
+              <a href="/services/activities.html" class="service-card">
+                <div class="service-icon">
+                  <img
+                    src="/assets/icons/activity.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="48"
+                    height="48"
+                  />
+                </div>
+                <h3>Adventure & Fun</h3>
+                <p>
+                  Exciting cultural activities, adventure sports, and attraction
+                  tickets.
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-wrapper container">
+          <div class="footer-brand">
+            <img
+              src="/assets/images/logo/logo.png"
+              alt="Delight Trips Logo"
+              class="footer-logo"
+              loading="lazy"
+            />
+            <p class="footer-description">
+              Delight Trips is a trusted travel company offering authentic
+              journeys, offbeat destinations, and curated travel experiences
+              across India and international destinations.
+            </p>
+          </div>
+
+          <nav class="footer-links" aria-label="Policy Links">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+              <li>
+                <a href="/terms-and-conditions.html">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="/refund-and-cancellation-policy.html">Refund Policy</a>
+              </li>
+              <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-links" aria-label="Tour Links">
+            <h4>Tours</h4>
+            <ul>
+              <li>
+                <a href="/tours/domestic.html"
+                  >Incredible Indian Destinations</a
+                >
+              </li>
+              <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+              <li>
+                <a href="/tours/international.html"
+                  >International Destinations</a
+                >
+              </li>
+              <li>
+                <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/delight_tripss/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/icons/social/instagram.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/Delighttrips/"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/icons/social/facebook.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+              <a
+                href="https://wa.me/917045286023"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/icons/social/whatsapp.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            © <span id="year"></span> Delight Trips. All Rights Reserved.
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </body>
+  </html>
 </html>

@@ -1,404 +1,744 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <!-- ===============================
-     CORE META
-  ================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <!doctype html>
+  <html lang="en" prefix="og: https://ogp.me/ns#">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ===============================
-     SEO (DOMESTIC TOURS – HIGH INTENT)
-  ================================ -->
-  <title>Domestic Tour Packages in India | Kerala, Kashmir, Goa & More – Delight Trips</title>
-  <meta
-    name="description"
-    content="Explore domestic tour packages across India including Kerala, Kashmir, Rajasthan, Goa, Himachal and North East. Enjoy customized itineraries and expert planning with Delight Trips."
-  />
-<!-- ===============================
-     FAVICON & APP ICONS
-================================ -->
-<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-<!-- Standard Browser Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-
-<!-- Android / PWA Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
-
-<!-- Web App Manifest -->
-<link rel="manifest" href="/assets/favicon/site.webmanifest" />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.delighttrips.in/domestic.html" />
-
-  <!-- ===============================
-     GOOGLE ANALYTICS (GA4 – ASYNC)
-  ================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5VESB5BY0', {
-      anonymize_ip: true,
-      page_path: window.location.pathname
-    });
-  </script>
-
-  <!-- ===============================
-     FONTS (GLOBAL – SAME EVERYWHERE)
-  ================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- ===============================
-     GLOBAL CORE CSS
-  ================================ -->
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/utilities.css" />
-  <link rel="stylesheet" href="/styles/accessibility.css" />
-  <link rel="stylesheet" href="/styles/support.css" />
-  <link rel="stylesheet" href="/styles/global-pattern.css" />
-
-  <!-- ===============================
-     COMPONENT STYLES
-  ================================ -->
-  <link rel="stylesheet" href="/styles/components/navbar.css" />
-  <link rel="stylesheet" href="/styles/components/footer.css" />
-  <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-  <link rel="stylesheet" href="/styles/components/buttons.css" />
-
-  <!-- ===============================
-     PAGE-SPECIFIC CSS
-  ================================ -->
-  <link rel="stylesheet" href="/styles/pages/domestic.css" />
-</head>
-
-
-  <body>
-
-  <div id="site-header"></div>
-<script type="module" src="/js/navigation.js"></script>
-
-    <!-- HERO -->
-    <section class="domestic-hero">
-      <div class="hero-overlay">
-        <h1>Incredible India Experiences</h1>
-        <p>Culture · Spirituality · Nature · Offbeat · Sustainable Travel</p>
-      </div>
-    </section>
-
-    <!-- INTRO -->
-    <section class="domestic-intro">
-      <p>
-        Discover India with Delight Trips — from tranquil backwaters and royal
-        palaces to Himalayan adventures and spiritual journeys. Our domestic
-        tour packages are thoughtfully designed for families, couples and
-        explorers.
-      </p>
-    </section>
-
-    <!-- DESTINATION GRID -->
-    <section class="domestic-grid">
-      <!-- CARD TEMPLATE -->
-    <a href="/destinations/domestic/kerala.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/kerala.webp"
-    loading="lazy"
-    alt="Kerala Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Kerala</h3>
-    <span>Backwaters · Hill Stations · Nature</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/rajasthan.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/rajasthan.webp"
-    loading="lazy"
-    alt="Rajasthan Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Rajasthan</h3>
-    <span>Royal Palaces · Desert Culture</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/goa.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/goa.webp"
-    loading="lazy"
-    alt="Goa Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Goa</h3>
-    <span>Beaches · Nightlife · Heritage</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/andaman.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/andaman.webp"
-    loading="lazy"
-    alt="Andaman Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Andaman</h3>
-    <span>Islands · Coral Reefs · Serenity</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/leh-ladakh.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/ladakh.webp"
-    loading="lazy"
-    alt="Leh Ladakh Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Leh Ladakh</h3>
-    <span>Himalayas · Lakes · Adventure</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/north-east.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/northeast.webp"
-    loading="lazy"
-    alt="North East India Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>North East India</h3>
-    <span>Tribal Culture · Hills · Waterfalls</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/karnataka.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/karnataka.webp"
-    loading="lazy"
-    alt="Karnataka Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Karnataka</h3>
-    <span>Heritage · Coffee Trails · Wildlife</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/maharashtra.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/maharashtra.webp"
-    loading="lazy"
-    alt="Maharashtra Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Maharashtra</h3>
-    <span>Forts · Ghats · City Escapes</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/madhya-pradesh.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/mp.webp"
-    loading="lazy"
-    alt="Madhya Pradesh Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Madhya Pradesh</h3>
-    <span>Temples · Wildlife · History</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/uttar-pradesh.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/up.webp"
-    loading="lazy"
-    alt="Uttar Pradesh Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Uttar Pradesh</h3>
-    <span>Spiritual · Heritage · Culture</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/uttrakhand.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/uttarakhand.webp"
-    loading="lazy"
-    alt="Uttarakhand Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Uttarakhand</h3>
-    <span>Himalayas · Yoga · Pilgrimage</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/odisha.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/odisha.webp"
-    loading="lazy"
-    alt="Odisha Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Odisha</h3>
-    <span>Temples · Beaches · Tribal Life</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/tamil-nadu.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/tamilnadu.webp"
-    loading="lazy"
-    alt="Tamil Nadu Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Tamil Nadu</h3>
-    <span>Temples · Culture · Coastline</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/andhra-pradesh.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/andhra.webp"
-    loading="lazy"
-    alt="Andhra Pradesh Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Andhra Pradesh</h3>
-    <span>Spiritual · Hills · Heritage</span>
-  </div>
-</a>
-
-<a href="/destinations/domestic/gujarat.html" class="destination-card">
-  <img
-    src="/assets/images/tours/domestic/gujarat.webp"
-    loading="lazy"
-    alt="Gujarat Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Gujarat</h3>
-    <span>Desert · Culture · Wildlife</span>
-  </div>
-</a>
-
-    </section>
-
-<div id="footer-placeholder"></div>
-
-    <footer class="footer">
-  <div class="footer-wrapper">
-
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <img
-        src="/assets/images/logo/logo.png"
-        alt="Delight Trips Logo"
-        class="footer-logo"
-        loading="lazy"
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap"
+        as="style"
       />
-      <p class="footer-description">
-        Delight Trips is a trusted travel company offering authentic journeys,
-        offbeat destinations, and carefully curated travel experiences across
-        India and international destinations with a focus on comfort,
-        sustainability, and reliability.
-      </p>
-    </div>
-
-    <!-- POLICIES -->
-    <div class="footer-links">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
-        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-    </div>
-
-    <!-- TOURS -->
-    <div class="footer-links">
-      <h4>Tours</h4>
-      <ul>
-        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
-        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
-        <li><a href="/tours/international.html">International Destinations</a></li>
-        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
-      </ul>
-    </div>
-
-    <!-- SOCIAL -->
-    <div class="footer-social">
-  <h4>Follow Us</h4>
-
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/delight_tripss/"
-      aria-label="Follow Delight Trips on Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/instagram.svg"
-        alt="Instagram"
-        width="24"
-        height="24"
-        loading="lazy"
+      <link
+        rel="preload"
+        href="/assets/images/hero/domestic-hero.webp"
+        as="image"
+        fetchpriority="high"
       />
-    </a>
 
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/Delighttrips/"
-      aria-label="Follow Delight Trips on Facebook"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/facebook.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        loading="lazy"
+      <title>
+        Domestic Tour Packages in India | Kerala, Kashmir, Goa & More – Delight
+        Trips
+      </title>
+      <meta
+        name="description"
+        content="Book best-selling domestic tour packages across India. Explore Kerala backwaters, Kashmir mountains, Goa beaches, and Rajasthan heritage. Custom itineraries & 24/7 travel support from Delight Trips."
       />
-    </a>
-
-    <!-- WhatsApp -->
-    <a
-      href="https://wa.me/917045286023"
-      aria-label="Chat with Delight Trips on WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/whatsapp.svg"
-        alt="WhatsApp"
-        width="24"
-        height="24"
-        loading="lazy"
+      <meta
+        name="keywords"
+        content="domestic tour packages, holiday packages in india, kerala tour packages, kashmir holiday, rajasthan trips, pilgrimage tours india, delight trips domestic, thane travel agency"
       />
-    </a>
-  </div>
-</div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Delight Trips. All Rights Reserved.
-  </div>
-</footer>
+      <meta
+        name="robots"
+        content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+      />
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-  </body> 
-  </html> 
+      <link rel="canonical" href="https://www.delighttrips.in/domestic.html" />
+
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:title"
+        content="Incredible India: Domestic Tour Packages | Delight Trips"
+      />
+      <meta
+        property="og:description"
+        content="Discover the beauty of India with our expertly planned domestic tours. From the Himalayas to the Indian Ocean."
+      />
+      <meta
+        property="og:url"
+        content="https://www.delighttrips.in/domestic.html"
+      />
+      <meta property="og:site_name" content="Delight Trips" />
+      <meta
+        property="og:image"
+        content="https://www.delighttrips.in/assets/images/og-domestic.jpg"
+      />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta
+        property="og:image:alt"
+        content="Scenic view of Indian landscapes - Delight Trips Domestic"
+      />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@delighttrips" />
+
+      <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/assets/favicon/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/assets/favicon/favicon-16x16.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/assets/favicon/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/assets/favicon/android-chrome-192x192.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="/assets/favicon/android-chrome-512x512.png"
+      />
+      <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+      <meta name="theme-color" content="#0b2a4a" />
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.delighttrips.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tour Packages",
+              "item": "https://www.delighttrips.in/tours.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Domestic Tours",
+              "item": "https://www.delighttrips.in/domestic.html"
+            }
+          ]
+        }
+      </script>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Indian Domestic Tour Destinations",
+          "numberOfItems": 15,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://www.delighttrips.in/destinations/domestic/kerala.html",
+              "name": "Kerala"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://www.delighttrips.in/destinations/domestic/rajasthan.html",
+              "name": "Rajasthan"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://www.delighttrips.in/destinations/domestic/goa.html",
+              "name": "Goa"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "url": "https://www.delighttrips.in/destinations/domestic/andaman.html",
+              "name": "Andaman"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "url": "https://www.delighttrips.in/destinations/domestic/leh-ladakh.html",
+              "name": "Leh Ladakh"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "url": "https://www.delighttrips.in/destinations/domestic/north-east.html",
+              "name": "North East"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "url": "https://www.delighttrips.in/destinations/domestic/karnataka.html",
+              "name": "Karnataka"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "url": "https://www.delighttrips.in/destinations/domestic/maharashtra.html",
+              "name": "Maharashtra"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "url": "https://www.delighttrips.in/destinations/domestic/madhya-pradesh.html",
+              "name": "Madhya Pradesh"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "url": "https://www.delighttrips.in/destinations/domestic/uttar-pradesh.html",
+              "name": "Uttar Pradesh"
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "url": "https://www.delighttrips.in/destinations/domestic/uttrakhand.html",
+              "name": "Uttarakhand"
+            },
+            {
+              "@type": "ListItem",
+              "position": 12,
+              "url": "https://www.delighttrips.in/destinations/domestic/odisha.html",
+              "name": "Odisha"
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "url": "https://www.delighttrips.in/destinations/domestic/tamil-nadu.html",
+              "name": "Tamil Nadu"
+            },
+            {
+              "@type": "ListItem",
+              "position": 14,
+              "url": "https://www.delighttrips.in/destinations/domestic/andhra-pradesh.html",
+              "name": "Andhra Pradesh"
+            },
+            {
+              "@type": "ListItem",
+              "position": 15,
+              "url": "https://www.delighttrips.in/destinations/domestic/gujarat.html",
+              "name": "Gujarat"
+            }
+          ]
+        }
+      </script>
+
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-F5VESB5BY0", {
+          anonymize_ip: true,
+          page_path: window.location.pathname,
+        });
+      </script>
+
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+
+      <link rel="stylesheet" href="/styles/tokens.css" />
+      <link rel="stylesheet" href="/styles/base.css" />
+      <link rel="stylesheet" href="/styles/layout.css" />
+      <link rel="stylesheet" href="/styles/utilities.css" />
+
+      <link rel="stylesheet" href="/styles/components/navbar.css" />
+      <link rel="stylesheet" href="/styles/components/footer.css" />
+      <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+      <link rel="stylesheet" href="/styles/components/buttons.css" />
+
+      <link rel="stylesheet" href="/styles/pages/domestic.css" />
+
+      <link rel="stylesheet" href="/styles/accessibility.css" />
+      <link rel="stylesheet" href="/styles/support.css" />
+    </head>
+
+    <body>
+      <div id="site-header"></div>
+
+      <main id="main-content">
+        <section
+          class="category-hero domestic-hero"
+          aria-labelledby="hero-title"
+        >
+          <div class="category-hero-overlay">
+            <h1 id="hero-title">Domestic Tour Packages in India</h1>
+            <p>
+              Culture · Spirituality · Nature · Heritage · Adventure ·
+              Sustainable Travel
+            </p>
+          </div>
+        </section>
+
+        <section class="category-intro container">
+          <p>
+            Delight Trips offers expertly curated
+            <strong>domestic tour packages in India</strong> covering Kerala
+            backwaters, Rajasthan royal heritage, Goa beaches, Himalayan
+            adventures, spiritual pilgrimage circuits, wildlife destinations,
+            and offbeat regions.
+          </p>
+        </section>
+
+        <section class="destination-section">
+          <div class="container">
+            <div class="destination-grid">
+              <article class="destination-card">
+                <a href="/destinations/domestic/kerala.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/kerala.webp"
+                      alt="Kerala Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Kerala</h3>
+                    <p>Backwaters · Hill Stations · Nature</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹12,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/rajasthan.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/rajasthan.webp"
+                      alt="Rajasthan Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Rajasthan</h3>
+                    <p>Royal Palaces · Desert Culture</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹13,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/goa.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/goa.webp"
+                      alt="Goa Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Goa</h3>
+                    <p>Beaches · Nightlife · Heritage</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹9,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/andaman.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/andaman.webp"
+                      alt="Andaman Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Andaman</h3>
+                    <p>Islands · Coral Reefs · Serenity</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹18,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/leh-ladakh.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/ladakh.webp"
+                      alt="Leh Ladakh Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Leh Ladakh</h3>
+                    <p>Himalayas · Lakes · Adventure</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹21,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/north-east.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/northeast.webp"
+                      alt="North East India Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>North East India</h3>
+                    <p>Tribal Culture · Hills · Waterfalls</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹17,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/karnataka.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/karnataka.webp"
+                      alt="Karnataka Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Karnataka</h3>
+                    <p>Heritage · Coffee Trails · Wildlife</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹11,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/maharashtra.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/maharashtra.webp"
+                      alt="Maharashtra Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Maharashtra</h3>
+                    <p>Forts · Ghats · City Escapes</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹10,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/madhya-pradesh.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/mp.webp"
+                      alt="Madhya Pradesh Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Madhya Pradesh</h3>
+                    <p>Temples · Wildlife · History</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹12,499</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/uttar-pradesh.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/up.webp"
+                      alt="Uttar Pradesh Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Uttar Pradesh</h3>
+                    <p>Spiritual · Heritage · Culture</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹9,499</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/uttrakhand.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/uttarakhand.webp"
+                      alt="Uttarakhand Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Uttarakhand</h3>
+                    <p>Himalayas · Yoga · Pilgrimage</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹10,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/odisha.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/odisha.webp"
+                      alt="Odisha Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Odisha</h3>
+                    <p>Temples · Beaches · Tribal Life</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹11,499</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/tamil-nadu.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/tamilnadu.webp"
+                      alt="Tamil Nadu Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Tamil Nadu</h3>
+                    <p>Temples · Culture · Coastline</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹12,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/andhra-pradesh.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/andhra.webp"
+                      alt="Andhra Pradesh Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Andhra Pradesh</h3>
+                    <p>Spiritual · Hills · Heritage</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹10,999</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <article class="destination-card">
+                <a href="/destinations/domestic/gujarat.html">
+                  <div class="card-img-wrapper">
+                    <img
+                      src="/assets/images/tours/domestic/gujarat.webp"
+                      alt="Gujarat Tour Packages"
+                      loading="lazy"
+                      width="640"
+                      height="420"
+                    />
+                  </div>
+                  <div class="card-overlay">
+                    <h3>Gujarat</h3>
+                    <p>Desert · Culture · Wildlife</p>
+                    <div class="card-footer">
+                      <span class="price">Starting from ₹13,499</span>
+                      <span class="cta">View Packages</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-wrapper container">
+          <div class="footer-brand">
+            <img
+              src="/assets/images/logo/logo.png"
+              alt="Delight Trips Logo"
+              class="footer-logo"
+              loading="lazy"
+            />
+            <p class="footer-description">
+              Delight Trips is a trusted travel company offering authentic
+              journeys, offbeat destinations, and curated travel experiences
+              across India and international destinations.
+            </p>
+          </div>
+
+          <nav class="footer-links" aria-label="Policy Links">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+              <li>
+                <a href="/terms-and-conditions.html">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="/refund-and-cancellation-policy.html">Refund Policy</a>
+              </li>
+              <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-links" aria-label="Tour Links">
+            <h4>Tours</h4>
+            <ul>
+              <li>
+                <a href="/tours/domestic.html"
+                  >Incredible Indian Destinations</a
+                >
+              </li>
+              <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+              <li>
+                <a href="/tours/international.html"
+                  >International Destinations</a
+                >
+              </li>
+              <li>
+                <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/delight_tripss/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/icons/social/instagram.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/Delighttrips/"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/icons/social/facebook.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+              <a
+                href="https://wa.me/917045286023"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/assets/icons/social/whatsapp.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            © <span id="year"></span> Delight Trips. All Rights Reserved.
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+      <script type="module" src="/js/navigation.js"></script>
+    </body>
+  </html>
+</html>

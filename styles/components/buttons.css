@@ -1,25 +1,112 @@
+/* ==========================================================
+   ✅ WORLD-CLASS BUTTONS — button.css
+   - Logic: Interactive Layering & State Feedback
+   - Accessibility: 44px+ Hit-zone safe
+========================================================== */
+
 .btn {
-  padding: var(--sp-2) var(--sp-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 12px 24px; /* Standard premium padding */
   border-radius: var(--radius-md);
-  font-size: var(--fs-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
   cursor: pointer;
-  border: none;
-  transition: transform var(--dur-fast) var(--ease),
-    box-shadow var(--dur-fast) var(--ease);
+  border: 2px solid transparent; /* Prevents layout shift on hover */
+  white-space: nowrap;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+  user-select: none;
+  line-height: 1;
 }
 
+/* 1. PRIMARY: The Action Taker */
 .btn-primary {
   background: var(--primary);
   color: var(--light);
+  box-shadow: 0 4px 14px 0 rgba(var(--primary-rgb), 0.3);
 }
 
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.4);
+}
+
+/* 2. OUTLINE: The Secondary Choice */
 .btn-outline {
   background: transparent;
-  border: 1px solid var(--primary);
+  border-color: var(--primary);
   color: var(--primary);
 }
 
-.btn:hover {
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--light);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+}
+
+/* 3. HERO/LARGE: For Attention */
+.btn-lg {
+  padding: 16px 32px;
+  font-size: var(--font-size-base);
+}
+
+/* 4. GLASS: For Hero Overlays */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--light);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* 5. ACTIVE & CLICKED STATE 
+   - Provides tactile feedback like a real button
+---------------------------------------------------------- */
+.btn:active {
+  transform: translateY(0) scale(0.97); /* "Pressed" feel */
+}
+
+/* 6. DISABLED STATE */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(1);
+  transform: none !important;
+}
+
+/* 7. LOADING SPINNER (For Forms) */
+.btn-loading {
+  color: transparent !important;
+  position: relative;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--light);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

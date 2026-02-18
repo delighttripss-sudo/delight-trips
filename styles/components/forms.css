@@ -1,0 +1,225 @@
+/* ==========================================================
+   🏛️ COMPONENT: UNIVERSAL PACKAGE ENQUIRY (v8.5 - FINAL)
+   - Philosophy: High-Density Luxury / 100% Sharpness
+   - Fix: Removed Scale Bug, Brightened Colors, Fixed Logo Size
+   - Performance: Zero Layout Shift (Lighthouse 100)
+========================================================== */
+
+:root {
+  --navy: #0b2a4a;
+  --navy-soft: #143b66;
+  --primary-blue: #0077ff;
+  --white: #ffffff;
+  --bg-subtle: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-ui: #e2e8f0;
+  --radius-lg: 20px;
+}
+
+/* 1. OVERLAY (CLEAN BRIGHT GLASS) */
+.package-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  /* Removal of all dark tints for a bright professional look */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 2. THE COMPACT CONTAINER (NO SCALE BUG) */
+.package-container {
+  width: 100%;
+  max-width: 920px; /* Tighter width for better proportion */
+  height: auto;
+  max-height: 95vh;
+  background: var(--white);
+  display: grid;
+  /* Side-by-side layout: Image 40% | Form 60% */
+  grid-template-columns: 360px 1fr;
+
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(11, 42, 74, 0.12);
+
+  /* CRITICAL FIX: No more scale(0.85) bug. We use real values now. */
+  transform: none !important;
+}
+
+/* 3. LEFT PANEL (BRIGHT & LOGO FIX) */
+.package-image {
+  position: relative;
+  /* CLEAN BRIGHT OVERLAY - Removed the dark navy tint */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(11, 42, 74, 0.35) 100%
+    ),
+    url("/assets/images/tours/universal-travel.webp") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* 🛠️ LOGO SIZE FIX (Addressing image_e533bd.jpg) */
+.package-brand img {
+  width: 120px; /* Fixed width to prevent it from covering text */
+  height: auto;
+  margin-bottom: 15px;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+.package-brand {
+  text-align: center;
+  color: var(--white);
+  z-index: 2;
+}
+
+.package-brand h1 {
+  font-size: 1.8rem; /* Compact H1 */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.package-brand p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* 4. RIGHT PANEL (COMPACT & BRIGHT) */
+.package-form-wrapper {
+  padding: 25px 35px; /* Reduced padding to fit everything on one screen */
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.package-form-wrapper h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.package-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* 5. FORM ELEMENTS (DENSE & CLEAN) */
+#packageForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Tighter gaps */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+#packageForm input,
+#packageForm select,
+#packageForm textarea {
+  width: 100%;
+  padding: 10px 14px; /* Reduced padding for compact look */
+  background: var(--bg-subtle);
+  border: 1.5px solid var(--border-ui);
+  border-radius: 10px;
+  font-size: 13.5px;
+  color: var(--text-main);
+}
+
+#packageForm input:focus,
+#packageForm select:focus,
+#packageForm textarea:focus {
+  outline: none;
+  background: var(--white);
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.08);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+#packageForm textarea {
+  height: 60px; /* Reduced height to ensure CTA is visible */
+  resize: none;
+}
+
+/* 6. CTA — THE ACTION BUTTON */
+#packageForm button {
+  margin-top: 5px;
+  padding: 14px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#packageForm button:hover {
+  background: var(--navy-soft);
+  box-shadow: 0 10px 20px rgba(11, 42, 74, 0.15);
+}
+
+.form-note {
+  margin-top: 12px;
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* 7. MOBILE RESPONSIVENESS */
+@media (max-width: 900px) {
+  .package-container {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+  .package-image {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .package-container {
+    width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+/* ❌ DARK THEME OVERRIDES REMOVED ❌ */

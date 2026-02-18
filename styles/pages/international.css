@@ -1,171 +1,238 @@
-/* =========================
-   HEADER
-========================= */
-.international-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
+/* ==========================================================
+   INTERNATIONAL TOURS PAGE — PRODUCTION CSS
+   ========================================================== */
+
+:root {
+  --radius-xl: 26px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --card-height-desktop: 260px;
+  --card-height-tablet: 240px;
+  --card-height-mobile: 220px;
+
+  --navy: #0b2a4a;
+  --navy-soft: #143b66;
+  --yellow: #f7b500;
+
+  --text-dark: #0f172a;
+  --text-muted: #6b7280;
+  --white: #ffffff;
+
+  --shadow-soft: 0 14px 34px rgba(15, 23, 42, 0.12);
+  --shadow-hover: 0 26px 60px rgba(15, 23, 42, 0.18);
 }
 
-.international-logo img {
-  height: 48px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.international-home {
-  font-weight: 500;
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background: #ffffff;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* =========================
-   HERO
-========================= */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HERO */
+
 .international-hero {
-  height: 60vh;
-  background: url("/assets/images/world-hero.webp") center/cover no-repeat;
   position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 85svh;
+  background-image: url("/assets/images/hero/internation-hero.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-overlay {
+.international-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
   text-align: center;
+  padding: 0 24px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.38),
+    rgba(0, 0, 0, 0.48)
+  );
 }
 
-/* =========================
-   INTRO
-========================= */
+
+.international-hero-overlay h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+}
+
+.international-hero-overlay p {
+  margin-top: 8px;   /* 🔥 THIS controls closeness */
+  margin-bottom: 0;
+  max-width: 760px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #e5e7eb;
+}
+
+
+/* INTRO */
+
 .international-intro {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 1100px;
+  margin: 72px auto;
+  padding: 0 24px;
   text-align: center;
-  padding: 0 20px;
 }
 
-/* =========================
-   GRID (BASIC)
-========================= */
-.international-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
-  padding: 40px;
+.international-intro p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
 }
 
-/* =========================
-   CTA
-========================= */
-.international-cta {
-  text-align: center;
-  padding: 60px 20px;
+/* DESTINATION GRID */
+
+.destination-section {
+  max-width: 1480px;
+  margin: 96px auto;
+  padding: 0 24px;
 }
 
-.cta-btn {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 14px 28px;
-  background: #0b5ed7;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-/* =========================
-   DESTINATION GRID (PREMIUM CARDS)
-========================= */
 .destination-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 22px;
-  margin-top: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
 }
 
 /* CARD */
+
 .destination-card {
-  position: relative;
-  height: 260px;
-  border-radius: 18px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-soft);
   transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
 
 .destination-card img {
   width: 100%;
-  height: 100%;
+  height: var(--card-height-desktop);
   object-fit: cover;
-  transition: transform 0.6s ease;
 }
 
-/* DARK GRADIENT OVERLAY */
-.destination-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.15),
-    transparent
-  );
+.card-overlay {
+  padding: 18px;
 }
 
-/* TEXT OVERLAY */
-.destination-overlay {
-  position: absolute;
-  bottom: 18px;
-  left: 18px;
-  right: 18px;
-  z-index: 2;
-  color: #fff;
+.card-overlay h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
 }
 
-.destination-overlay h3 {
-  font-size: 18px;
+.card-overlay p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.card-footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 4px;
 }
 
-.destination-overlay span {
-  font-size: 13px;
-  opacity: 0.9;
+.cta {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+  color: var(--white);
 }
 
-/* HOVER EFFECT */
-.destination-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-}
+/* TABLET */
 
-.destination-card:hover img {
-  transform: scale(1.08);
-}
+@media (max-width: 1024px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-  .international-header {
-    padding: 16px 20px;
+  .destination-card img {
+    height: var(--card-height-tablet);
   }
 
   .international-hero {
-    height: 45vh;
+    height: 75vh;
   }
 
+  .international-hero-overlay h1 {
+    font-size: 2.6rem;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-card img {
+    height: var(--card-height-mobile);
+  }
+
+  .international-hero {
+    height: 68vh;
+  }
+
+  .international-hero-overlay h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .international-hero-overlay p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
   .destination-card {
-    height: 220px;
-  }
-
-  .destination-overlay h3 {
-    font-size: 16px;
+    transition: none;
   }
 }

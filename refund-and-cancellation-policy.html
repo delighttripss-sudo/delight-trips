@@ -1,84 +1,86 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <!-- ===============================
+    <!-- ===============================
      ✅ CORE META (NON-NEGOTIABLE)
   ================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, follow">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
 
-
-  <!-- ===============================
+    <!-- ===============================
      ✅ SEO (PAGE-SPECIFIC)
      Change title + description per page
   ================================ -->
-  <title>Delight Trips</title>
-  <meta
-    name="description"
-    content="Delight Trips offers expertly curated domestic and international tour packages with personalized planning and trusted travel support."
-  />
+    <title>Delight Trips</title>
+    <meta
+      name="description"
+      content="Delight Trips offers expertly curated domestic and international tour packages with personalized planning and trusted travel support."
+    />
 
-  <!-- Canonical (SAFE, NO PERFORMANCE HIT) -->
-  <link rel="canonical" href="https://www.delighttrips.in/" />
+    <!-- Canonical (SAFE, NO PERFORMANCE HIT) -->
+    <link rel="canonical" href="https://www.delighttrips.in/" />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ GOOGLE ANALYTICS (GA4 – LIGHTHOUSE SAFE)
      Async + zero render blocking
   ================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5VESB5BY0', {
-      anonymize_ip: true,
-      page_path: window.location.pathname
-    });
-  </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-F5VESB5BY0", {
+        anonymize_ip: true,
+        page_path: window.location.pathname,
+      });
+    </script>
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ FONTS (OPTIMIZED – SAME FOR ALL PAGES)
   ================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ GLOBAL CORE CSS (CRITICAL PATH)
      These MUST remain render-blocking
   ================================ -->
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/global-pattern.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/utilities.css" />
-  <link rel="stylesheet" href="/styles/accessibility.css" />
-  <link rel="stylesheet" href="/styles/support.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/global-pattern.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/utilities.css" />
+    <link rel="stylesheet" href="/styles/accessibility.css" />
+    <link rel="stylesheet" href="/styles/support.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ COMPONENTS (SAFE TO LOAD NORMALLY)
   ================================ -->
-  <link rel="stylesheet" href="/styles/components/navbar.css" />
-  <link rel="stylesheet" href="/styles/components/footer.css" />
-  <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-  <link rel="stylesheet" href="/styles/components/buttons.css" />
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+    <link rel="stylesheet" href="/styles/components/buttons.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      ✅ PAGE-SPECIFIC CSS
      (Change per page ONLY)
   ================================ -->
-  <link rel="stylesheet" href="/styles/pages/home.css" />
-</head>
-
+    <link rel="stylesheet" href="/styles/pages/home.css" />
+  </head>
 
   <body>
-<div id="site-header"></div>
-<script type="module" src="/js/navigation.js"></script>
-
+    <div id="site-header"></div>
+    <script type="module" src="/js/navigation.js"></script>
 
     <main class="legal-content">
       <h1>Refund & Cancellation Policy</h1>
@@ -269,109 +271,104 @@
         });
     </script>
 
- <div id="footer-placeholder"></div>
-<footer class="footer">
-  <div class="footer-wrapper">
+    <footer class="footer">
+      <div class="footer-wrapper container">
+        <div class="footer-brand">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="Delight Trips Logo"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <p class="footer-description">
+            Delight Trips is a trusted travel company offering authentic
+            journeys, offbeat destinations, and curated travel experiences
+            across India and international destinations.
+          </p>
+        </div>
 
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <img
-        src="/assets/images/logo/logo.png"
-        alt="Delight Trips Logo"
-        class="footer-logo"
-        loading="lazy"
-      />
-      <p class="footer-description">
-        Delight Trips is a trusted travel company offering authentic journeys,
-        offbeat destinations, and carefully curated travel experiences across
-        India and international destinations with a focus on comfort,
-        sustainability, and reliability.
-      </p>
-    </div>
+        <nav class="footer-links" aria-label="Policy Links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            <li>
+              <a href="/refund-and-cancellation-policy.html">Refund Policy</a>
+            </li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
 
-    <!-- POLICIES -->
-    <div class="footer-links">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
-        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
-    </div>
+        <nav class="footer-links" aria-label="Tour Links">
+          <h4>Tours</h4>
+          <ul>
+            <li>
+              <a href="/tours/domestic.html">Incredible Indian Destinations</a>
+            </li>
+            <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+            <li>
+              <a href="/tours/international.html">International Destinations</a>
+            </li>
+            <li>
+              <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
+            </li>
+          </ul>
+        </nav>
 
-    <!-- TOURS -->
-    <div class="footer-links">
-      <h4>Tours</h4>
-      <ul>
-        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
-        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
-        <li><a href="/tours/international.html">International Destinations</a></li>
-        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
-      </ul>
-    </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/delight_tripss/"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/instagram.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/Delighttrips/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/facebook.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://wa.me/917045286023"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/whatsapp.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          © <span id="year"></span> Delight Trips. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
 
-    <!-- SOCIAL -->
-    <div class="footer-social">
-  <h4>Follow Us</h4>
-
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/delight_tripss/"
-      aria-label="Follow Delight Trips on Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/instagram.svg"
-        alt="Instagram"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/Delighttrips/"
-      aria-label="Follow Delight Trips on Facebook"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/facebook.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- WhatsApp -->
-    <a
-      href="https://wa.me/917045286023"
-      aria-label="Chat with Delight Trips on WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/whatsapp.svg"
-        alt="WhatsApp"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-  </div>
-</div>
-
-
-  <div class="footer-bottom">
-    © <span id="year"></span> Delight Trips. All Rights Reserved.
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

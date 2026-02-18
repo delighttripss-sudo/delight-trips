@@ -1,89 +1,178 @@
+/* ==========================================================
+   💎 MASTER DESIGN TOKENS — tokens.css (v3.0)
+   - Framework: Isomorphic Semantic Scaling (ISS)
+   - Architecture: Primitives -> Semantics
+   - Optimization: Zero-Jank, GPU-Ready, Brand-Aligned
+========================================================== */
+
 :root {
-  /* ===============================
-     ✅ Premium Color System
-  =============================== */
+  /* =========================================
+     1. BRAND PRIMITIVES (The Raw DNA)
+     Single source of truth for Hex codes.
+     ========================================= */
 
-  --light: #ffffff;
-  --dark: #0b0f1a;
+  /* Brand Core */
+  --brand-navy: #0b2a4a; /* Deep Trustworthy Navy */
+  --brand-yellow: #ffd400; /* Energetic Accent */
+  --brand-red: #ef4444; /* Alert / Sale */
 
-  /* Brand Primary (Professional Blue) */
-  --primary: #0b5ed7;
-  --primary-dark: #084298;
-  --primary-soft: rgba(11, 94, 215, 0.12);
+  /* Neutrals (OLED Safe Slate Scale) */
+  --neutral-white: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-600: #475569;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a; /* Almost Black */
 
-  /* Neutrals (Luxury UI Scale) */
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-400: #9ca3af;
-  --gray-600: #4b5563;
-  --gray-800: #1f2937;
+  /* Functional Colors */
+  --state-success: #10b981;
+  --state-error: #ef4444;
+  --state-info: #3b82f6;
 
-  /* Text Colors */
-  --text-main: var(--dark);
-  --text-muted: rgba(11, 15, 26, 0.65);
-  --text-light: rgba(255, 255, 255, 0.92);
+  /* =========================================
+     2. SEMANTIC ALIASES (Usage Layers)
+     This maps raw colors to UI roles.
+     ========================================= */
 
-  /* Backgrounds */
-  --bg-soft: var(--gray-50);
-  --bg-glass: rgba(255, 255, 255, 0.82);
+  /* Identity Mapping */
+  --logo-blue: var(--brand-navy);
+  --logo-yellow: var(--brand-yellow);
+  --accent-red: var(--brand-red);
 
-  /* ===============================
-     ✅ Spacing System (Consistent)
-  =============================== */
+  /* UI Surfaces */
+  --bg-page: var(--neutral-white);
+  --bg-surface: var(--neutral-50);
+  --bg-surface-hover: var(--neutral-100);
+  --border-light: var(--neutral-200);
 
-  --sp-1: 4px;
-  --sp-2: 8px;
-  --sp-3: 12px;
-  --sp-4: 16px;
-  --sp-5: 20px;
-  --sp-6: 24px;
-  --sp-8: 32px;
-  --sp-10: 40px;
-  --sp-12: 48px;
+  /* Text Hierarchy (Contrast Compliant) */
+  --text-main: var(--neutral-900); /* Headings */
+  --text-body: #64748b; /* Readable Paragraph Gray */
+  --text-muted: var(--neutral-400); /* Meta data */
+  --text-inverse: var(--neutral-white);
 
-  /* ===============================
-     ✅ Radius (Modern Rounded UI)
-  =============================== */
+  /* Special Background Tints */
+  --tint-ocean: #f0f9ff;
+  --tint-warm: #fffbeb;
+  --tint-mint: #f0fdf4;
+
+  /* =========================================
+     3. TYPOGRAPHY ENGINE (Performance Optimized)
+     Matches your HTML <link> tags perfectly.
+     ========================================= */
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Poppins", system-ui, -apple-system, sans-serif;
+
+  /* Fluid Scale (Mobile -> Desktop) */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 0.95rem);
+  --text-base: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+
+  /* Display Scale */
+  --text-xl: clamp(1.5rem, 4vw, 2.25rem);
+  --text-2xl: clamp(2rem, 5vw, 3rem);
+  --text-hero: clamp(2.5rem, 8vw, 4.5rem);
+
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+
+  /* =========================================
+     4. SPACING & LAYOUT (Isomorphic)
+     Mathematical balance for visual rhythm.
+     ========================================= */
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* Safe Area Containers */
+  --container-width: 1200px;
+  --header-height: clamp(70px, 8vh, 90px);
+  --section-pad: clamp(4rem, 8vw, 7rem);
+
+  /* =========================================
+     5. DEPTH & GLASSMORPHISM (World Class UI)
+     Layered shadows for premium feel.
+     ========================================= */
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md:
+    0 10px 15px -3px rgba(15, 23, 42, 0.08),
+    0 4px 6px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+  --shadow-float: 0 20px 40px rgba(11, 42, 74, 0.12);
+
+  /* Glass Effects (Backdrop Filters) */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: blur(12px) saturate(180%);
+
+  /* =========================================
+     6. BORDER RADIUS (The Smooth Factor)
+     ========================================= */
 
   --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-xl: 32px;
+  --radius-md: 14px; /* Standard UI elements */
+  --radius-lg: 24px; /* Cards */
+  --radius-xl: 32px; /* Hero / Large sections */
+  --radius-full: 9999px;
 
-  /* ===============================
-     ✅ Shadows (High-End Look)
-  =============================== */
+  /* =========================================
+     7. ANIMATION & TIMING (GPU Optimized)
+     Spring physics for natural interaction.
+     ========================================= */
 
-  --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.08);
-  --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.14);
-  --shadow-lg: 0 25px 80px rgba(15, 23, 42, 0.2);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 200ms;
+  --dur-normal: 400ms;
+  --dur-slow: 800ms;
 
-  /* ===============================
-   ✅ Typography Tokens
-=============================== */
+  /* =========================================
+     8. Z-INDEX LAYERS (Stacking Context Map)
+     Prevents "z-index: 99999" wars.
+     ========================================= */
 
-  --font-main: "Google Sans", "Inter", system-ui, sans-serif;
-  --font-size-sm: 0.9rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 2.2rem;
-  --font-size-hero: clamp(2.2rem, 5vw, 4rem);
+  --z-negative: -1;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-toast: 2000;
+}
 
-  --line-height: 1.6;
+/* =========================================
+   9. PREFERENCES & MODES
+   ========================================= */
 
-  /* ===============================
-     ✅ Motion (Smooth Premium Feel)
-  =============================== */
+/* Dark Mode (Prepared but opt-in to prevent breaking light-only designs) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* NOTE: We are NOT automatically overriding colors here yet 
+       because the Home Design is strictly Light Mode (White/Blue).
+       Use specific classes like .dark-mode to activate these in future.
+    */
+    --bg-page-dark: var(--neutral-900);
+    --text-main-dark: var(--neutral-50);
+  }
+}
 
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-fast: 180ms;
-  --dur-med: 350ms;
-  --dur-slow: 600ms;
-
-  /* ===============================
-     ✅ UI Constants (Hero/Navbar)
-  =============================== */
-
-  --navbar-height: 125px; /* matches your current navbar */
+/* Reduced Motion (Accessibility Mandatory) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-normal: 0ms;
+    --dur-slow: 0ms;
+  }
 }

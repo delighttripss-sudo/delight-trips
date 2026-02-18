@@ -1,0 +1,66 @@
+<!-- UNIVERSAL PACKAGE ENQUIRY | DELIGHT TRIPS -->
+<section class="package-overlay">
+  <div class="package-container">
+    <!-- LEFT : IMAGE + CONTENT -->
+    <div class="package-image">
+      <div class="package-brand">
+        <img src="/assets/images/logo/logo.png" alt="Delight Trips" />
+
+        <h1>Your Perfect Holiday, Tailor-Made</h1>
+
+        <p>
+          Discover customised travel packages with Delight Trips. Handcrafted
+          itineraries, best-price guarantees, trusted hotels, seamless
+          transfers, and expert destination support.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT : FORM -->
+    <div class="package-form-wrapper">
+      <h2>Get a Custom Travel Package</h2>
+      <p class="package-subtitle">
+        Share your travel preferences and receive the best package curated by
+        our destination experts.
+      </p>
+
+      <form id="packageForm">
+        <input type="text" id="name" placeholder="Full Name*" required />
+        <input type="email" id="email" placeholder="Email Address*" />
+        <input type="tel" id="phone" placeholder="Mobile Number*" required />
+
+        <div class="form-row">
+          <input
+            type="text"
+            id="destination"
+            placeholder="Destination*"
+            required
+          />
+          <input type="date" id="travelDate" />
+        </div>
+
+        <div class="form-row">
+          <select id="travelType">
+            <option value="">Travel Type</option>
+            <option value="Honeymoon">Honeymoon</option>
+            <option value="Family">Family</option>
+            <option value="Adventure">Adventure</option>
+          </select>
+          <select id="travellers">
+            <option value="">No. of Travellers</option>
+            <option value="1-2">1-2</option>
+            <option value="3-5">3-5</option>
+            <option value="6+">6+</option>
+          </select>
+        </div>
+
+        <textarea
+          id="message"
+          placeholder="Tell us your budget, hotel preference, etc."
+        ></textarea>
+
+        <button type="submit">Get a Quote</button>
+      </form>
+    </div>
+  </div>
+</section>

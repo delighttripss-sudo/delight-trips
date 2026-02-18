@@ -1,152 +1,238 @@
-/* =========================
-   HEADER
-========================= */
-.honeymoon-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
+/* ==========================================================
+   HONEYMOON TOURS PAGE — PRODUCTION CSS
+   ========================================================== */
+
+:root {
+  --radius-xl: 26px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --card-height-desktop: 260px;
+  --card-height-tablet: 240px;
+  --card-height-mobile: 220px;
+
+  --navy: #0b2a4a;
+  --navy-soft: #143b66;
+  --rose: #c0265c;
+
+  --text-dark: #0f172a;
+  --text-muted: #6b7280;
+  --white: #ffffff;
+
+  --shadow-soft: 0 14px 34px rgba(15, 23, 42, 0.12);
+  --shadow-hover: 0 26px 60px rgba(15, 23, 42, 0.18);
 }
 
-.honeymoon-logo img {
-  height: 48px;
+/* RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* =========================
-   HERO
-========================= */
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background: #ffffff;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HERO */
+
 .honeymoon-hero {
-  height: 60vh;
-  background: url("/assets/images/honeymoon-hero.webp") center / cover no-repeat;
   position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 85svh;
+  background-image: url("/assets/images/hero/honeymoon-hero.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-overlay {
+.honeymoon-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
   text-align: center;
-}
-
-/* =========================
-   INTRO
-========================= */
-.honeymoon-intro {
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
-  padding: 0 20px;
-}
-
-/* =========================
-   GRID
-========================= */
-.destination-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-  padding: 40px;
-}
-
-/* =========================
-   CARD (SINGLE SOURCE)
-========================= */
-.destination-card {
-  position: relative;
-  height: 260px;
-  border-radius: 18px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-.destination-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.destination-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+  padding: 0 24px;
   background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.15),
-    transparent
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.55)
   );
 }
 
-.destination-overlay {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  color: #fff;
-  z-index: 2;
+.honeymoon-hero-overlay h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--white);
+  margin: 0;
 }
 
-.destination-overlay h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 4px;
+.honeymoon-hero-overlay p {
+  margin-top: 6px; /* closer, romantic, premium */
+  margin-bottom: 0;
+  max-width: 760px;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: #fce7f3;
 }
 
-.destination-overlay span {
-  font-size: 13px;
-  opacity: 0.9;
+/* INTRO */
+
+.honeymoon-intro {
+  max-width: 1100px;
+  margin: 72px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.honeymoon-intro p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* DESTINATION GRID */
+
+.destination-section {
+  max-width: 1480px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+
+.destination-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .destination-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-hover);
 }
 
-.destination-card:hover img {
-  transform: scale(1.08);
+.destination-card img {
+  width: 100%;
+  height: var(--card-height-desktop);
+  object-fit: cover;
 }
 
-/* =========================
-   CTA
-========================= */
-.honeymoon-cta {
-  text-align: center;
-  padding: 60px 20px;
+.card-overlay {
+  padding: 18px;
 }
 
-.cta-btn {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 14px 28px;
-  background: #e91e63;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
+.card-overlay h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .honeymoon-header {
-    padding: 16px 20px;
+.card-overlay p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.card-footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cta {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--rose), #db2777);
+  color: var(--white);
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destination-card img {
+    height: var(--card-height-tablet);
   }
 
   .honeymoon-hero {
-    height: 45vh;
+    height: 75vh;
   }
 
+  .honeymoon-hero-overlay h1 {
+    font-size: 2.6rem;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-card img {
+    height: var(--card-height-mobile);
+  }
+
+  .honeymoon-hero {
+    height: 68vh;
+  }
+
+  .honeymoon-hero-overlay h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .honeymoon-hero-overlay p {
+    margin-top: 5px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
   .destination-card {
-    height: 220px;
+    transition: none;
   }
 }

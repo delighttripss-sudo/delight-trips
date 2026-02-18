@@ -1,401 +1,580 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <!-- ===============================
+  <head>
+    <!-- ===============================
      CORE META
   ================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- ===============================
+    <!-- ===============================
      SEO (INTERNATIONAL TOURS)
   ================================ -->
-  <title>International Tour Packages | Dubai, Maldives, Europe & More – Delight Trips</title>
-  <meta
-    name="description"
-    content="Discover international tour packages to Dubai, Maldives, Thailand, Bali, Europe, Singapore and more. Enjoy customized itineraries and expert travel planning with Delight Trips."
-  />
-<!-- ===============================
+    <title>
+      International Tour Packages | Dubai, Maldives, Europe & More – Delight
+      Trips
+    </title>
+    <meta
+      name="description"
+      content="Discover international tour packages to Dubai, Maldives, Thailand, Bali, Europe, Singapore and more. Enjoy customized itineraries and expert travel planning with Delight Trips."
+    />
+    <!-- ===============================
      FAVICON & APP ICONS
 ================================ -->
-<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
 
-<!-- Standard Browser Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+    <!-- Standard Browser Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    />
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
 
-<!-- Android / PWA Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
+    <!-- Android / PWA Icons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon/android-chrome-512x512.png"
+    />
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.delighttrips.in/international.html" />
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      href="https://www.delighttrips.in/international.html"
+    />
 
-  <!-- ===============================
+    <!-- ===============================
      GOOGLE ANALYTICS (GA4 – ASYNC)
   ================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5VESB5BY0', {
-      anonymize_ip: true,
-      page_path: window.location.pathname
-    });
-  </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-F5VESB5BY0", {
+        anonymize_ip: true,
+        page_path: window.location.pathname,
+      });
+    </script>
 
-  <!-- ===============================
+    <!-- ===============================
      FONTS (GLOBAL – SAME EVERYWHERE)
   ================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- ===============================
+    <!-- ===============================
      GLOBAL CORE CSS
   ================================ -->
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/utilities.css" />
-  <link rel="stylesheet" href="/styles/accessibility.css" />
-  <link rel="stylesheet" href="/styles/support.css" />
-  <link rel="stylesheet" href="/styles/global-pattern.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/utilities.css" />
+    <link rel="stylesheet" href="/styles/accessibility.css" />
+    <link rel="stylesheet" href="/styles/support.css" />
+    <link rel="stylesheet" href="/styles/global-pattern.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      COMPONENT STYLES
   ================================ -->
-  <link rel="stylesheet" href="/styles/components/navbar.css" />
-  <link rel="stylesheet" href="/styles/components/footer.css" />
-  <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-  <link rel="stylesheet" href="/styles/components/buttons.css" />
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+    <link rel="stylesheet" href="/styles/components/buttons.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      PAGE-SPECIFIC CSS
   ================================ -->
-  <link rel="stylesheet" href="/styles/pages/international.css" />
-</head>
+    <link rel="stylesheet" href="/styles/pages/international.css" />
+  </head>
 
   <body>
     <div id="site-header"></div>
-<script type="module" src="/js/navigation.js"></script>
+    <script type="module" src="/js/navigation.js"></script>
 
-    <!-- HERO -->
+    <!-- ===============================
+     HERO
+================================ -->
     <section class="international-hero">
-  <div class="hero-overlay">
-    <h1>Luxury International Journeys Designed to Inspire</h1>
-    <p>Elite Destinations · Personalized Travel · Timeless Experiences</p>
-  </div>
-</section>
+      <div class="international-hero-overlay">
+        <h1>International Tour Packages</h1>
+        <p>
+          Luxury Journeys · Iconic Destinations · Personalized Global
+          Experiences
+        </p>
+      </div>
+    </section>
 
-    <!-- INTRO -->
+    <!-- ===============================
+     INTRO (SEO OPTIMIZED)
+================================ -->
     <section class="international-intro">
       <p>
-        Travel beyond borders with Delight Trips. Our international tour
-        packages cover iconic cities, cultural landmarks, scenic landscapes and
-        unforgettable global experiences — thoughtfully curated for comfort and
-        discovery.
+        Delight Trips offers expertly curated
+        <strong>international tour packages</strong>
+        from India to the world’s most sought-after destinations. Travel across
+        Asia, Europe, America, Australia, and island paradises with thoughtfully
+        designed itineraries covering culture, luxury, adventure, romance, and
+        scenic landscapes. Our global travel packages are ideal for families,
+        honeymooners, corporate travelers, and explorers seeking seamless
+        international holidays.
       </p>
     </section>
 
-    <!-- DESTINATION GRID -->
-    <section class="destination-grid">
-      <a href="/destinations/international/dubai.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/dubai.webp"
-    loading="lazy"
-    alt="Dubai Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Dubai</h3>
-    <span>Luxury · Shopping · Skyline</span>
-  </div>
-</a>
+    <!-- ===============================
+     DESTINATION GRID
+================================ -->
+    <section class="destination-section">
+      <div class="destination-grid">
+        <!-- DUBAI -->
+        <article class="destination-card">
+          <a href="/destinations/international/dubai.html">
+            <img
+              src="/assets/images/tours/international/dubai.webp"
+              alt="Dubai Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Dubai</h3>
+              <p>Luxury · Shopping · Skyline</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹29,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/thailand.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/thailand.webp"
-    loading="lazy"
-    alt="Thailand Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Thailand</h3>
-    <span>Beaches · Night Markets · Islands</span>
-  </div>
-</a>
+        <!-- THAILAND -->
+        <article class="destination-card">
+          <a href="/destinations/international/thailand.html">
+            <img
+              src="/assets/images/tours/international/thailand.webp"
+              alt="Thailand Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Thailand</h3>
+              <p>Beaches · Night Markets · Islands</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹34,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/vietnam.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/vietnam.webp"
-    loading="lazy"
-    alt="Vietnam Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Vietnam</h3>
-    <span>Culture · Landscapes · Food Trails</span>
-  </div>
-</a>
+        <!-- VIETNAM -->
+        <article class="destination-card">
+          <a href="/destinations/international/vietnam.html">
+            <img
+              src="/assets/images/tours/international/vietnam.webp"
+              alt="Vietnam Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Vietnam</h3>
+              <p>Culture · Landscapes · Food Trails</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹42,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/bali.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/bali.webp"
-    loading="lazy"
-    alt="Bali Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Bali</h3>
-    <span>Resorts · Temples · Serenity</span>
-  </div>
-</a>
+        <!-- BALI -->
+        <article class="destination-card">
+          <a href="/destinations/international/bali.html">
+            <img
+              src="/assets/images/tours/international/bali.webp"
+              alt="Bali Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Bali</h3>
+              <p>Resorts · Temples · Serenity</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹39,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/singapore.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/singapore.webp"
-    loading="lazy"
-    alt="Singapore Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Singapore</h3>
-    <span>City Lights · Luxury · Attractions</span>
-  </div>
-</a>
+        <!-- SINGAPORE -->
+        <article class="destination-card">
+          <a href="/destinations/international/singapore.html">
+            <img
+              src="/assets/images/tours/international/singapore.webp"
+              alt="Singapore Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Singapore</h3>
+              <p>City Lights · Luxury · Attractions</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹49,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/malaysia.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/malaysia.webp"
-    loading="lazy"
-    alt="Malaysia Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Malaysia</h3>
-    <span>Nature · Culture · City Escapes</span>
-  </div>
-</a>
+        <!-- MALAYSIA -->
+        <article class="destination-card">
+          <a href="/destinations/international/malaysia.html">
+            <img
+              src="/assets/images/tours/international/malaysia.webp"
+              alt="Malaysia Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Malaysia</h3>
+              <p>Nature · Culture · City Escapes</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹36,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/japan.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/japan.webp"
-    loading="lazy"
-    alt="Japan Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Japan</h3>
-    <span>Tradition · Technology · Cherry Blossoms</span>
-  </div>
-</a>
+        <!-- JAPAN -->
+        <article class="destination-card">
+          <a href="/destinations/international/japan.html">
+            <img
+              src="/assets/images/tours/international/japan.webp"
+              alt="Japan Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Japan</h3>
+              <p>Tradition · Technology · Cherry Blossoms</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹1,29,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/turkey.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/turkey.webp"
-    loading="lazy"
-    alt="Turkey Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Turkey</h3>
-    <span>History · Mosques · Cappadocia</span>
-  </div>
-</a>
+        <!-- TURKEY -->
+        <article class="destination-card">
+          <a href="/destinations/international/turkey.html">
+            <img
+              src="/assets/images/tours/international/turkey.webp"
+              alt="Turkey Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Turkey</h3>
+              <p>History · Mosques · Cappadocia</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹74,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/nepal.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/nepal.webp"
-    loading="lazy"
-    alt="Nepal Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Nepal</h3>
-    <span>Himalayas · Temples · Adventure</span>
-  </div>
-</a>
+        <!-- NEPAL -->
+        <article class="destination-card">
+          <a href="/destinations/international/nepal.html">
+            <img
+              src="/assets/images/tours/international/nepal.webp"
+              alt="Nepal Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Nepal</h3>
+              <p>Himalayas · Temples · Adventure</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹24,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/bhutan.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/bhutan.webp"
-    loading="lazy"
-    alt="Bhutan Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Bhutan</h3>
-    <span>Monasteries · Peace · Mountains</span>
-  </div>
-</a>
+        <!-- BHUTAN -->
+        <article class="destination-card">
+          <a href="/destinations/international/bhutan.html">
+            <img
+              src="/assets/images/tours/international/bhutan.webp"
+              alt="Bhutan Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Bhutan</h3>
+              <p>Monasteries · Peace · Mountains</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹39,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/europe.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/europe.webp"
-    loading="lazy"
-    alt="Europe Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Europe</h3>
-    <span>Romance · Cities · Iconic Culture</span>
-  </div>
-</a>
+        <!-- EUROPE -->
+        <article class="destination-card">
+          <a href="/destinations/international/europe.html">
+            <img
+              src="/assets/images/tours/international/europe.webp"
+              alt="Europe Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Europe</h3>
+              <p>Romance · Cities · Iconic Culture</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹1,49,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/usa.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/usa.webp"
-    loading="lazy"
-    alt="USA Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>USA</h3>
-    <span>New York · Vegas · Road Trips</span>
-  </div>
-</a>
+        <!-- USA -->
+        <article class="destination-card">
+          <a href="/destinations/international/usa.html">
+            <img
+              src="/assets/images/tours/international/usa.webp"
+              alt="USA Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>USA</h3>
+              <p>New York · Vegas · Road Trips</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹1,79,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/new-zealand.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/new-zealand.webp"
-    loading="lazy"
-    alt="New Zealand Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>New Zealand</h3>
-    <span>Lakes · Mountains · Nature Wonders</span>
-  </div>
-</a>
+        <!-- NEW ZEALAND -->
+        <article class="destination-card">
+          <a href="/destinations/international/new-zealand.html">
+            <img
+              src="/assets/images/tours/international/new-zealand.webp"
+              alt="New Zealand Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>New Zealand</h3>
+              <p>Lakes · Mountains · Nature Wonders</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹2,19,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/australia.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/australia.webp"
-    loading="lazy"
-    alt="Australia Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Australia</h3>
-    <span>Beaches · Wildlife · Cities</span>
-  </div>
-</a>
+        <!-- AUSTRALIA -->
+        <article class="destination-card">
+          <a href="/destinations/international/australia.html">
+            <img
+              src="/assets/images/tours/international/australia.webp"
+              alt="Australia Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Australia</h3>
+              <p>Beaches · Wildlife · Cities</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹1,99,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/international/sri-lanka.html" class="destination-card">
-  <img
-    src="/assets/images/tours/international/sri-lanka.webp"
-    loading="lazy"
-    alt="Sri Lanka Tour Package"
-  />
-  <div class="destination-overlay">
-    <h3>Sri Lanka</h3>
-    <span>Tea Hills · Temples · Coastline</span>
-  </div>
-</a>
-
+        <!-- SRI LANKA -->
+        <article class="destination-card">
+          <a href="/destinations/international/sri-lanka.html">
+            <img
+              src="/assets/images/tours/international/sri-lanka.webp"
+              alt="Sri Lanka Tour Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Sri Lanka</h3>
+              <p>Tea Hills · Temples · Coastline</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹28,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
     </section>
-
-   <div id="footer-placeholder"></div>
 
     <footer class="footer">
-  <div class="footer-wrapper">
+      <div class="footer-wrapper container">
+        <div class="footer-brand">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="Delight Trips Logo"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <p class="footer-description">
+            Delight Trips is a trusted travel company offering authentic
+            journeys, offbeat destinations, and curated travel experiences
+            across India and international destinations.
+          </p>
+        </div>
 
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <img
-        src="/assets/images/logo/logo.png"
-        alt="Delight Trips Logo"
-        class="footer-logo"
-        loading="lazy"
-      />
-      <p class="footer-description">
-        Delight Trips is a trusted travel company offering authentic journeys,
-        offbeat destinations, and carefully curated travel experiences across
-        India and international destinations with a focus on comfort,
-        sustainability, and reliability.
-      </p>
-    </div>
+        <nav class="footer-links" aria-label="Policy Links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            <li>
+              <a href="/refund-and-cancellation-policy.html">Refund Policy</a>
+            </li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
 
-    <!-- POLICIES -->
-    <div class="footer-links">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
-        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-    </div>
+        <nav class="footer-links" aria-label="Tour Links">
+          <h4>Tours</h4>
+          <ul>
+            <li>
+              <a href="/tours/domestic.html">Incredible Indian Destinations</a>
+            </li>
+            <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+            <li>
+              <a href="/tours/international.html">International Destinations</a>
+            </li>
+            <li>
+              <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
+            </li>
+          </ul>
+        </nav>
 
-    <!-- TOURS -->
-    <div class="footer-links">
-      <h4>Tours</h4>
-      <ul>
-        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
-        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
-        <li><a href="/tours/international.html">International Destinations</a></li>
-        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
-      </ul>
-    </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/delight_tripss/"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/instagram.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/Delighttrips/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/facebook.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://wa.me/917045286023"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/whatsapp.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          © <span id="year"></span> Delight Trips. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
 
-    <!-- SOCIAL -->
-    <div class="footer-social">
-  <h4>Follow Us</h4>
-
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/delight_tripss/"
-      aria-label="Follow Delight Trips on Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/instagram.svg"
-        alt="Instagram"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/Delighttrips/"
-      aria-label="Follow Delight Trips on Facebook"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/facebook.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- WhatsApp -->
-    <a
-      href="https://wa.me/917045286023"
-      aria-label="Chat with Delight Trips on WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/whatsapp.svg"
-        alt="WhatsApp"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-  </div>
-</div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Delight Trips. All Rights Reserved.
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
- </body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

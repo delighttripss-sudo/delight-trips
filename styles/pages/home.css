@@ -1,1520 +1,1369 @@
-/* Remove default white gap */
+/* =========================================
+   1. ROOT & GLOBAL SETTINGS
+   ========================================= */
+:root {
+  --logo-blue: #0b2a4a;
+  --logo-yellow: #ffd400;
+  --accent-red: #ef4444;
+  --text-gray: #64748b;
+  --bg-off-white: #f8f9fa;
+
+  /* Spacing System */
+  --section-padding: 90px;
+  --container-width: 1200px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px;
+  }
+}
+
+html,
 body {
-  margin: 0;
-  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scroll jank */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ================================
-   ✅ HERO SECTION FIX (WORLD CLASS)
-================================ */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
 
-.hero-section {
+/* ==========================================================
+   HERO SECTION — PERFORMANCE & CONVERSION OPTIMIZED (BRIGHT & WHITE)
+   ========================================================== */
+
+.hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
+  min-height: 600px;
   overflow: hidden;
+  /* Lightened base blue to keep the vibe energetic */
+  background-color: #1a4f8a;
+  isolation: isolate;
 }
 
-/* ✅ Background Wrapper (Stops duplication) */
-.hero-bg {
+/* 1. The Poster Image (Immediate Visibility) */
+.hero-poster {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   z-index: 1;
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
 }
 
-/* ✅ Video Styling */
-.hero-video {
+/* 2. The Video Layer */
+.hero-bg-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ✅ Fallback Image (Hidden after video loads) */
-.hero-fallback {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+.hero-video.is-video-loaded .hero-bg-video {
+  opacity: 1;
+  z-index: 2;
 }
 
-/* ✅ Overlay Content */
+.hero-video.is-video-loaded .hero-poster {
+  /* Higher opacity for the fallback image keeps the background "filled" with color */
+  opacity: 0.4;
+}
+
+/* 3. The Cinematic Overlay (High Transparency for Brightness) */
 .hero-overlay {
-  position: relative;
-  z-index: 5;
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.05) 0%,
+      /* Slight light leak in center */ rgba(11, 42, 74, 0.3) 100%
+        /* Softened dark edges */
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(11, 42, 74, 0.4) 100% /* Lifted the bottom shadow */
+    );
+  z-index: 3;
+}
 
+/* 4. Content Architecture */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-  padding: 20px;
-
-  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 1s cubic-bezier(0.2, 1, 0.3, 1) forwards 0.3s;
 }
 
-.hero-title-main {
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
+.hero-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+/* MAIN HEADING - UPDATED FOR MAXIMUM BRIGHTNESS */
+.hero-content h1 {
+  color: #ffffff !important; /* Forces pure white */
+  font-size: clamp(2.5rem, 8vw, 4.8rem);
   font-weight: 800;
-  color: #fff;
-  line-height: 1.15;
-  margin-bottom: 14px;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  /* Reduced shadow size to prevent the heading from looking "dirty" */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.hero-overlay p {
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  color: rgba(255, 255, 255, 0.92);
-  max-width: 680px;
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 700px;
   line-height: 1.6;
-  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 1); /* Full opacity white */
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hero-cta-btn {
-  padding: 14px 38px;
-  border-radius: 60px;
-  background: #fff;
-  color: #000;
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none;
-
-  transition: transform 0.25s ease;
-}
-
-.hero-cta-btn:hover {
-  transform: translateY(-4px);
-}
-
-/* ================================
-   ✅ MOBILE FIX (Critical)
-================================ */
-
-@media (max-width: 991px) {
-  .hero-section {
-    height: 90vh;
-  }
-
-  .hero-video {
-    min-height: 100%;
-  }
-}
-
-/* ✅ Extra Safety for Very Small Screens */
-@media (max-width: 600px) {
-  .hero-section {
-    height: 85vh;
-  }
-
-  .hero-overlay {
-    padding: 15px;
-  }
-}
-
-/* ============================================================
-   🌍 TRENDING TOURS — ELITE LANDING PAGE SECTION
-   World-Class Container • Premium Cards • Lighthouse-Safe
-============================================================ */
-
-/* ------------------------------
-   SECTION CONTAINER (WORLD CLASS)
-------------------------------- */
-
-.trending-tours {
-  position: relative;
-  background: #ffffff;
-
-  /* Vertical rhythm */
-  padding: clamp(70px, 8vw, 100px) 0;
-
-  /* Performance */
-  content-visibility: auto;
-  contain-intrinsic-size: 800px;
-}
-
-/* Inner container (premium alignment) */
-.trending-tours .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 28px);
-}
-
-/* ------------------------------
-   SECTION HEADER
-------------------------------- */
-
-.trending-tours .section-title {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 14px;
-  color: #0f172a;
-  letter-spacing: -0.5px;
-}
-
-.trending-tours .section-subtitle {
-  text-align: center;
-  font-size: 15px;
-  color: #64748b;
-  max-width: 620px;
-  margin: 0 auto 55px;
-  line-height: 1.6;
-}
-
-/* ------------------------------
-   CAROUSEL WRAPPER
-------------------------------- */
-
-.trending-tours .tour-carousel-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: visible; /* arrows + swipe */
-}
-
-/* ------------------------------
-   CAROUSEL TRACK
-------------------------------- */
-
-.trending-tours .tour-carousel {
-  display: flex;
-  gap: 20px;
-
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-
-  padding-bottom: 6px;
-
-  /* UX polish */
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Hide scrollbar (safe) */
-.trending-tours .tour-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* ============================================================
-   PREMIUM SQUARE CARD — WORLD CLASS
-============================================================ */
-
-.trending-tours .tour-card.premium-card {
-  flex: 0 0 auto;
-
-  width: 280px;
-  height: 280px;
-
-  border-radius: 8px;
-  overflow: hidden;
-
-  position: relative;
-  background: #000;
-  cursor: pointer;
-
-  scroll-snap-align: start;
-
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease;
-  will-change: transform;
-}
-
-/* Lift on hover */
-.trending-tours .tour-card.premium-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.25);
-}
-
-/* ------------------------------
-   CARD IMAGE
-------------------------------- */
-
-.trending-tours .tour-card.premium-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-
-  transition: transform 0.55s ease;
-}
-
-.trending-tours .tour-card.premium-card:hover img {
-  transform: scale(1.1);
-}
-
-/* ============================================================
-   TOP-ALIGNED PREMIUM OVERLAY
-============================================================ */
-
-.trending-tours .premium-overlay {
-  position: absolute;
-  inset: 0;
-
+/* 5. CTA & Trust Indicators */
+.hero-actions {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  text-align: center;
-
-  padding: 26px 20px;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.35) 35%,
-    transparent 70%
-  );
+  gap: 1.5rem;
 }
 
-/* Destination Name */
-.trending-tours .premium-overlay h3 {
-  margin: 0;
-  font-size: 18px;
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 48px;
+  background-color: #ffcc00;
+  color: #0b2a4a;
+  text-decoration: none;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #ffffff;
-  line-height: 1.25;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 40px rgba(255, 204, 0, 0.4);
 }
 
-/* Price / Tag */
-.trending-tours .premium-overlay p {
-  margin-top: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+.hero-cta svg {
+  width: 20px;
+  transition: transform 0.3s ease;
+}
 
-  color: #ffffff;
-  background: rgba(255, 60, 60, 0.88);
-  padding: 5px 14px;
-  border-radius: 100px;
+.hero-cta:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(255, 204, 0, 0.5);
+}
+
+.hero-cta:hover svg {
+  transform: translateX(5px);
+}
+
+.hero-trust-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff; /* Brighter trust text */
+}
+
+.trust-icons {
+  color: #ffcc00;
+  letter-spacing: 2px;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Strategic Layout */
+@media (max-width: 768px) {
+  .hero-content {
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+  .hero-badge {
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================================
+   TRENDING TOURS — WORLD-CLASS PERFORMANCE EDITION
+   ========================================================== */
+
+.trending-tours {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+  background-color: #f8fbff;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 40%),
+    radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.05) 0px, transparent 40%);
+}
+
+.carousel-header {
+  max-width: var(--container-width);
+  margin: 0 auto 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.category-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--logo-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
   display: inline-block;
 }
 
-/* ============================================================
-   ARROW CONTROLS (DESKTOP)
-============================================================ */
+.category-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--logo-yellow);
+}
 
-.trending-tours .carousel-btn {
+/* Section Head Styling */
+.section-head.screenshot-style {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: #0b2a4a;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.section-line {
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #e63946;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/* Carousel Architecture */
+.tour-carousel-wrapper {
+  position: relative;
+  margin-bottom: 5rem;
+  padding: 0 10px;
+}
+
+.tour-carousel {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 25px 25px 60px 25px;
+  margin: 0 -25px -40px -25px;
+  scrollbar-width: none;
+  /* Hardware Acceleration */
+  transform: translate3d(0, 0, 0);
+}
+
+.tour-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* The Destination Card */
+.destination-card {
+  flex: 0 0 auto;
+  width: 380px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  box-shadow: 0 15px 35px rgba(11, 42, 74, 0.06);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(11, 42, 74, 0.03);
+}
+
+.destination-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 40px 80px rgba(11, 42, 74, 0.12);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.destination-card:hover .card-img-wrapper img {
+  transform: scale(1.1);
+}
+
+/* Glassmorphism Tags */
+.card-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 204, 0, 0.9);
+  backdrop-filter: blur(5px);
+  color: #0b2a4a;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-tag.pulse {
+  animation: tagPulse 2s infinite;
+}
+
+@keyframes tagPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 204, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+  }
+}
+
+/* Card Typography */
+.card-content {
+  padding: 25px;
+}
+
+.card-content h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0b2a4a;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.price {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.price strong {
+  font-size: 1.25rem;
+  color: #0b2a4a;
+  display: block;
+  margin-top: 2px;
+}
+
+.cta {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0b2a4a;
+  border-bottom: 3px solid #ffcc00;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.destination-card:hover .cta {
+  color: #e63946;
+  border-color: #e63946;
+}
+
+/* Premium Navigation Buttons */
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
-  width: 46px;
-  height: 46px;
-
-  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
   border: none;
-
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
-
-  font-size: 20px;
-  font-weight: bold;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   cursor: pointer;
-
-  z-index: 10;
-
-  transition: all 0.25s ease;
+  z-index: 20;
+  font-size: 1.4rem;
+  color: #0b2a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.trending-tours .carousel-btn:hover {
-  background: #111827;
+.carousel-btn:hover {
+  background: #0b2a4a;
   color: #ffffff;
   transform: translateY(-50%) scale(1.1);
 }
 
-.trending-tours .carousel-btn.left {
-  left: -14px;
+.carousel-btn.left {
+  left: -28px;
+}
+.carousel-btn.right {
+  right: -28px;
 }
 
-.trending-tours .carousel-btn.right {
-  right: -14px;
-}
-
-/* ============================================================
-   RESPONSIVE REFINEMENTS
-============================================================ */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .trending-tours .tour-card.premium-card {
-    width: 210px;
-    height: 210px;
+/* Mobile Optimization */
+@media (max-width: 1100px) {
+  .carousel-btn {
+    display: none;
+  }
+  .tour-carousel-wrapper {
+    padding: 0;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
+  .destination-card {
+    width: 310px;
+  }
+  .card-img-wrapper {
+    height: 210px;
+  }
   .trending-tours {
     padding: 60px 0;
   }
-
-  .trending-tours .tour-card.premium-card {
-    width: 290px;
-    height: 290px;
-  }
-
-  .trending-tours .carousel-btn {
-    display: none; /* swipe only */
-  }
-
-  .trending-tours .premium-overlay h3 {
-    font-size: 25px;
+  .section-title {
+    font-size: 2rem;
   }
 }
 
-/* Small phones */
-@media (max-width: 480px) {
-  .trending-tours .tour-card.premium-card {
-    width: 170px;
-    height: 170px;
-  }
-}
-/* ============================================================
-   🎯 TRENDING TOURS — FINAL HEADING & EDGE POLISH
-   Clean • Safe • Non-breaking
-============================================================ */
+/* ==========================================================
+   SPIRITUAL JOURNEYS — DIVINE SAFFRON EDITION
+   ========================================================== */
 
-/* 1️⃣ Almost edge-to-edge section */
-.trending-tours {
-  padding-left: 4px; /* near-zero gap */
-  padding-right: 4px;
-}
+.spiritual-carousel {
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+  isolation: isolate;
 
-/* Override container padding ONLY for this section */
-.trending-tours .container {
-  max-width: 100%;
-  padding-left: 4px;
-  padding-right: 4px;
-}
+  /* Performance */
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
 
-/* 2️⃣ Trending Tours Main Heading */
-.trending-tours .section-title {
-  margin-top: 12px; /* breathing space from previous section */
-  margin-bottom: 18px; /* clean gap before cards */
-
-  text-align: center;
-
-  font-size: clamp(26px, 3vw, 36px);
-  font-weight: 800;
-
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-
-  color: #0f172a;
+  /* Divine Saffron Base */
+  background-color: #fffbeb;
+  background-image:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(245, 158, 11, 0.08) 0%,
+      transparent 60%
+    ),
+    repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      transparent 0deg,
+      transparent 15deg,
+      rgba(245, 158, 11, 0.03) 15deg,
+      rgba(245, 158, 11, 0.03) 16deg
+    );
+  background-attachment: scroll;
 }
 
-/* Optional: subtle premium underline effect */
-.trending-tours .section-title::after {
+.spiritual-carousel::before {
   content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: #ef4444;
-  margin: 10px auto 0;
-  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 158, 11, 0.5) 50%,
+    transparent 100%
+  );
+  opacity: 0.8;
 }
 
-/* 3️⃣ Card Title — Uppercase & Premium */
-.trending-tours .premium-overlay h3 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 18px;
-  font-weight: 800;
-}
-
-/* 4️⃣ Price badge — cleaner & tighter */
-.trending-tours .premium-overlay p {
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.6px;
-  padding: 4px 14px;
-}
-
-/* 5️⃣ Ensure no side clipping while scrolling */
-.trending-tours .tour-carousel {
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
-/* ============================================
-   ✅ FEATURED RECTANGLE SLIDER — ELITE
-============================================ */
-
-:root {
-  /* 🛠️ CONTROL DIMENSIONS HERE */
-  --rect-width: 550px;
-  --rect-height: 320px;
-  --rect-gap: 25px;
-}
-
-.featured-carousel {
-  padding: 85px 0;
-  background: #ffffff;
+.spiritual-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .featured-slider-viewport {
   width: 100%;
-  overflow: hidden; /* Clips the track for one-at-a-time view */
-  position: relative;
-  padding: 15px 0;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  gap: var(--rect-gap);
-  /* Razor smooth hardware-accelerated motion */
-  transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-  will-change: transform;
+  gap: 28px;
+  padding: 30px 10px 80px 10px;
+  margin-bottom: -60px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .carousel-card {
-  flex: 0 0 var(--rect-width);
-  height: var(--rect-height);
-  border-radius: 8px;
-  overflow: hidden;
+  flex: 0 0 auto;
+  width: 520px;
+  height: 340px;
+  border-radius: 28px;
   position: relative;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   text-decoration: none;
-  background: #000;
+  scroll-snap-align: center;
+  background-color: #f3f4f6; /* LCP Placeholder */
+  box-shadow: 0 15px 35px rgba(11, 42, 74, 0.1);
+  transition: all 0.6s var(--ease-out-expo);
+  border: 1px solid rgba(245, 158, 11, 0.1);
 }
 
 .carousel-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
-  opacity: 0.9;
+  transition: transform 1.2s ease;
+  display: block;
+}
+
+.carousel-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 80px rgba(11, 42, 74, 0.2);
 }
 
 .carousel-card:hover img {
-  transform: scale(1.08);
-  opacity: 1;
+  transform: scale(1.1);
 }
 
 .carousel-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 65%);
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
   display: flex;
-  align-items: flex-end;
-  padding: 28px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  z-index: 2;
 }
 
 .carousel-overlay h3 {
   color: #fff;
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0;
-  line-height: 1.2;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
-/* ✅ RESPONSIVE SCALING */
-@media (max-width: 1200px) {
-  :root {
-    --rect-width: 450px;
-    --rect-height: 290px;
-  }
+.carousel-overlay .usp {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
 }
 
-@media (max-width: 768px) {
-  :root {
-    --rect-width: 90vw;
-    --rect-height: 240px;
-  }
-  .carousel-track {
-    gap: 15px;
-  }
-  .carousel-overlay {
-    padding: 20px;
-  }
-  .carousel-overlay h3 {
-    font-size: 18px;
-  }
-}
-/* ============================================
-   🎯 CENTERED SECTION HEADERS (Spiritual & Trending)
-============================================ */
-
-/* 1. Target the header wrappers */
-.carousel-header,
-.section-header,
-.blog-section-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers horizontally */
-  text-align: center; /* Centers text lines */
-  margin-bottom: 50px;
-  padding: 0 20px;
-}
-
-/* 2. Style the main Titles (Spiritual Journeys / Trending Tours) */
-.carousel-header h2,
-.section-header h2,
-.blog-section-header h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 850;
-  color: #0f172a;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-  position: relative;
-  display: inline-block;
-}
-
-/* 3. Style the Subtitles */
-.carousel-header p,
-.section-header p,
-.blog-section-header p {
-  font-size: 16px;
-  color: #64748b;
-  max-width: 600px; /* Prevents text from stretching too wide */
-  line-height: 1.6;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 4. Center the Navigation Buttons if they are inside the header */
-.carousel-controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-/* ✅ Mobile Optimization for Centered Text */
-@media (max-width: 768px) {
-  .carousel-header,
-  .section-header {
-    margin-bottom: 35px;
-  }
-
-  .carousel-header h2 {
-    font-size: 1.6rem;
-  }
-}
-/* ============================================================
-   🌸 SPIRITUAL JOURNEYS — HEADING & CARD TEXT POLISH ONLY
-   Safe • Scoped • No layout or JS impact
-============================================================ */
-
-/* 1️⃣ Heading — EXACT match with Trending Tours */
-.featured-carousel .carousel-header h2 {
-  margin-top: 12px;
-  margin-bottom: 18px;
-
-  font-size: clamp(26px, 3vw, 36px);
-  font-weight: 800;
-
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #0f172a;
-
-  text-align: center;
-}
-
-/* Underline — same as Trending */
-.featured-carousel .carousel-header h2::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: #ef4444;
-  margin: 10px auto 0;
-  border-radius: 10px;
-}
-
-/* Subtitle spacing (no layout change) */
-.featured-carousel .carousel-header p {
-  margin: 0;
-  text-align: center;
-}
-
-/* 2️⃣ Card text — TOP CENTER + UPPERCASE ONLY */
-.featured-carousel .carousel-overlay {
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-
-  padding-top: 26px;
-}
-
-/* Card title styling */
-.featured-carousel .carousel-overlay h3 {
-  margin: 0;
-
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  font-weight: 800;
-}
-/* ============================================================
-   🌸 SPIRITUAL JOURNEYS — CONTROLS & SPACING FIX
-   Scoped • Clean • Non-breaking
-============================================================ */
-
-/* 1️⃣ Move subtitle closer to cards */
-.featured-carousel .carousel-header {
-  margin-bottom: 18px; /* reduced gap */
-}
-
-/* Tighten subtitle spacing */
-.featured-carousel .carousel-header p {
-  margin-bottom: 8px;
-}
-
-/* 2️⃣ Position arrows ON the card edges */
-.featured-carousel .carousel-controls {
+/* Floating Quote Button */
+.carousel-cta {
   position: absolute;
-  top: 50%;
+  right: 25px;
+  bottom: 25px;
+  width: 85px;
+  height: 85px;
+  background: var(--logo-yellow);
+  color: var(--logo-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.2;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.carousel-card:hover .carousel-cta {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+  .carousel-card {
+    width: 440px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-card {
+    width: 85vw;
+    height: 260px;
+  }
+  .spiritual-carousel {
+    /* Simple gradient for mobile */
+    background-image: radial-gradient(
+      circle at 50% 50%,
+      rgba(251, 191, 36, 0.1) 0%,
+      transparent 70%
+    );
+  }
+  .carousel-cta {
+    opacity: 1;
+    transform: scale(1);
+    width: 60px;
+    height: 60px;
+    font-size: 9px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+/* ==========================================================
+   BLOG HUB — MINT BREEZE EDITION (LCP FIXED)
+   ========================================================== */
+
+.blog-hub {
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Performance */
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+
+  /* Mint Breeze Base */
+  background-color: #f0fdf4;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(74, 222, 128, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(34, 197, 94, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+  background-attachment: scroll;
+}
+
+.blog-hub::before {
+  content: "";
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-
-  display: flex;
-  justify-content: space-between;
-
-  padding: 0 6px; /* minimal side gap */
-  transform: translateY(-50%);
-  pointer-events: none; /* avoids blocking swipe */
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(34, 197, 94, 0.3) 50%,
+    transparent 100%
+  );
+  opacity: 0.6;
 }
 
-/* Enable click on buttons only */
-.featured-carousel .carousel-controls button {
-  pointer-events: auto;
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 280px;
+  gap: 24px;
 }
 
-/* 3️⃣ Arrow button styling (consistent & premium) */
-.featured-carousel .carousel-controls .carousel-btn {
-  width: 44px;
-  height: 44px;
-
-  border-radius: 50%;
-  border: none;
-
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-
-  font-size: 22px;
-  font-weight: 700;
-  cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
+/* Base Card Logic */
+.bento-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: #e2e8f0; /* Fallback loading color */
+  transition: all 0.5s var(--ease-out-expo);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  /* Fix Safari border radius clipping */
+  transform: translateZ(0);
 }
 
-/* Hover feedback */
-.featured-carousel .carousel-controls .carousel-btn:hover {
-  background: #111827;
-  color: #ffffff;
+/* NEW: Image Tag Handling (Replaces Background-Image for LCP) */
+.bento-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Behind content */
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.bento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(11, 42, 74, 0.15);
+}
+
+.bento-card:hover .bento-bg-img {
   transform: scale(1.08);
 }
 
-/* 4️⃣ Ensure viewport allows arrow overlap */
-.featured-carousel .featured-slider-viewport {
-  position: relative;
+/* Overlay & Content */
+.bento-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* --- WHY SECTION MASTER --- */
-.why-section {
-  padding: 80px 0;
-  background: #ffffff;
+.bento-card .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  z-index: 2;
+  color: #fff;
+  width: 100%;
 }
 
-.why-header {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.why-header h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 600;
-  color: #111827;
-}
-
-/* ✅ GRID SYSTEM: Desktop 4, Mobile 2 */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.why-item {
-  background: #f9fafb;
-  padding: 24px 20px;
-  border-radius: 20px;
-  border: 1px solid #f3f4f6;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.why-item:hover {
-  background: #ffffff;
-  transform: translateY(-8px);
-  border-color: #0077ff;
-  box-shadow: 0 20px 40px rgba(0, 119, 255, 0.08);
-}
-
-.why-icon-bg {
-  width: 54px;
-  height: 54px;
-  background: #ffffff;
-  border-radius: 14px;
+.card-icon-box {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-  transition: 0.3s ease;
+  font-size: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.why-item:hover .why-icon-bg {
-  background: #0077ff;
+.bento-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.why-icon-bg img {
-  width: 38px;
-  height: 38px;
+.bento-card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
-.why-item:hover .why-icon-bg img {
-  filter: brightness(0) invert(1);
+/* Special Grid Spans */
+.grid-wide {
+  grid-column: span 2;
 }
 
-.why-info h3 {
-  font-size: 15px;
-  font-weight: 750;
-  color: #111827;
-  margin-bottom: 6px;
-  line-height: 1.2;
-}
-
-.why-info p {
-  font-size: 13px;
-  color: #6b7280;
-  line-height: 1.4;
-}
-
-/* --- RESPONSIVE BREAKPOINTS --- */
-
-/* Tablets: 3 Columns */
-@media (max-width: 1024px) {
-  .why-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ✅ MOBILE: 2 BOXES IN ONE ROW */
-@media (max-width: 768px) {
-  .why-section {
-    padding: 50px 0;
-  }
-
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr); /* THE KEY FIX */
-    gap: 12px;
-    padding: 0 10px;
-  }
-
-  .why-item {
-    padding: 20px 12px;
-    border-radius: 8px;
-  }
-
-  .why-icon-bg {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 10px;
-  }
-
-  .why-icon-bg img {
-    width: 22px;
-  }
-
-  .why-info h3 {
-    font-size: 13.5px;
-  }
-
-  .why-info p {
-    font-size: 11.5px;
-  }
-}
-
-/* Very Small Phones */
-@media (max-width: 380px) {
-  .why-grid {
-    gap: 8px;
-  }
-}
-/* ============================================================
-   ✨ WHY DELIGHT TRIPS — PREMIUM VISUAL ENHANCEMENT
-   Clean • Catchy • Lighthouse Safe
-============================================================ */
-
-/* 1️⃣ Section spacing (balanced with other sections) */
-.why-section {
-  padding: 80px 0 90px;
-  background: #ffffff;
-}
-
-/* 2️⃣ Heading — MATCH Spiritual / Trending EXACTLY */
-.why-header h2 {
-  margin: 0 0 18px 0;
-
-  font-size: clamp(26px, 3vw, 36px);
-  font-weight: 800;
-
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #0f172a;
-  text-align: center;
-}
-
-/* underline accent */
-.why-header h2::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: #ef4444;
-  margin: 10px auto 0;
-  border-radius: 10px;
-}
-
-/* Optional subtitle polish (if present) */
-.why-header p {
-  margin-top: 6px;
-  margin-bottom: 40px;
-  font-size: 16px;
-  color: #64748b;
-  text-align: center;
-}
-
-/* 3️⃣ Card — premium translucent red accent */
-.why-item {
-  position: relative;
-  overflow: hidden;
-
-  background: linear-gradient(
-    135deg,
-    rgba(239, 68, 68, 0.06),
-    rgba(255, 255, 255, 0.95)
-  );
-
-  border-radius: 22px;
-  border: 1px solid rgba(239, 68, 68, 0.12);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-/* Soft inner glow */
-.why-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top,
-    rgba(239, 68, 68, 0.15),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-/* Hover — refined, not flashy */
-.why-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 45px rgba(239, 68, 68, 0.12);
-}
-
-.why-item:hover::before {
-  opacity: 1;
-}
-
-/* 4️⃣ Icon — more premium focus */
-.why-icon-bg {
-  background: rgba(239, 68, 68, 0.08);
-  border-radius: 16px;
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.why-item:hover .why-icon-bg {
-  background: #ef4444;
-  transform: scale(1.05);
-}
-
-/* Icon color flip stays */
-.why-item:hover .why-icon-bg img {
-  filter: brightness(0) invert(1);
-}
-
-/* 5️⃣ Typography — cleaner hierarchy */
-.why-info h3 {
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-  margin-bottom: 6px;
-  color: #0f172a;
-}
-
-.why-info p {
-  font-size: 13.5px;
-  color: #475569;
-  line-height: 1.45;
-}
-
-/* ============================================
-   ✅ HOME BLOG SECTION — REFINED PADDING
-============================================ */
-
-.home-blog-section {
-  padding: 80px 0;
-  background: #ffffff;
-  overflow: hidden;
-}
-
-/* 🛠️ The Gap Fix: Standardized Container */
-.home-blog-section .container {
-  width: 100%;
-  max-width: 1240px; /* Limits width on ultra-wide screens */
-  margin: 0 auto;
-  padding: 0 25px; /* Creates the perfect left/right gap */
-}
-
-.blog-section-header {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.blog-section-header h2 {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 8px;
-  text-align: center; /* Ensures center alignment */
-}
-
-.blog-section-header p {
-  color: #64748b;
-  font-size: 15px;
-  text-align: center;
-}
-
-/* ✅ BENTO GRID (Adjusted for Padding) */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 190px);
-  gap: 16px;
-}
-
-.blog-card {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #000;
-  display: block;
-  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.blog-feature {
+/* Featured Center Card */
+.featured-center {
   grid-column: span 2;
   grid-row: span 2;
-}
-
-.blog-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.85;
-  transition: transform 0.8s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.blog-card:hover img {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-/* ✅ OVERLAY TEXT */
-.blog-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 70%);
+  background: #0b2a4a;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 22px;
-  color: #fff;
-}
-
-.blog-overlay h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.blog-feature h3 {
-  font-size: 22px;
-}
-
-/* ✅ CENTERED FOOTER BUTTON */
-.blog-footer {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center; /* Ensures button is dead-center */
-}
-
-.blog-explore-btn {
-  padding: 15px 35px;
-  background: #111827;
-  color: #fff;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.blog-explore-btn:hover {
-  background: #0077ff;
-  transform: scale(1.05);
-}
-
-/* ============================================
-   ✅ MOBILE & TABLET RESPONSIVE
-============================================ */
-
-@media (max-width: 1024px) {
-  .blog-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 170px);
-  }
-}
-
-@media (max-width: 768px) {
-  .home-blog-section .container {
-    padding: 0 18px; /* Slightly tighter gap for mobile */
-  }
-
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 12px;
-  }
-
-  .blog-feature {
-    grid-column: span 2;
-    height: 230px;
-  }
-
-  .blog-card:not(.blog-feature) {
-    height: 170px;
-  }
-}
-/* ============================================================
-   ✨ HOME BLOG SECTION — PREMIUM VISUAL POLISH
-   Matches Why / Spiritual / Trending
-   Clean • Catchy • Lighthouse Safe
-============================================================ */
-
-/* 1️⃣ Section spacing harmony */
-.home-blog-section {
-  padding: 80px 0 90px;
-  background: #ffffff;
-}
-
-/* 2️⃣ Heading — SAME SYSTEM AS OTHER SECTIONS */
-.blog-section-header h2 {
-  margin: 0 0 18px 0;
-
-  font-size: clamp(26px, 3vw, 36px);
-  font-weight: 800;
-
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #0f172a;
-  text-align: center;
-}
-
-/* underline accent */
-.blog-section-header h2::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: #ef4444;
-  margin: 10px auto 0;
-  border-radius: 10px;
-}
-
-/* subtitle */
-.blog-section-header p {
-  margin-top: 6px;
-  margin-bottom: 40px;
-  font-size: 16px;
-  color: #64748b;
-  text-align: center;
-}
-
-/* 3️⃣ Card — premium translucent red accent */
-.blog-card {
-  position: relative;
-  overflow: hidden;
-
-  background: linear-gradient(
-    135deg,
-    rgba(239, 68, 68, 0.05),
-    rgba(0, 0, 0, 0.9)
-  );
-
-  border-radius: 16px;
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-/* inner glow */
-.blog-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top,
-    rgba(239, 68, 68, 0.18),
-    transparent 65%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-/* hover — refined depth */
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 45px rgba(239, 68, 68, 0.18);
-}
-
-.blog-card:hover::before {
-  opacity: 1;
-}
-
-/* 4️⃣ Overlay — cleaner hierarchy */
-.blog-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.35) 45%,
-    transparent 100%
-  );
-}
-
-/* 5️⃣ Typography — stronger, editorial */
-.blog-overlay h3 {
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  margin: 0;
-
-  text-transform: uppercase;
-}
-
-.blog-feature .blog-overlay h3 {
-  font-size: 22px;
-}
-
-/* 6️⃣ Footer CTA — aligned with site language */
-.blog-explore-btn {
-  background: #111827;
-  border-radius: 100px;
-  letter-spacing: 0.6px;
-}
-
-.blog-explore-btn:hover {
-  background: #ef4444;
-}
-
-/* ============================================
-   ✅ NEWSLETTER SECTION — PREMIER UI
-============================================ */
-
-.newsletter-section {
-  padding: 100px 0;
-  background: #ffffff;
-}
-
-.newsletter-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #0f172a; /* Deep elegant dark background */
-  border-radius: 30px;
-  overflow: hidden;
-  min-height: 480px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-}
-
-/* Visual Side */
-.newsletter-visual {
-  position: relative;
-  overflow: hidden;
-}
-
-.newsletter-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1.5s ease;
-}
-
-.newsletter-card:hover .newsletter-visual img {
-  transform: scale(1.1);
-}
-
-.visual-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(15, 23, 42, 0.4), transparent);
-}
-
-/* Content Side */
-.newsletter-body {
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  color: #fff;
+  text-align: center;
 }
 
-.news-tag {
-  color: #0077ff;
+.featured-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 200% 200%;
+  animation: blogGradient 8s infinite ease;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.featured-center .card-content {
+  position: relative;
+  padding: 40px;
+  height: auto;
+}
+
+.featured-center h2 {
+  font-size: 2.5rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 12px;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.newsletter-body h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 850;
-  margin-bottom: 20px;
+  margin: 15px 0;
   line-height: 1.1;
 }
 
-.newsletter-body p {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 35px;
-  line-height: 1.6;
+.badge-pill {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-text-link {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 30px;
+  background: #fff;
+  color: #0b2a4a;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+/* Arrow Decoration */
+.card-arrow {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.bento-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes blogGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  .bento-card {
+    min-height: 220px;
+  }
+  .featured-center h2 {
+    font-size: 1.8rem;
+  }
+  .blog-hub {
+    /* Simplified mobile gradient */
+    background-image: radial-gradient(
+      at 0% 0%,
+      rgba(74, 222, 128, 0.08) 0px,
+      transparent 60%
+    );
+  }
+}
+
+/* ==========================================================
+   WHY SECTION — THE DELIGHT TRIPS EDGE (STYLE & PERFORMANCE)
+   ========================================================== */
+
+.why-vertical {
+  padding: 100px 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
+
+/* 1. Enhanced Mandala Logic */
+.mandala-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* World-class subtle dot grid + radial focus */
+  background-image: radial-gradient(
+    rgba(11, 42, 74, 0.05) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2. Header & Trust Pill */
+.trust-pill {
+  display: inline-block;
+  background: rgba(255, 204, 0, 0.1);
+  color: #0b2a4a;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+/* 3. The Grid (Bento Style) */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+  position: relative;
+  z-index: 5;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* 4. The Why Box (Card) */
+.why-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 35px 20px;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.02),
+    0 2px 4px -1px rgba(0, 0, 0, 0.01);
+}
+
+.why-box:hover {
+  transform: translateY(-12px);
+  background: #ffffff;
+  border-color: #ffcc00;
+  box-shadow: 0 25px 50px -12px rgba(11, 42, 74, 0.12);
+}
+
+/* Icon Container Animation */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+.why-box:hover .icon-wrapper {
+  background: #ffcc00;
+  transform: rotate(10deg);
+}
+
+.why-box img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Typography Refinement */
+.why-box h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0b2a4a;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.why-box p {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+/* 5. Responsive World-Class Layout */
+@media (max-width: 1200px) {
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .why-vertical {
+    padding: 60px 0;
+  }
+  .why-box {
+    padding: 25px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Strategic "Stack" for Small Mobile to keep readability */
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-box {
+    flex-direction: row;
+    text-align: left;
+    padding: 20px;
+    gap: 20px;
+  }
+  .icon-wrapper {
+    margin-bottom: 0;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+  .icon-wrapper img {
+    width: 28px;
+    height: 28px;
+  }
+  .why-box h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+}
+
+/* ==========================================================
+   NEWSLETTER SECTION
+   ========================================================== */
+
+.newsletter-section {
+  margin: 4rem auto 6rem;
+  padding: 0 1.5rem;
+  max-width: var(--container-width);
+
+  /* Performance */
+  content-visibility: auto;
+  contain-intrinsic-size: 300px;
+}
+
+.newsletter-card {
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  border-radius: 24px;
+  padding: 4rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.newsletter-text {
+  flex: 1;
+  z-index: 2;
+}
+
+.newsletter-text h3 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.newsletter-text p {
+  font-size: 1.1rem;
+  opacity: 0.9;
   max-width: 450px;
 }
 
-/* Form Design */
-.input-group {
-  position: relative;
-  display: flex;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 8px;
-  border-radius: 100px;
-  transition: all 0.3s ease;
-}
-
-.input-group:focus-within {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #0077ff;
-  box-shadow: 0 0 20px rgba(0, 119, 255, 0.2);
-}
-
-.input-group input {
+.newsletter-form {
   flex: 1;
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
   background: transparent;
   border: none;
-  padding: 12px 25px;
+  padding: 12px 15px;
   color: #fff;
-  font-size: 15px;
+  font-size: 1rem;
   outline: none;
 }
 
-.news-submit-btn {
-  background: #0077ff;
-  color: #fff;
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.newsletter-btn {
+  background: #fff;
+  color: #b21f1f;
   border: none;
-  padding: 12px 28px;
-  border-radius: 100px;
+  padding: 12px 30px;
+  border-radius: 8px;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.news-submit-btn:hover {
-  background: #005fcc;
-  transform: translateX(3px);
+.newsletter-btn:hover {
+  transform: translateY(-2px);
+  background: #f8f9fa;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.form-privacy {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
-  margin-top: 15px;
-  padding-left: 20px;
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Status Message Styling */
-.status-message {
-  margin-top: 20px;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .newsletter-card {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
+    gap: 30px;
   }
-  .newsletter-visual {
-    height: 250px;
+  .newsletter-form {
+    flex-direction: column;
   }
-  .newsletter-body {
-    padding: 40px;
+  .newsletter-btn {
+    width: 100%;
   }
 }
 
-@media (max-width: 600px) {
-  .input-group {
-    flex-direction: column;
-    border-radius: 20px;
-    background: transparent;
-    border: none;
-    padding: 0;
-    gap: 10px;
-  }
-  .input-group input {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .news-submit-btn {
-    width: 100%;
-    justify-content: center;
-    padding: 16px;
+/* =========================================
+   COOKIE BANNER
+   ========================================= */
+
+.cookie-banner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 12px;
+  pointer-events: none;
+  transform: translateY(-150%);
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.cookie-banner-wrapper.is-visible {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cookie-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .cookie-container {
+    flex-direction: row;
+    max-width: 1100px;
+    text-align: left;
+    padding: 12px 24px;
+    justify-content: space-between;
   }
 }
-/* ACCESSIBILITY */
-.sr-only {
+
+.cookie-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .cookie-content {
+    flex-direction: row;
+  }
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .cookie-actions {
+    width: auto;
+  }
+}
+
+.btn-primary {
+  background-color: var(--logo-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-text {
+  background-color: transparent;
+  color: var(--text-gray);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-text:hover {
+  background-color: #f1f5f9;
+  color: var(--logo-blue);
+}
+
+/* Utility Helper */
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
+  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-input,
-textarea {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 1rem;
-  width: 100%;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-  border-color: var(--primary-color);
-  outline: none;
-}
-
-[aria-hidden="true"] {
-  display: none;
-}
-
-[role="button"] {
-  cursor: pointer;
-}
-/* ============================================
-   ✅ MASTER SECTION SPACING CONTROL SYSTEM
-   Adjust gaps between ALL sections easily
-============================================ */
-
-/* ✅ Global spacing variable */
-:root {
-  --section-gap: 10px; /* 🔥 Change this value anytime */
-}
-
-/* ✅ Apply spacing to every major section */
-section {
-  padding-top: var(--section-gap);
-  padding-bottom: var(--section-gap);
-  margin: 0;
-}
-
-/* ✅ Reduce spacing only between Trending → Spiritual */
-.trending-tours {
-  padding-bottom: 10px !important;
-}
-
-#spiritual-journeys,
-.spiritual-section {
-  padding-top: 10px !important;
-}
-
-/* ✅ Remove extra heading default margin */
-section h2 {
-  margin-top: 0 !important;
-}
-/* ✅ Floating WhatsApp Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  background: #25d366;
-  border: none;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: transform 0.25s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.08);
-}
-
-.whatsapp-float img {
-  width: 32px;
-  height: 32px;
 }

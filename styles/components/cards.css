@@ -1,13 +1,89 @@
+/* ==========================================================
+   ✅ WORLD-CLASS GLOBAL CARDS — cards.css
+   - Logic: Flexible Content Containers
+   - Performance: GPU-Accelerated Depth
+========================================================== */
+
 .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--light);
   border-radius: var(--radius-lg);
-  padding: var(--sp-4);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--dur-med) var(--ease),
-    box-shadow var(--dur-med) var(--ease);
+  border: 1px solid var(--gray-100);
+  overflow: hidden; /* Ensures child images/patterns don't bleed out */
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    border-color var(--dur-med) var(--ease-out);
+  height: 100%; /* Ensures cards in a row match heights */
+  will-change: transform, box-shadow;
 }
 
+/* 1. CARD TOP (IMAGE/HEADER AREA) */
+.card-header {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Modern wide-screen standard */
+  overflow: hidden;
+}
+
+.card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+/* 2. CARD BODY (SPACING LOGIC) */
+.card-body {
+  padding: var(--space-md);
+  flex-grow: 1; /* Pushes footer to the bottom */
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+/* 3. CARD FOOTER (ACTION AREA) */
+.card-footer {
+  padding: var(--sp-4) var(--space-md);
+  border-top: 1px solid var(--gray-100);
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 4. PREMIUM HOVER STATES
+   - Combining Lift + Shadow + Border Glow
+---------------------------------------------------------- */
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-8px) translateZ(0);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-soft);
+}
+
+.card:hover .card-header img {
+  transform: scale(1.08); /* Subtle zoom effect */
+}
+
+/* 5. VARIATION: GLASS CARD
+   - For use over hero backgrounds or dark patterns
+---------------------------------------------------------- */
+.card-glass {
+  background: var(--bg-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+}
+
+/* 6. RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .card {
+    /* Reduce lift on mobile to keep focus on content */
+    transform: none !important;
+  }
+  .card-body {
+    padding: var(--space-sm);
+  }
 }

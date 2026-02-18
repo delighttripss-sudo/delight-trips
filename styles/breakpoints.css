@@ -1,62 +1,171 @@
-/* ============================================
-   ✅ GLOBAL BREAKPOINT SYSTEM — breakpoint.css
-   Purpose:
-   - Central responsive control
-   - Shared breakpoints across all pages
-   - Avoid repeating media queries everywhere
-============================================ */
+/* ==========================================================
+   🌍 GLOBAL RESPONSIVE ENGINE — breakpoint.css
+   - Architecture: Fluid Scaling & Container-First Logic
+   - Performance: Zero-Jank Variable Interpolation
+   - Version: 2026 World-Class Standard
+========================================================== */
 
+:root {
+  /* 1. FLUID TYPOGRAPHY ENGINE (World-Class Standard)
+       Scaling based on viewport width: 1rem at 320px to 1.125rem at 1920px
+    ------------------------------------------------------ */
+  --font-size-base: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
 
-/* ===============================
-   ✅ TABLET (≤ 1100px)
-================================= */
-@media (max-width: 1100px) {
+  /* 2. DYNAMIC NAVBAR SCALING
+       Seamlessly grows from 64px (Mobile) to 100px (4K)
+    ------------------------------------------------------ */
+  --navbar-height: clamp(64px, 4vh + 32px, 100px);
+
+  /* 3. ADAPTIVE SPACING SYSTEM
+       Using the 8pt grid with fluid scaling
+    ------------------------------------------------------ */
+  --container-pad: clamp(1rem, 3vw, 3rem);
+  --space-lg: clamp(3rem, 8vh, 6rem);
+  --space-xl: clamp(5rem, 12vh, 10rem);
+}
+
+/* 4. MOBILE-FIRST REFINEMENTS (0px to 480px)
+   ------------------------------------------------------ */
+@media (max-width: 480px) {
+  :root {
+    /* Optimize for "thumb-zone" navigation */
+    --container-pad: 1.25rem;
+  }
+
+  /* Prevent text overflow on narrow devices */
+  h1 {
+    letter-spacing: -0.04em;
+  }
+
+  /* Optimize touch interactions */
+  .btn,
+  input,
+  select {
+    font-size: 16px;
+  } /* Prevents iOS auto-zoom on focus */
+}
+
+/* 5. FOLDABLE & TABLET ADAPTATION (481px to 1024px)
+   ------------------------------------------------------ */
+@media (min-width: 481px) and (max-width: 1024px) {
+  :root {
+    --container-max: 95vw;
+  }
+
+  /* Grid system adjustment for tablets */
+  .blog-grid,
+  .experience-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* 6. LARGE DESKTOP & ULTRA-WIDE (1441px+)
+   ------------------------------------------------------ */
+@media (min-width: 1441px) {
+  :root {
+    /* Prevent content from becoming too wide to read */
+    --container-max: 1440px;
+  }
+
+  /* Enhance visual depth for high-res screens */
+  body {
+    --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* 7. THE "4K & BEYOND" EXPERIENCE (2560px+)
+   ------------------------------------------------------ */
+@media (min-width: 2560px) {
+  :root {
+    --font-size-base: 1.25rem;
+    --container-max: 1800px;
+  }
+}
+
+/* 8. LANDSCAPE MOBILE (The Content-First Fix)
+   - Solves the "Navbar eats half the screen" issue
+------------------------------------------------------ */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --navbar-height: 56px;
+    --space-lg: 2rem;
+  }
+
+  /* Hide non-essential decorative elements to save vertical space */
+  .hero__subtitle,
+  .section-line {
+    display: none;
+  }
+
+  .hero--tour {
+    height: 100vh; /* Full screen view for immersion */
+  }
+}
+
+/* 9. DARK MODE & CONTRAST SYNC
+   - Deeply integrated with accessibility.css
+------------------------------------------------------ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gray-50: #0f172a;
+    --gray-100: #1e293b;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --white: #020617;
+  }
+
+  img {
+    filter: brightness(0.9) contrast(1.1); /* Prevent eye strain on OLED */
+  }
+}
+
+/* 10. PRINT OPTIMIZATION (The Often Forgotten World-Class Aspect)
+   - Ensures tour itineraries look professional when printed
+------------------------------------------------------ */
+@media print {
+  :root {
+    --navbar-height: 0px !important;
+    --container-pad: 0px;
+  }
+
+  .package-overlay,
+  .cta-banner,
+  .whatsapp-btn,
+  .footer-social {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
 
   .container {
-    width: 94%;
-  }
-
-  section {
-    padding: 70px 0;
-  }
-
-  .section-title {
-    font-size: 2.1rem;
-  }
-}
-
-
-/* ===============================
-   ✅ MOBILE (≤ 768px)
-================================= */
-@media (max-width: 768px) {
-
-  section {
-    padding: 60px 0;
-  }
-
-  .section-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-  }
-
-  .btn {
     width: 100%;
-    max-width: 320px;
+    max-width: none;
+  }
+
+  a::after {
+    content: " (" attr(href) ")"; /* Show URLs on paper */
+    font-size: 0.8rem;
   }
 }
 
+/* 11. ASPECT RATIO LOCKS
+   - Prevents layout shift during image loading
+------------------------------------------------------ */
+.blog-card,
+.experience-card,
+.hero__image {
+  aspect-ratio: auto; /* Fallback */
+}
 
-/* ===============================
-   ✅ SMALL MOBILE (≤ 480px)
-================================= */
-@media (max-width: 480px) {
-
-  .section-title {
-    font-size: 1.7rem;
+@supports (aspect-ratio: 1) {
+  .experience-card {
+    aspect-ratio: 4 / 5;
   }
-
-  .footer-bottom {
-    font-size: 0.8rem;
+  .blog-card.featured {
+    aspect-ratio: 16 / 9;
   }
 }

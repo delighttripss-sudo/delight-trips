@@ -1,112 +1,100 @@
 /* ============================================================
-   THEME-SLIDER.JS — CLEAN, ISOLATED, PRODUCTION
-   Works with Scroll-Snap • Lighthouse Safe
+   THEME-SLIDER.JS — RECTIFIED PRODUCTION VERSION
+   ✔ Fixed: No blank slides
+   ✔ Fixed: Button alignment & interaction
+   ✔ Feature: Synchronized Scroll Logic
 ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- UNIVERSAL CAROUSEL HANDLER ---
+  // This works for BOTH Trending (.tour-carousel) and Spiritual (.carousel-track)
+  const initCarousel = (
+    trackSelector,
+    viewportSelector,
+    nextBtnId,
+    prevBtnId,
+  ) => {
+    const track = document.querySelector(trackSelector);
+    const viewport = document.querySelector(viewportSelector) || track;
+    const nextBtn = document.getElementById(nextBtnId);
+    const prevBtn = document.getElementById(prevBtnId);
 
-  /* ============================================================
-     1️⃣ THEME MOOD PICKER (UNCHANGED, SAFE)
-  ============================================================ */
-  const themeScroll = document.getElementById("themesScroll");
-  const themePrev = document.getElementById("themePrev");
-  const themeNext = document.getElementById("themeNext");
+    if (!track) return;
 
-  if (themeScroll && themePrev && themeNext) {
-    themeNext.addEventListener("click", () => {
-      themeScroll.scrollBy({ left: 260, behavior: "smooth" });
-    });
+    const getStep = () => {
+      const firstCard = track.firstElementChild;
+      const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+      return firstCard ? firstCard.offsetWidth + gap : 0;
+    };
 
-    themePrev.addEventListener("click", () => {
-      themeScroll.scrollBy({ left: -260, behavior: "smooth" });
-    });
-  }
-
-  /* ============================================================
-     2️⃣ FEATURED SLIDER (UNCHANGED, SAFE)
-  ============================================================ */
-  initEliteSlider();
-
-  function initEliteSlider() {
-    const viewport = document.getElementById("featuredSlider");
-    const track = viewport?.querySelector(".carousel-track");
-    const cards = track?.querySelectorAll(".carousel-card");
-    const nextBtn = document.getElementById("featNext");
-    const prevBtn = document.getElementById("featPrev");
-
-    if (!viewport || !track || !cards.length) return;
-
-    let index = 0;
     let timer;
-
-    const move = () => {
-      const cardWidth = cards[0].offsetWidth;
-      const gap = parseInt(getComputedStyle(track).gap) || 0;
-      track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
-    };
-
-    const next = () => {
-      index = (index + 1) % cards.length;
-      move();
-    };
-
-    const prev = () => {
-      index = (index - 1 + cards.length) % cards.length;
-      move();
-    };
-
-    const start = () => {
-      clearInterval(timer);
-      timer = setInterval(next, 4500);
-    };
-
-    const stop = () => clearInterval(timer);
-
-    nextBtn?.addEventListener("click", () => {
-      next();
-      start();
-    });
-
-    prevBtn?.addEventListener("click", () => {
-      prev();
-      start();
-    });
-
-    viewport.addEventListener("mouseenter", stop);
-    viewport.addEventListener("mouseleave", start);
-
-    window.addEventListener("resize", move);
-
-    start();
-  }
-
-  /* ============================================================
-     3️⃣ TRENDING TOURS — REAL AUTOPLAY (FIXED)
-     ✔ Scroll-Snap Compatible
-     ✔ Visible Movement
-     ✔ Stable
-  ============================================================ */
-
-  const tourCarousels = document.querySelectorAll(".tour-carousel");
-
-  tourCarousels.forEach((carousel) => {
-    const card = carousel.querySelector(".tour-card");
-    if (!card) return;
-
     let isPaused = false;
-    let timer;
 
-    const gap = parseInt(getComputedStyle(carousel).gap) || 18;
-    const step = card.offsetWidth + gap;
-
-    const autoplay = () => {
+    const startAutoplay = () => {
+      clearInterval(timer);
       timer = setInterval(() => {
         if (isPaused) return;
 
-        const maxScroll =
-          carousel.scrollWidth - carousel.clientWidth;
+        const step = getStep();
+        const maxScroll = track.scrollWidth - track.clientWidth;
 
-        if (carousel.scrollLeft >= maxScroll - 5) {
+        if (track.scrollLeft >= maxScroll - 10) {
+          track.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          track.scrollBy({ left: step, behavior: "smooth" });
+        }
+      }, 4500);
+    };
+
+    const stopAutoplay = () => clearInterval(timer);
+
+    // Click Events
+    nextBtn?.addEventListener("click", () => {
+      track.scrollBy({ left: getStep(), behavior: "smooth" });
+      startAutoplay(); // Reset timer on click
+    });
+
+    prevBtn?.addEventListener("click", () => {
+      track.scrollBy({ left: -getStep(), behavior: "smooth" });
+      startAutoplay();
+    });
+
+    // Pause on Hover / Touch
+    track.addEventListener("mouseenter", () => (isPaused = true));
+    track.addEventListener("mouseleave", () => (isPaused = false));
+    track.addEventListener("touchstart", () => (isPaused = true), {
+      passive: true,
+    });
+    track.addEventListener("touchend", () => (isPaused = false), {
+      passive: true,
+    });
+
+    startAutoplay();
+  };
+
+  // --- 1. INITIALIZE SPIRITUAL JOURNEYS ---
+  initCarousel("#spiritual-track", "#featuredSlider", "featNext", "featPrev");
+
+  // --- 2. INITIALIZE TRENDING TOURS (DOMESTIC) ---
+  // Since Trending has multiple rows, we use your existing loop logic:
+  const trendingCarousels = document.querySelectorAll(".tour-carousel");
+  trendingCarousels.forEach((carousel) => {
+    const wrapper = carousel.closest(".tour-carousel-wrapper");
+    const nextBtn = wrapper?.querySelector(".carousel-btn.right");
+    const prevBtn = wrapper?.querySelector(".carousel-btn.left");
+
+    if (!carousel) return;
+
+    let timer;
+    const startAutoplay = () => {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        const firstCard = carousel.querySelector(".destination-card");
+        const gap = parseInt(window.getComputedStyle(carousel).gap) || 28;
+        const step = firstCard.offsetWidth + gap;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+        if (carousel.scrollLeft >= maxScroll - 10) {
           carousel.scrollTo({ left: 0, behavior: "smooth" });
         } else {
           carousel.scrollBy({ left: step, behavior: "smooth" });
@@ -114,18 +102,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 3500);
     };
 
-    const stop = () => clearInterval(timer);
-
-    carousel.addEventListener("mouseenter", () => (isPaused = true));
-    carousel.addEventListener("mouseleave", () => (isPaused = false));
-
-    carousel.addEventListener("touchstart", () => (isPaused = true), {
-      passive: true,
+    nextBtn?.addEventListener("click", () => {
+      const firstCard = carousel.querySelector(".destination-card");
+      const gap = parseInt(window.getComputedStyle(carousel).gap) || 28;
+      carousel.scrollBy({
+        left: firstCard.offsetWidth + gap,
+        behavior: "smooth",
+      });
+      startAutoplay();
     });
-    carousel.addEventListener("touchend", () => (isPaused = false));
 
-    stop();
-    autoplay();
+    prevBtn?.addEventListener("click", () => {
+      const firstCard = carousel.querySelector(".destination-card");
+      const gap = parseInt(window.getComputedStyle(carousel).gap) || 28;
+      carousel.scrollBy({
+        left: -(firstCard.offsetWidth + gap),
+        behavior: "smooth",
+      });
+      startAutoplay();
+    });
+
+    startAutoplay();
   });
-
 });

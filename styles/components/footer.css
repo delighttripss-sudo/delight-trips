@@ -1,172 +1,281 @@
-/* =====================================
-   ✅ FOOTER — WORLD CLASS + OPTIMIZED
-===================================== */
+/* ==========================================================
+   🏛️ COMPONENT: GLOBAL FOOTER (FIXED)
+   - Style: "Deep Ocean Luxury" (Navy + Gold)
+   - Fix: Copyright text now perfectly centered
+========================================================== */
 
 .footer {
   width: 100%;
-  background: #0ea5e9; /* Brand primary */
-  color: #ffffff;
-  padding: 55px 20px 25px;
+  /* Brand Backdrop: Deep Navy Gradient */
+  background: linear-gradient(170deg, var(--logo-blue) 0%, #051626 100%);
+  color: var(--neutral-white);
+  padding-top: var(--space-xl);
+  position: relative;
+  overflow: hidden;
 
-  /* ✅ Lighthouse Boost: Render only when needed */
+  /* Performance */
   content-visibility: auto;
-  contain-intrinsic-size: 500px;
+  contain-intrinsic-size: 1px 400px;
+  isolation: isolate;
 }
 
-/* ✅ Footer Wrapper Grid */
-.footer-wrapper {
-  max-width: 1150px;
-  margin: auto;
+/* Texture Overlay */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: overlay;
+}
 
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
+/* Gold Separator Line */
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--logo-yellow) 50%,
+    transparent 100%
+  );
+  opacity: 0.6;
 }
 
 /* ===============================
-   ✅ BRAND
+   GRID LAYOUT ENGINE
 ================================= */
+.footer-wrapper {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+
+  display: grid;
+  /* Columns: Brand (Wide) | Links | Links | Social */
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+/* ===============================
+   1. BRAND COLUMN
+================================= */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
 .footer-logo {
-  max-width: 70px;
-  margin-bottom: 14px;
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transform-origin: left;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
 }
 
 .footer-description {
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  line-height: 1.65;
-  opacity: 0.9;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
   max-width: 320px;
+  text-wrap: pretty;
 }
 
 /* ===============================
-   ✅ LINKS
+   2. NAVIGATION LINKS
 ================================= */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
 
-.footer-links h4,
-.footer-social h4 {
-  font-size: 1.05rem;
-  margin-bottom: 14px;
+.footer-links h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: var(--logo-yellow); /* Gold */
+  text-shadow: 0 2px 10px rgba(255, 212, 0, 0.15);
 }
 
 .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.88);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: opacity 0.25s ease;
-}
-
-.footer-links a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-/* ===============================
-   ✅ SOCIAL ICONS (FIXED FOR IMG)
-================================= */
-
-.social-icons {
   display: flex;
+  flex-direction: column;
   gap: 14px;
 }
 
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s var(--ease-out-expo);
+  display: inline-block;
+  position: relative;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(6px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.footer-links a:focus-visible {
+  outline: 2px solid var(--logo-yellow);
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+/* ===============================
+   3. SOCIAL CONNECT
+================================= */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-social h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: var(--logo-yellow);
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s var(--ease-elastic);
+}
+
+.social-icons a:hover {
+  background: var(--logo-yellow);
+  border-color: var(--logo-yellow);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(255, 212, 0, 0.2);
+}
+
 .social-icons img {
-  width: 26px;
-  height: 26px;
-  opacity: 0.9;
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s ease;
 }
 
-.social-icons img:hover {
-  transform: scale(1.12);
-  opacity: 1;
+.social-icons a:hover img {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(28%) saturate(3755%)
+    hue-rotate(193deg) brightness(96%) contrast(100%);
 }
 
 /* ===============================
-   ✅ FOOTER BOTTOM
+   ✅ FOOTER BOTTOM (FIXED)
+   Changed justify-content from space-between to CENTER
 ================================= */
-
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-  margin-top: 35px;
-  padding-top: 14px;
-
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 0;
   text-align: center;
+}
+
+.footer-bottom .container {
   font-size: 0.85rem;
-  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  /* CRITICAL FIX: Center aligned to prevent text scattering */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* Small gap between Year and Name */
 }
 
 /* ===============================
-   ✅ RESPONSIVE
+   RESPONSIVE BREAKPOINTS
 ================================= */
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .footer-wrapper {
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    gap: 3rem;
   }
-}
 
-@media (max-width: 576px) {
-  .footer-wrapper {
-    grid-template-columns: 1fr;
+  .footer-brand {
+    grid-column: span 2;
+    align-items: center;
     text-align: center;
   }
 
-  .social-icons {
-    justify-content: center;
+  .footer-logo {
+    transform-origin: center;
   }
 
   .footer-description {
-    margin: auto;
+    max-width: 500px;
   }
 }
-.cookie-popup {
-  position: fixed;
-  bottom: 20px; /* Start visible to test immediately */
-  left: 20px;
-  z-index: 99999;
-  display: none; /* Controlled by JS */
+
+@media (max-width: 640px) {
+  .footer {
+    padding-top: 3rem;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-links ul,
+  .social-icons {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
-.cookie-card {
-  background: #0f172a;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.cookie-btn-primary {
-  background: #0077ff;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.cookie-btn-outline {
-  background: transparent;
-  color: white;
-  border: 1px solid #fff;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+@media (prefers-contrast: more) {
+  .footer-description,
+  .footer-links a,
+  .footer-bottom .container {
+    color: #ffffff;
+    opacity: 1;
+  }
 }

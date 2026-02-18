@@ -1,335 +1,310 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <!-- ===============================
-     CORE META
-  ================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
 
-  <!-- ===============================
-     SEO (ABOUT / TRUST PAGE)
-  ================================ -->
-  <title>About Us | Delight Trips</title>
-  <meta
-    name="description"
-    content="Learn about Delight Trips, a trusted travel agency offering customized domestic and international tour packages, honeymoon trips, and expert travel planning services."
-  />
-<!-- ===============================
-     FAVICON & APP ICONS
-================================ -->
-<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+    <title>About Delight Trips | Trusted Travel Experts & Tour Planners</title>
+    <meta name="description" content="Get to know Delight Trips India — your dedicated travel partners. We specialize in crafting customized domestic & international holidays, honeymoon packages, and spiritual journeys with 24/7 support." />
+    <link rel="canonical" href="https://www.delighttrips.in/about.html" />
 
-<!-- Standard Browser Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Delight Trips | Your Journey, Our Expertise" />
+    <meta property="og:description" content="Thoughtfully planned travel experiences built on trust, knowledge, and care." />
+    <meta property="og:url" content="https://www.delighttrips.in/about.html" />
+    <meta property="og:image" content="https://www.delighttrips.in/assets/images/about/og-about.jpg" />
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-<!-- Android / PWA Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/assets/favicon/site.webmanifest" />
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.delighttrips.in/about.html" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/utilities.css" />
+    <link rel="stylesheet" href="/styles/accessibility.css" />
+    <link rel="stylesheet" href="/styles/support.css" />
+    <link rel="stylesheet" href="/styles/global-pattern.css" />
 
-  <!-- ===============================
-     GOOGLE ANALYTICS (GA4 – SAFE)
-  ================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5VESB5BY0', {
-      anonymize_ip: true,
-      page_path: window.location.pathname
-    });
-  </script>
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+    <link rel="stylesheet" href="/styles/components/buttons.css" />
+    <link rel="stylesheet" href="/styles/pages/about.css" />
 
-  <!-- ===============================
-     FONTS (GLOBAL – SAME EVERYWHERE)
-  ================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- ===============================
-     GLOBAL CORE CSS
-  ================================ -->
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/utilities.css" />
-  <link rel="stylesheet" href="/styles/accessibility.css" />
-  <link rel="stylesheet" href="/styles/support.css" />
-  <link rel="stylesheet" href="/styles/global-pattern.css" />
-
-  <!-- ===============================
-     COMPONENT STYLES
-  ================================ -->
-  <link rel="stylesheet" href="/styles/components/navbar.css" />
-  <link rel="stylesheet" href="/styles/components/footer.css" />
-  <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-  <link rel="stylesheet" href="/styles/components/buttons.css" />
-
-  <!-- ===============================
-     PAGE-SPECIFIC CSS
-  ================================ -->
-  <link rel="stylesheet" href="/styles/pages/about.css" />
-</head>
-
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Delight Trips India",
+      "image": "https://www.delighttrips.in/assets/images/logo/logo.png",
+      "url": "https://www.delighttrips.in/",
+      "telephone": "+917045286023",
+      "priceRange": "₹₹",
+      "description": "Professional travel agency specializing in customized domestic and international tour planning.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Thane",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.instagram.com/delight_tripss/",
+        "https://www.facebook.com/Delighttrips/"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.delighttrips.in/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://www.delighttrips.in/about.html"
+      }]
+    }
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F5VESB5BY0', { anonymize_ip: true });
+    </script>
+  </head>
 
   <body>
-   <div id="site-header"></div>
-<script type="module" src="/js/navigation.js"></script>
+    <div id="site-header"></div>
+    <script type="module" src="/js/navigation.js"></script>
 
     <main id="main-content">
-  <!-- HERO -->
-  <section
-    class="about-hero"
-    style="background-image: url('/assets/images/about/about-hero.webp');"
-  >
-    <div class="about-overlay">
-      <h1>About Delight Trips India</h1>
-      <p>
-        Your Journey, Our Expertise — thoughtfully planned travel experiences
-        built on trust, knowledge, and care.
-      </p>
-    </div>
-  </section>
+      
+      <section class="about-hero" style="background-image: url('/assets/images/about/about-hero.webp');">
+        <div class="about-overlay">
+          <div class="container text-center">
+            <span class="badge-pill mb-sm">Since 2024</span>
+            <h1>Your Journey, Our Expertise</h1>
+            <p class="hero-lead">
+              At Delight Trips, we don't just plan holidays; we craft memories. 
+              Thoughtfully designed travel experiences built on trust, deep local knowledge, and genuine care.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <!-- INTRO / BRAND STATEMENT -->
-  <section class="about-intro container">
-    <div class="intro-grid">
-      <div class="intro-text">
-        <h2>Who We Are</h2>
-        <p>
-          Delight Trips India is a professional travel company specializing in
-          customized domestic and international tour planning. We design
-          meaningful travel experiences for individuals, families, couples, and
-          groups, focusing on comfort, reliability, and thoughtful execution.
-        </p>
-        <p>
-          Our approach combines practical travel expertise with an understanding
-          of destinations, seasonal conditions, and traveler expectations to
-          ensure every journey is well planned and smoothly delivered.
-        </p>
+      <div class="container mt-md">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+           <a href="/">Home</a> <span>/</span> <span class="current">About Us</span>
+        </nav>
       </div>
 
-      <div class="intro-highlight">
-        <h3>Trusted Travel, Thoughtfully Designed</h3>
-        <p>
-          From leisure holidays and honeymoons to pilgrimage journeys and
-          experience-driven travel, we focus on creating itineraries that are
-          realistic, transparent, and tailored to individual needs.
-        </p>
-      </div>
-    </div>
-  </section>
+      <section class="about-intro container section-padding">
+        <div class="intro-grid">
+          <div class="intro-text">
+            <span class="section-tag">Who We Are</span>
+            <h2>More Than Just a Travel Agency</h2>
+            <p class="lead-text">
+              Delight Trips was born from a simple belief: Travel should be personal, not transactional.
+            </p>
+            <p>
+              We are a team of passionate travel architects specializing in customized domestic and international journeys. 
+              Whether you are a couple seeking a romantic escape to the Maldives, a family looking to bond in Kerala, 
+              or a solo traveler exploring the Himalayas, we design itineraries that fit <em>your</em> pace, <em>your</em> budget, and <em>your</em> dreams.
+            </p>
+            <p>
+              Our approach combines practical expertise with emotional intelligence—understanding that a trip is often a lifelong dream coming true.
+            </p>
+          </div>
 
-  <!-- WHAT WE DO -->
-  <section class="about-intro container">
-    <div class="intro-grid">
-      <div class="intro-text">
-        <h2>What We Do</h2>
-        <p>
-          We provide end-to-end travel planning services including destination
-          consultation, itinerary design, accommodation planning, transportation
-          coordination, and on-ground travel support. Our services cover travel
-          across India as well as selected international destinations.
-        </p>
-        <p>
-          Each travel plan is curated with attention to detail, realistic
-          timelines, and clear communication to ensure a stress-free travel
-          experience.
-        </p>
-      </div>
+          <div class="intro-highlight">
+            <h3>The Delight Difference</h3>
+            <ul class="check-list">
+              <li><strong>Personalized Attention:</strong> No cookie-cutter plans. Every trip is unique.</li>
+              <li><strong>Ground Reality:</strong> We recommend hotels and routes we have vetted personally.</li>
+              <li><strong>Zero Hidden Costs:</strong> Complete transparency in pricing from day one.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <div class="intro-highlight">
-        <h3>Travel Planning With Clarity</h3>
-        <p>
-          We believe responsible travel planning begins with honest guidance,
-          transparent information, and practical recommendations — not
-          exaggerated promises.
-        </p>
-      </div>
-    </div>
-  </section>
+      <section class="about-services bg-light section-padding">
+        <div class="container">
+          <div class="section-header-center mb-lg">
+            <span class="section-tag">Our Expertise</span>
+            <h2>Crafting Journeys Across the Globe</h2>
+            <p>End-to-end travel management designed for peace of mind.</p>
+          </div>
 
-  <!-- EXPERTISE -->
-  <section class="about-experience container">
-    <div class="experience-box">
-      <h2>Our Travel Expertise</h2>
-      <ul>
-        <li>✔ Customized domestic and international tour packages</li>
-        <li>✔ Honeymoon and couple-focused travel planning</li>
-        <li>✔ Pilgrimage and spiritual travel across India</li>
-        <li>✔ Leisure, heritage, and experience-based tourism</li>
-        <li>✔ Reliable support before, during, and after travel</li>
-      </ul>
+          <div class="intro-grid">
+             <div class="intro-text">
+                <h3>Comprehensive Travel Solutions</h3>
+                <p>
+                  We provide a 360-degree travel service ecosystem. From the moment you think of a destination 
+                  to the moment you return home, we handle the complexities so you can focus on the experience.
+                </p>
+                <div class="service-list-grid">
+                   <div class="service-item">
+                      <h4>🌍 International Holidays</h4>
+                      <p>Dubai, Thailand, Bali, Europe, and beyond. We handle visas, flights, and forex.</p>
+                   </div>
+                   <div class="service-item">
+                      <h4>🇮🇳 Incredible India</h4>
+                      <p>From the backwaters of Kerala to the peaks of Ladakh and the spiritual ghats of Varanasi.</p>
+                   </div>
+                   <div class="service-item">
+                      <h4>❤️ Honeymoon Specials</h4>
+                      <p>Romantic candlelight dinners, private transfers, and luxury suites curated for couples.</p>
+                   </div>
+                   <div class="service-item">
+                      <h4>🚙 Seamless Logistics</h4>
+                      <p>Private cabs, verified drivers, and 24/7 on-ground support.</p>
+                   </div>
+                </div>
+             </div>
+             
+             <div class="intro-highlight trust-box">
+                <h3>Travel Planning With Clarity</h3>
+                <p>
+                  We believe responsible travel planning begins with honest guidance. 
+                  We won't sell you a hotel that looks good only in photos. We prioritize 
+                  <strong>safety, hygiene, and location</strong> above all else.
+                </p>
+                <a href="/tours.html" class="btn-primary mt-sm">Explore Our Packages</a>
+             </div>
+          </div>
+        </div>
+      </section>
 
-      <p>
-        Our team continuously researches destinations, accommodation standards,
-        and travel logistics to provide informed recommendations and dependable
-        service for every journey.
-      </p>
+      <section class="about-trust container section-padding">
+        <div class="intro-grid">
+          <div class="intro-text">
+            <h2>Our Commitment to Trust & Transparency</h2>
+            <p>
+              In an industry full of hidden charges and false promises, Delight Trips India stands firm on <strong>Ethics</strong>.
+            </p>
+            <p>
+              We operate with a "Client First" philosophy. If a destination isn't safe or a hotel isn't up to the mark, we will tell you upfront. 
+              Our goal isn't just to book this trip, but to be your travel partner for life.
+            </p>
+            
+            <div class="stats-row mt-md">
+               <div class="stat">
+                 <span class="stat-num">100%</span>
+                 <span class="stat-label">Transparent Pricing</span>
+               </div>
+               <div class="stat">
+                 <span class="stat-num">24/7</span>
+                 <span class="stat-label">Trip Support</span>
+               </div>
+            </div>
+          </div>
 
-      <a href="/contact.html" class="btn-primary">
-        Plan Your Journey With Us
-      </a>
-    </div>
-  </section>
+          <div class="intro-highlight business-card-highlight">
+            <h3>Experience You Can Rely On</h3>
+            <p>
+              Every itinerary we design reflects our belief that travel should be enjoyable, well-informed, and confidently planned.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <!-- TRUST & TRANSPARENCY -->
-  <section class="about-intro container">
-    <div class="intro-grid">
-      <div class="intro-text">
-        <h2>Our Commitment to Trust & Transparency</h2>
-        <p>
-          Delight Trips India operates with a strong commitment to ethical
-          business practices, transparent communication, and customer trust. We
-          prioritize clear travel details, accurate information, and responsible
-          planning at every stage of the journey.
-        </p>
-        <p>
-          Our goal is to build long-term relationships with travelers through
-          honesty, consistency, and dependable service.
-        </p>
-      </div>
+      <section class="about-business bg-dark text-white section-padding">
+        <div class="container">
+           <div class="business-card-wrapper">
+             <div class="biz-info">
+               <h2 class="text-white">Official Business Information</h2>
+               <p class="text-muted">Verified details for your peace of mind.</p>
+               <ul class="biz-list mt-sm">
+                 <li><strong>Business Name:</strong> Delight Trips</li>
+                 <li><strong>Service Type:</strong> Travel Agency & Tour Operator</li>
+                 <li><strong>Headquarters:</strong> Thane, Maharashtra, India</li>
+                 <li><strong>Operating Regions:</strong> Pan India & International</li>
+               </ul>
+             </div>
+             <div class="biz-contact">
+               <p class="contact-label">Talk to an Expert</p>
+               <a href="https://wa.me/917045286023" class="phone-link">+91 70452 86023</a>
+               <p class="email-link">delighttripss@gmail.com</p>
+             </div>
+           </div>
+        </div>
+      </section>
 
-      <div class="intro-highlight">
-        <h3>Experience You Can Rely On</h3>
-        <p>
-          Every itinerary we design reflects our belief that travel should be
-          enjoyable, well-informed, and confidently planned.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUSINESS INFO (E-E-A-T SIGNAL) -->
-  <section class="about-intro container">
-    <div class="intro-grid">
-      <div class="intro-text">
-        <h2>Business Information</h2>
-        <p>
-          <strong>Business Name:</strong> Delight Trips India<br />
-          <strong>Service Type:</strong> Travel Agency & Tour Planning<br />
-          <strong>Operating Regions:</strong> India & International Destinations<br />
-          <strong>Phone / WhatsApp:</strong> +91-7045286023<br />
-          <strong>Website:</strong> https://www.delighttrips.in/
-        </p>
-      </div>
-    </div>
-  </section>
-</main>
+    </main>
 
     <footer class="footer">
-  <div class="footer-wrapper">
+      <div class="footer-wrapper container">
+        <div class="footer-brand">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="Delight Trips Logo"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <p class="footer-description">
+            Delight Trips is a trusted travel company offering authentic
+            journeys, offbeat destinations, and curated travel experiences
+            across India and international destinations.
+          </p>
+        </div>
 
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <img
-        src="/assets/images/logo/logo.svg"
-        alt="Delight Trips Logo"
-        class="footer-logo"
-        loading="lazy"
-      />
-      <p class="footer-description">
-        Delight Trips is a trusted travel company offering authentic journeys,
-        offbeat destinations, and carefully curated travel experiences across
-        India and international destinations with a focus on comfort,
-        sustainability, and reliability.
-      </p>
-    </div>
+        <nav class="footer-links" aria-label="Policy Links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
 
-    <!-- POLICIES -->
-    <div class="footer-links">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
-        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-    </div>
+        <nav class="footer-links" aria-label="Tour Links">
+          <h4>Tours</h4>
+          <ul>
+            <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
+            <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+            <li><a href="/tours/international.html">International Destinations</a></li>
+            <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
+          </ul>
+        </nav>
 
-    <!-- TOURS -->
-    <div class="footer-links">
-      <h4>Tours</h4>
-      <ul>
-        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
-        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
-        <li><a href="/tours/international.html">International Destinations</a></li>
-        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
-      </ul>
-    </div>
-
-    <!-- SOCIAL -->
-    <div class="footer-social">
-  <h4>Follow Us</h4>
-
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/delight_tripss/"
-      aria-label="Follow Delight Trips on Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/instagram.svg"
-        alt="Instagram"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/Delighttrips/"
-      aria-label="Follow Delight Trips on Facebook"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/facebook.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- WhatsApp -->
-    <a
-      href="https://wa.me/917045286023"
-      aria-label="Chat with Delight Trips on WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/whatsapp.svg"
-        alt="WhatsApp"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-  </div>
-</div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Delight Trips. All Rights Reserved.
-  </div>
-</footer>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/delight_tripss/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/icons/social/instagram.svg" alt="" width="24" height="24" />
+            </a>
+            <a href="https://www.facebook.com/Delighttrips/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/icons/social/facebook.svg" alt="" width="24" height="24" />
+            </a>
+            <a href="https://wa.me/917045286023" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/icons/social/whatsapp.svg" alt="" width="24" height="24" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          © <span id="year"></span> Delight Trips. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();

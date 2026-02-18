@@ -1,151 +1,422 @@
-/* ABOUT HERO */
+/* ==========================================================
+   🚀 ABOUT PAGE — SYMMETRICAL PERFECTION ARCHITECTURE
+   - Focus: Optical Alignment, Vertical Rhythm, Perfect Spacing
+   - Grid System: 12-Column Logic condensed to Split Views
+   - Mobile: Edge-to-Edge Breathing Room
+   ========================================================== */
+
+/* 1. SCALABLE SPACING SYSTEM (The Backbone of Balance) */
+:root {
+  --section-spacing: clamp(4rem, 8vw, 7rem); /* Responsive Vertical Rhythm */
+  --container-max: 1280px;
+  --gutter: clamp(1.5rem, 4vw, 3rem); /* Dynamic gap between columns */
+
+  /* Brand Palette */
+  --brand-navy: #0f172a;
+  --brand-gold: #f59e0b;
+  --brand-mint: #f0fdf4;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+}
+
+/* 2. HERO SECTION — ABSOLUTE DEAD CENTER */
 .about-hero {
-  height: 85vh;
+  position: relative;
+  width: 100%;
+  height: clamp(500px, 70vh, 700px); /* Never too tall, never too short */
   background-size: cover;
   background-position: center;
-  position: relative;
-  display: grid;
-  place-items: center;
+  background-attachment: scroll; /* Fixes mobile jitter */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-overlay {
-  text-align: center;
-  max-width: 900px;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.4) 0%,
+    rgba(15, 23, 42, 0.7) 100%
+  );
+  backdrop-filter: blur(2px); /* Slight blur for focus on text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
-  border-radius: 18px;
-  backdrop-filter: blur(14px);
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  animation: fadeUp 1s ease;
+  text-align: center;
 }
 
-.about-overlay h1 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+.about-hero h1 {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  max-width: 18ch; /* Limits width for perfect readability */
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.about-overlay p {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  opacity: 0.9;
+.hero-lead {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  max-width: 65ch; /* Optimal reading length */
+  line-height: 1.6;
 }
 
-/* INTRO */
-.about-intro {
-  padding: 5rem 0;
+/* 3. UNIVERSAL SECTION LAYOUT (The "Balanced" Grid) */
+.about-intro,
+.about-services,
+.about-trust {
+  padding: var(--section-spacing) 0;
+  overflow: hidden; /* Prevents horizontal scroll */
 }
 
 .intro-grid {
   display: grid;
-  gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  align-items: center;
+  /* 60% Content | 40% Visual - The Golden Ratio Split */
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: var(--gutter);
+  align-items: start; /* Aligns tops perfectly */
 }
 
-.intro-text h2 {
-  font-size: 2.2rem;
+/* Text Side Alignment */
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Ensures it takes full height of the row */
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--brand-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   margin-bottom: 1rem;
 }
 
-.intro-text p {
-  line-height: 1.7;
-  opacity: 0.85;
+.intro-text h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--brand-navy);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
+.intro-text p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  max-width: 60ch; /* Prevents text from stretching too wide */
+}
+
+/* 4. THE HIGHLIGHT CARD (Visual Balance) */
 .intro-highlight {
+  background: var(--brand-mint);
+  padding: 3rem;
+  border-radius: 24px;
+  position: relative;
+  /* Adds depth without heavy shadows */
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.03);
+}
+
+/* Sticky behavior for desktop reading flow */
+@media (min-width: 1024px) {
+  .intro-highlight {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.intro-highlight h3 {
+  font-size: 1.5rem;
+  color: var(--brand-navy);
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--brand-gold);
+  font-weight: 800;
+}
+
+/* 5. SERVICE GRID (Symmetrical Cards) */
+.about-services {
+  background: #f8fafc; /* Subtle grey to separate sections */
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto; /* Perfectly centered header */
+}
+
+.service-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Strict 2-column */
+  gap: 24px;
+}
+
+.service-item {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  /* Ensures all cards are equal height */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand-gold);
+}
+
+.service-item h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin-bottom: 0.75rem;
+}
+
+/* 6. TRUST STATS (Aligned Horizontally) */
+.stats-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.stat-num {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--brand-navy);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* 7. BUSINESS INFO (The Footer Anchor) */
+.about-business {
+  background: var(--brand-navy);
+  color: white;
+  padding: var(--section-spacing) 0;
+}
+
+.business-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.biz-info h2 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.biz-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split list for balance */
+  gap: 1rem;
+}
+
+.biz-list li {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.biz-contact {
+  background: rgba(255, 255, 255, 0.05);
   padding: 2.5rem;
   border-radius: 20px;
-  background: linear-gradient(to bottom right, #0f172a, #1e293b);
-  color: white;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-/* VALUES */
-.about-values {
-  padding: 5rem 0;
-  background: #f8fafc;
-}
-
-.section-title {
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 3rem;
 }
 
-.values-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+.phone-link {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 10px 0;
 }
 
-.value-card {
-  padding: 2.2rem;
-  border-radius: 18px;
-  background: white;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
-  transition: all 0.35s ease;
-}
+/* ==========================================================
+   📱 MOBILE & TABLET REFLOW (The "Responsive Perfection")
+   ========================================================== */
 
-.value-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
-}
-
-/* EXPERIENCE */
-.about-experience {
-  padding: 5rem 0;
-}
-
-.experience-box {
-  padding: 3.5rem;
-  border-radius: 22px;
-  background: linear-gradient(to right, #2563eb, #0f172a);
-  color: white;
-  text-align: center;
-  animation: fadeUp 1.2s ease;
-}
-
-.experience-box ul {
-  margin: 2rem auto;
-  list-style: none;
-  display: grid;
-  gap: 0.8rem;
-  max-width: 520px;
-}
-
-.experience-box a {
-  margin-top: 1.5rem;
-  display: inline-block;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
+/* Tablet (Portrait) */
+@media (max-width: 1024px) {
+  .intro-grid {
+    grid-template-columns: 1fr; /* Stack content vertically */
+    gap: 3rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .intro-text p {
+    max-width: 100%;
+  } /* Let text fill width */
+
+  .intro-highlight {
+    width: 100%;
+    margin-top: 1rem;
   }
 }
 
-/* MOBILE FIRST OPTIMIZATION */
+/* Mobile (Landscape & Large Phones) */
 @media (max-width: 768px) {
-  .experience-box {
-    padding: 2.2rem;
+  :root {
+    --section-spacing: 4rem; /* Tighter spacing for mobile */
   }
 
-  .section-title {
-    font-size: 2rem;
+  .about-hero {
+    height: 450px;
+  }
+
+  .service-list-grid {
+    grid-template-columns: 1fr; /* Stack services */
+  }
+
+  .business-card-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .biz-list {
+    grid-template-columns: 1fr; /* Stack business info */
+  }
+
+  .stats-row {
+    justify-content: space-between; /* Spread stats evenly */
+    gap: 1rem;
   }
 }
-.about-hero,
-.about-overlay {
-  position: relative;
-  z-index: 1;
+
+/* Small Mobile (iPhone SE etc.) */
+@media (max-width: 480px) {
+  .intro-highlight {
+    padding: 1.5rem;
+  }
+  .biz-contact {
+    padding: 1.5rem;
+  }
+  .phone-link {
+    font-size: 1.8rem;
+  }
 }
+/* ==========================================================
+   🚀 HERO ALIGNMENT — ABSOLUTE BALANCED CENTER
+   ========================================================== */
+
 .about-hero {
-  margin-top: calc(-1 * var(--navbar-height));
-  padding-top: var(--navbar-height);
+  position: relative;
+  width: 100%;
+  height: clamp(550px, 80vh, 850px); /* World-class responsive height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;     /* Vertical Center */
+  justify-content: center;    /* Horizontal Center */
+  text-align: center;
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 23, 42, 0.35) 0%, 
+    rgba(15, 23, 42, 0.75) 100%
+  );
+  padding: 2rem;
+}
+
+/* 🎯 THE ALIGNMENT ENGINE */
+.about-overlay .container {
+  width: 100%;
+  max-width: 960px; /* Optimal for high-impact typography */
+  margin-left: auto !important;  /* Force center */
+  margin-right: auto !important; /* Force center */
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Center the Badge, H1, and P */
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Typography Refinement */
+.about-overlay h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-block: 1.5rem;
+  color: #ffffff;
+  text-wrap: balance; /* Prevents awkward line breaks on desktop */
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-lead {
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  max-width: 65ch; /* Balanced line length for reading */
+  margin-inline: auto; /* Centers the paragraph block */
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+}
+
+.badge-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fff;
 }

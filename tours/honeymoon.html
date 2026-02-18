@@ -1,283 +1,361 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <!-- ===============================
+    <!-- ===============================
      CORE META
   ================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- ===============================
+    <!-- ===============================
      SEO (HONEYMOON / ROMANTIC TOURS)
   ================================ -->
-  <title>Honeymoon Tour Packages | Maldives, Bali, Kashmir & More – Delight Trips</title>
-  <meta
-    name="description"
-    content="Plan your perfect honeymoon with Delight Trips. Explore romantic honeymoon tour packages to Maldives, Bali, Kerala, Kashmir, Europe and other dreamy destinations."
-  />
+    <title>
+      Honeymoon Tour Packages | Maldives, Bali, Kashmir & More – Delight Trips
+    </title>
+    <meta
+      name="description"
+      content="Plan your perfect honeymoon with Delight Trips. Explore romantic honeymoon tour packages to Maldives, Bali, Kerala, Kashmir, Europe and other dreamy destinations."
+    />
 
-  <!-- ===============================
+    <!-- ===============================
      FAVICON & APP ICONS
 ================================ -->
-<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
 
-<!-- Standard Browser Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+    <!-- Standard Browser Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    />
 
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
 
-<!-- Android / PWA Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
+    <!-- Android / PWA Icons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon/android-chrome-512x512.png"
+    />
 
-<!-- Web App Manifest -->
-<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.delighttrips.in/honeymoon.html" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.delighttrips.in/honeymoon.html" />
 
-  <!-- ===============================
+    <!-- ===============================
      GOOGLE ANALYTICS (GA4 – ASYNC)
   ================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F5VESB5BY0', {
-      anonymize_ip: true,
-      page_path: window.location.pathname
-    });
-  </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F5VESB5BY0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-F5VESB5BY0", {
+        anonymize_ip: true,
+        page_path: window.location.pathname,
+      });
+    </script>
 
-  <!-- ===============================
+    <!-- ===============================
      FONTS (GLOBAL – SAME EVERYWHERE)
   ================================ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- ===============================
+    <!-- ===============================
      GLOBAL CORE CSS
   ================================ -->
-  <link rel="stylesheet" href="/styles/tokens.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/utilities.css" />
-  <link rel="stylesheet" href="/styles/accessibility.css" />
-  <link rel="stylesheet" href="/styles/support.css" />
-  <link rel="stylesheet" href="/styles/global-pattern.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/utilities.css" />
+    <link rel="stylesheet" href="/styles/accessibility.css" />
+    <link rel="stylesheet" href="/styles/support.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      COMPONENT STYLES
   ================================ -->
-  <link rel="stylesheet" href="/styles/components/navbar.css" />
-  <link rel="stylesheet" href="/styles/components/footer.css" />
-  <link rel="stylesheet" href="/styles/components/whatsapp.css" />
-  <link rel="stylesheet" href="/styles/components/buttons.css" />
+    <link rel="stylesheet" href="/styles/components/navbar.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/whatsapp.css" />
+    <link rel="stylesheet" href="/styles/components/buttons.css" />
 
-  <!-- ===============================
+    <!-- ===============================
      PAGE-SPECIFIC CSS
   ================================ -->
-  <link rel="stylesheet" href="/styles/pages/honeymoon.css" />
-</head>
-
+    <link rel="stylesheet" href="/styles/pages/honeymoon.css" />
+  </head>
 
   <body>
-  <div id="site-header"></div>
-<script type="module" src="/js/navigation.js"></script>
+    <div id="site-header"></div>
+    <script type="module" src="/js/navigation.js"></script>
 
-    <!-- HERO -->
+    <!-- ===============================
+     HERO
+================================ -->
     <section class="honeymoon-hero">
-      <div class="hero-overlay">
-        <h1>Honeymoon Experiences Crafted with Love</h1>
+      <div class="honeymoon-hero-overlay">
+        <h1>Honeymoon Tour Packages</h1>
         <p>Romance · Luxury · Privacy · Unforgettable Moments</p>
       </div>
     </section>
 
-    <!-- INTRO -->
+    <!-- ===============================
+     INTRO (SEO CONTENT)
+================================ -->
     <section class="honeymoon-intro">
       <p>
-        Celebrate love with Delight Trips. Our honeymoon tour packages are
-        thoughtfully designed for couples seeking romance, serenity, luxury and
-        unforgettable memories across the world’s most beautiful destinations.
+        Celebrate the beginning of your journey together with
+        <strong>romantic honeymoon tour packages</strong> curated by Delight
+        Trips. From private overwater villas and alpine escapes to iconic
+        romantic cities, our honeymoon destinations are thoughtfully designed
+        for couples seeking intimacy, luxury, scenic beauty, and unforgettable
+        memories.
       </p>
     </section>
 
-    <!-- DESTINATION GRID -->
-    <section class="destination-grid">
-      <a href="/destinations/honeymoon/maldives.html" class="destination-card">
-  <img
-    src="/assets/images/tours/honeymoon/maldives.webp"
-    loading="lazy"
-    alt="Maldives Honeymoon Package"
-  />
-  <div class="destination-overlay">
-    <h3>Maldives</h3>
-    <span>Overwater Villas · Private Beaches</span>
-  </div>
-</a>
+    <!-- ===============================
+     DESTINATION GRID
+================================ -->
+    <section class="destination-section">
+      <div class="destination-grid">
+        <!-- MALDIVES -->
+        <article class="destination-card">
+          <a href="/destinations/honeymoon/maldives.html">
+            <img
+              src="/assets/images/tours/honeymoon/maldives.webp"
+              alt="Maldives Honeymoon Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Maldives</h3>
+              <p>Overwater Villas · Private Beaches</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹1,19,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/honeymoon/bali.html" class="destination-card">
-  <img
-    src="/assets/images/tours/honeymoon/bali.webp"
-    loading="lazy"
-    alt="Bali Honeymoon Package"
-  />
-  <div class="destination-overlay">
-    <h3>Bali</h3>
-    <span>Romantic Resorts · Culture</span>
-  </div>
-</a>
+        <!-- BALI -->
+        <article class="destination-card">
+          <a href="/destinations/honeymoon/bali.html">
+            <img
+              src="/assets/images/tours/honeymoon/bali.webp"
+              alt="Bali Honeymoon Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Bali</h3>
+              <p>Romantic Resorts · Culture</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹49,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/honeymoon/mauritius.html" class="destination-card">
-  <img
-    src="/assets/images/tours/honeymoon/mauritius.webp"
-    loading="lazy"
-    alt="Mauritius Honeymoon Package"
-  />
-  <div class="destination-overlay">
-    <h3>Mauritius</h3>
-    <span>Luxury Islands · Blue Lagoons</span>
-  </div>
-</a>
+        <!-- MAURITIUS -->
+        <article class="destination-card">
+          <a href="/destinations/honeymoon/mauritius.html">
+            <img
+              src="/assets/images/tours/honeymoon/mauritius.webp"
+              alt="Mauritius Honeymoon Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Mauritius</h3>
+              <p>Luxury Islands · Blue Lagoons</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹89,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/honeymoon/paris.html" class="destination-card">
-  <img
-    src="/assets/images/tours/honeymoon/paris.webp"
-    loading="lazy"
-    alt="Paris Honeymoon Package"
-  />
-  <div class="destination-overlay">
-    <h3>Paris</h3>
-    <span>City of Love · Romance</span>
-  </div>
-</a>
+        <!-- PARIS -->
+        <article class="destination-card">
+          <a href="/destinations/honeymoon/paris.html">
+            <img
+              src="/assets/images/tours/honeymoon/paris.webp"
+              alt="Paris Honeymoon Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Paris</h3>
+              <p>City of Love · Romance</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹1,39,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
 
-<a href="/destinations/honeymoon/switzerland.html" class="destination-card">
-  <img
-    src="/assets/images/tours/honeymoon/switzerland.webp"
-    loading="lazy"
-    alt="Switzerland Honeymoon Package"
-  />
-  <div class="destination-overlay">
-    <h3>Switzerland</h3>
-    <span>Alps · Scenic Train Journeys</span>
-  </div>
-</a>
+        <!-- SWITZERLAND -->
+        <article class="destination-card">
+          <a href="/destinations/honeymoon/switzerland.html">
+            <img
+              src="/assets/images/tours/honeymoon/switzerland.webp"
+              alt="Switzerland Honeymoon Packages"
+              loading="lazy"
+              width="640"
+              height="420"
+            />
+            <div class="card-overlay">
+              <h3>Switzerland</h3>
+              <p>Alps · Scenic Train Journeys</p>
+              <div class="card-footer">
+                <span class="price">Starting from ₹1,59,999</span>
+                <span class="cta">View Packages</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
     </section>
-
-
-<div id="footer-placeholder"></div>
 
     <footer class="footer">
-  <div class="footer-wrapper">
+      <div class="footer-wrapper container">
+        <div class="footer-brand">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="Delight Trips Logo"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <p class="footer-description">
+            Delight Trips is a trusted travel company offering authentic
+            journeys, offbeat destinations, and curated travel experiences
+            across India and international destinations.
+          </p>
+        </div>
 
-    <!-- BRAND -->
-    <div class="footer-brand">
-      <img
-        src="/assets/images/logo/logo.png"
-        alt="Delight Trips Logo"
-        class="footer-logo"
-        loading="lazy"
-      />
-      <p class="footer-description">
-        Delight Trips is a trusted travel company offering authentic journeys,
-        offbeat destinations, and carefully curated travel experiences across
-        India and international destinations with a focus on comfort,
-        sustainability, and reliability.
-      </p>
-    </div>
+        <nav class="footer-links" aria-label="Policy Links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            <li>
+              <a href="/refund-and-cancellation-policy.html">Refund Policy</a>
+            </li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
 
-    <!-- POLICIES -->
-    <div class="footer-links">
-      <h4>Policies</h4>
-      <ul>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
-        <li><a href="/refund-and-cancellation-policy.html">Refund Policy</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-        </ul>
-    </div>
+        <nav class="footer-links" aria-label="Tour Links">
+          <h4>Tours</h4>
+          <ul>
+            <li>
+              <a href="/tours/domestic.html">Incredible Indian Destinations</a>
+            </li>
+            <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
+            <li>
+              <a href="/tours/international.html">International Destinations</a>
+            </li>
+            <li>
+              <a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a>
+            </li>
+          </ul>
+        </nav>
 
-    <!-- TOURS -->
-    <div class="footer-links">
-      <h4>Tours</h4>
-      <ul>
-        <li><a href="/tours/domestic.html">Incredible Indian Destinations</a></li>
-        <li><a href="/tours/honeymoon.html">Romantic Destinations</a></li>
-        <li><a href="/tours/international.html">International Destinations</a></li>
-        <li><a href="/tours/pilgrimage.html">Divine & Spiritual Tours</a></li>
-      </ul>
-    </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/delight_tripss/"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/instagram.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/Delighttrips/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/facebook.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+            <a
+              href="https://wa.me/917045286023"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/icons/social/whatsapp.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          © <span id="year"></span> Delight Trips. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
 
-    <!-- SOCIAL -->
-    <div class="footer-social">
-  <h4>Follow Us</h4>
-
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/delight_tripss/"
-      aria-label="Follow Delight Trips on Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/instagram.svg"
-        alt="Instagram"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- Facebook -->
-    <a
-      href="https://www.facebook.com/Delighttrips/"
-      aria-label="Follow Delight Trips on Facebook"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/facebook.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-
-    <!-- WhatsApp -->
-    <a
-      href="https://wa.me/917045286023"
-      aria-label="Chat with Delight Trips on WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="/assets/icons/social/whatsapp.svg"
-        alt="WhatsApp"
-        width="24"
-        height="24"
-        loading="lazy"
-      />
-    </a>
-  </div>
-</div>
-  <div class="footer-bottom">
-    © <span id="year"></span> Delight Trips. All Rights Reserved.
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

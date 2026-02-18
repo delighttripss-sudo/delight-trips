@@ -1,29 +1,87 @@
+/* ==========================================================
+   ✅ WORLD-CLASS BREADCRUMBS — breadcrumb.css
+   - Logic: Fluid scaling & Auto-separators
+   - Compatibility: Schema.org Microdata
+========================================================== */
+
 .breadcrumb {
-  padding: 10px 20px;
-  background-color: var(--background-color);
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: var(--space-sm) 0; /* Aligns with global container padding */
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  overflow-x: auto; /* Enables swipe on small mobile screens */
+  white-space: nowrap;
+  scrollbar-width: none; /* Hides scrollbar on Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar on IE/Edge */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.breadcrumb::-webkit-scrollbar {
+  display: none;
 }
 
 .breadcrumb-list {
-  list-style: none;
   display: flex;
-  gap: 8px;
+  align-items: center;
+  list-style: none;
+  gap: var(--sp-2);
   margin: 0;
   padding: 0;
 }
 
+/* 1. ITEM BASE */
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* 2. AUTOMATIC SEPARATOR (The "Magic" Part)
+   - Injects a high-end chevron without editing HTML
+---------------------------------------------------------- */
+.breadcrumb-item:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: var(--sp-2);
+  background-color: var(--gray-400);
+  /* World-class icon: chevron-right via SVG Mask */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat center;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat center;
+  opacity: 0.5;
+}
+
+/* 3. INTERACTIVE LINKS */
 .breadcrumb-item a {
-  color: var(--primary-color);
+  color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
 .breadcrumb-item a:hover {
-  color: var(--accent-color);
+  color: var(--primary);
 }
 
+/* 4. ACTIVE PAGE (Current Location) */
 .breadcrumb-item[aria-current="page"] {
-  font-weight: 600;
-  color: var(--text-color);
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* 5. MOBILE FADE EFFECT
+   - Shows user there is more to scroll if text is long
+---------------------------------------------------------- */
+@media (max-width: 600px) {
+  .breadcrumb {
+    padding: var(--sp-3) 0;
+    /* Adds a subtle fade at the right edge */
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
 }

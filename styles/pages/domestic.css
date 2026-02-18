@@ -1,149 +1,281 @@
-/* HEADER */
-.domestic-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
+/* ==========================================================
+   DOMESTIC TOURS PAGE — PRODUCTION CSS
+   ========================================================== */
+
+/* ==========================================================
+   DESIGN TOKENS
+   ========================================================== */
+
+:root {
+  /* Radius */
+  --radius-xl: 26px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Card image heights */
+  --card-height-desktop: 260px;
+  --card-height-tablet: 240px;
+  --card-height-mobile: 220px;
+
+  /* Brand */
+  --navy: #0b2a4a;
+  --navy-soft: #143b66;
+  --yellow: #f7b500;
+
+  /* Text */
+  --text-dark: #0f172a;
+  --text-muted: #6b7280;
+  --white: #ffffff;
+
+  /* Shadows */
+  --shadow-soft: 0 14px 34px rgba(15, 23, 42, 0.12);
+  --shadow-hover: 0 26px 60px rgba(15, 23, 42, 0.18);
 }
 
-.domestic-logo img {
-  height: 48px;
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.domestic-home {
-  font-weight: 500;
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(14, 165, 233, 0.08),
+      transparent 55%
+    ),
+    linear-gradient(180deg, #f4f9ff 0%, #ffffff 100%);
+
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* HERO */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================
+   HERO — DOMESTIC
+   ========================================================== */
+
 .domestic-hero {
-  height: 100vh;
-  background: url("/assets/images/india-hero.webp") center/cover no-repeat;
   position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 85svh;
+  background-image: url("/assets/images/hero/domestic-hero.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-overlay {
+.category-hero-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
   text-align: center;
-}
-
-/* INTRO */
-.domestic-intro {
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
-  padding: 0 20px;
-}
-
-/* GRID */
-.domestic-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
-  padding: 40px;
-}
-
-/* CTA */
-.domestic-cta {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.cta-btn {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 14px 28px;
-  background: #0b5ed7;
-  color: #fff;
-  border-radius: 8px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .domestic-header {
-    padding: 16px 20px;
-  }
-  .domestic-hero {
-    height: 45vh;
-  }
-}
-
-/* CARD */
-.destination-card {
-  position: relative;
-  height: 260px;
-  border-radius: 18px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-.destination-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-/* DARK GRADIENT OVERLAY */
-.destination-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+  padding: 0 24px;
   background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.15),
-    transparent
+    to bottom,
+    rgba(0, 0, 0, 0.38),
+    rgba(0, 0, 0, 0.48)
   );
 }
 
-/* TEXT OVERLAY */
-.destination-overlay {
-  position: absolute;
-  bottom: 18px;
-  left: 18px;
-  right: 18px;
-  z-index: 2;
-  color: #fff;
+.category-hero-overlay h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.destination-overlay h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 4px;
+.category-hero-overlay p {
+  margin-top: 8px; /* 👈 closer, premium */
+  margin-bottom: 0;
+  max-width: 760px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #e5e7eb;
 }
 
-.destination-overlay span {
-  font-size: 13px;
-  opacity: 0.9;
+/* ==========================================================
+   INTRO SECTION (SEO CONTENT)
+   ========================================================== */
+
+.category-intro {
+  max-width: 1100px;
+  margin: 72px auto;
+  padding: 0 24px;
+  text-align: center;
 }
 
-/* HOVER EFFECT */
+.category-intro p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+/* ==========================================================
+   DESTINATION SECTION
+   ========================================================== */
+
+.destination-section {
+  max-width: 1480px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
+
+/* Grid */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* ==========================================================
+   DESTINATION CARD
+   ========================================================== */
+
+.destination-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
 .destination-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-hover);
 }
 
-.destination-card:hover img {
-  transform: scale(1.08);
+/* Image */
+.destination-card img {
+  width: 100%;
+  height: var(--card-height-desktop);
+  object-fit: cover;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .destination-card {
-    height: 220px;
+/* Card content */
+.card-overlay {
+  padding: 18px;
+}
+
+.card-overlay h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.card-overlay p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.card-footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* CTA */
+.cta {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+  color: var(--white);
+  transition: background 0.2s ease;
+}
+
+.destination-card:hover .cta {
+  background: linear-gradient(135deg, var(--navy-soft), var(--navy));
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .destination-overlay h3 {
-    font-size: 16px;
+  .destination-card img {
+    height: var(--card-height-tablet);
+  }
+
+  .domestic-hero {
+    height: 75vh;
+  }
+
+  .category-hero-overlay h1 {
+    font-size: 2.6rem;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 640px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-card img {
+    height: var(--card-height-mobile);
+  }
+
+  .domestic-hero {
+    height: 68vh;
+  }
+
+  .category-hero-overlay h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .category-hero-overlay p {
+    margin-top: 6px;
+    font-size: 0.95rem;
+  }
+}
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .destination-card {
+    transition: none;
   }
 }

@@ -1,25 +1,187 @@
-.text-center {
-  text-align: center;
+/* ============================================
+   ✅ DELIGHT TRIPS WORLD-CLASS UTILITIES
+   - Mobile-First Approach
+   - Performance Optimized
+   - Logic: Responsive & Fluid
+============================================ */
+
+/* 1. LAYOUT & CONTAINERS 
+-------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
 }
+
+.section-padding {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+/* 2. FLEX & GRID (Responsive)
+   - These ensure things stack on mobile and row on desktop
+-------------------------------------------------- */
 .flex {
   display: flex;
 }
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* World-Class fix: Auto-stacking utility */
+.flex-adaptive {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .flex-adaptive {
+    flex-direction: row; /* Row on desktop */
+    align-items: center;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* 3. SPACING (Using Clamp for Fluidity) 
+-------------------------------------------------- */
+.m-auto {
+  margin: auto;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Margin Top */
+.mt-xs {
+  margin-top: var(--space-xs);
+}
 .mt-sm {
-  margin-top: var(--sp-2);
+  margin-top: var(--space-sm);
 }
 .mt-md {
-  margin-top: var(--sp-3);
+  margin-top: var(--space-md);
 }
 .mt-lg {
-  margin-top: var(--sp-5);
+  margin-top: var(--space-lg);
+}
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+
+/* Padding */
+.p-sm {
+  padding: var(--space-sm);
+}
+.p-md {
+  padding: var(--space-md);
+}
+.p-lg {
+  padding: var(--space-lg);
+}
+
+/* 4. TYPOGRAPHY & ALIGNMENT
+-------------------------------------------------- */
+.text-center {
+  text-align: center;
+}
+.text-balance {
+  text-wrap: balance;
+} /* Prevents awkward single words on new lines */
+
+.text-primary {
+  color: var(--primary);
+}
+.text-white {
+  color: #ffffff;
+}
+.text-muted {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+.font-medium {
+  font-weight: 500;
+}
+.tracking-tight {
+  letter-spacing: -0.02em;
+}
+
+/* 5. VISUAL REFINEMENT
+-------------------------------------------------- */
+.rounded-sm {
+  border-radius: var(--radius-sm, 8px);
+}
+.rounded-md {
+  border-radius: var(--radius-md, 12px);
+}
+.rounded-lg {
+  border-radius: var(--radius-lg, 24px);
+} /* For premium cards */
+
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.shadow-md {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.shadow-lg {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 6. UTILITY HELPERS
+-------------------------------------------------- */
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.object-cover {
+  object-fit: cover;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .md-block {
+    display: block !important;
+  }
 }
