@@ -226,12 +226,20 @@ textarea {
 
 /* Map Styling */
 .contact-map {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg); /* 12px matches your form */
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  min-height: 400px; /* Ensure visibility on mobile */
+  min-height: 450px; /* Slightly taller for better desktop balance */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+.contact-map:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
 /* =========================================
    RESPONSIVE
 ========================================= */
@@ -278,4 +286,40 @@ textarea {
 .whatsapp-float img {
   /* Ensures the image doesn't block the link click */
   pointer-events: none;
+}
+/* Optimized Map Styling for Delight Trips */
+.contact-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  /* CRITICAL FIX: Ensure the container has a set height on desktop */
+  height: 100%;
+  min-height: 500px; /* Increased for a more premium, balanced look */
+  display: flex; /* Helps internal alignment */
+}
+
+.contact-map iframe {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.contact-map:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 968px) {
+  .form-map-grid {
+    grid-template-columns: 1fr; /* Stacks Form and Map */
+  }
+
+  .contact-map {
+    height: 450px; /* Ensures a generous view on mobile/tablets */
+    min-height: auto;
+  }
 }
